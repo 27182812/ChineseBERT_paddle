@@ -16,31 +16,39 @@ class FusionBertEmbeddings(nn.Layer):
     Construct the embeddings from word, position, glyph, pinyin and token_type embeddings.
     """
 
-    def __init__(self, config):
+    def __init__(self,
+                 vocab_size,
+                 hidden_size=768,
+                 hidden_dropout_prob=0.1,
+                 max_position_embeddings=512,
+                 type_vocab_size=16,
+                 name_or_path="config path ",
+                 layer_norm_eps=1e-12):
+
         super(FusionBertEmbeddings, self).__init__()
-        config_path = os.path.join(config.name_or_path, 'config')
+        config_path = os.path.join(name_or_path, 'config')
         font_files = []
         for file in os.listdir(config_path):
             if file.endswith(".npy"):
                 font_files.append(os.path.join(config_path, file))
-        self.word_embeddings = nn.Embedding(config.vocab_size, config.hidden_size, padding_idx=0)
-        self.position_embeddings = nn.Embedding(config.max_position_embeddings, config.hidden_size)
-        self.token_type_embeddings = nn.Embedding(config.type_vocab_size, config.hidden_size)
-        self.pinyin_embeddings = PinyinEmbedding(embedding_size=128, pinyin_out_dim=config.hidden_size,
+        self.word_embeddings = nn.Embedding(vocab_size, hidden_size, padding_idx=0)
+        self.position_embeddings = nn.Embedding(max_position_embeddings, hidden_size)
+        self.token_type_embeddings = nn.Embedding(type_vocab_size, hidden_size)
+        self.pinyin_embeddings = PinyinEmbedding(embedding_size=128, pinyin_out_dim=hidden_size,
                                                  config_path=config_path)
         self.glyph_embeddings = GlyphEmbedding(font_npy_files=font_files)
 
         # self.LayerNorm is not snake-cased to stick with TensorFlow models variable name and be able to load
         # any TensorFlow checkpoint file
-        self.glyph_map = nn.Linear(1728, config.hidden_size)
-        self.map_fc = nn.Linear(config.hidden_size * 3, config.hidden_size)
-        #self.LayerNorm = nn.LayerNorm(config.hidden_size, eps=config.layer_norm_eps)
-        self.LayerNorm = nn.LayerNorm(config.hidden_size, epsilon=config.layer_norm_eps)
-        self.dropout = nn.Dropout(config.hidden_dropout_prob)
+        self.glyph_map = nn.Linear(1728, hidden_size)
+        self.map_fc = nn.Linear(hidden_size * 3, hidden_size)
+        #self.LayerNorm = nn.LayerNorm(hidden_size, eps=layer_norm_eps)
+        self.LayerNorm = nn.LayerNorm(hidden_size, epsilon=layer_norm_eps)
+        self.dropout = nn.Dropout(hidden_dropout_prob)
 
         # position_ids (1, len position emb) is contiguous in memory and exported when serialized
-        # self.register_buffer("position_ids", torch.arange(config.max_position_embeddings).expand((1, -1)))
-        self.register_buffer("position_ids", paddle.expand(paddle.arange(config.max_position_embeddings),[1, -1]))
+        # self.register_buffer("position_ids", torch.arange(max_position_embeddings).expand((1, -1)))
+        self.register_buffer("position_ids", paddle.expand(paddle.arange(max_position_embeddings),[1, -1]))
 
     def forward(self, input_ids=None, pinyin_ids=None, token_type_ids=None, position_ids=None, inputs_embeds=None):
         if input_ids is not None:
