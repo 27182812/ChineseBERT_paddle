@@ -3,7 +3,7 @@
 
 import json
 import os
-
+import numpy as np
 import paddle
 # from torch import nn
 from paddle import nn
@@ -52,3 +52,13 @@ class PinyinEmbedding(nn.Layer):
         
         # return pinyin_embed.view(bs, sentence_length, self.pinyin_out_dim)  # [bs,sentence_length,pinyin_out_dim]
         return paddle.reshape(pinyin_embed,[bs, sentence_length, self.pinyin_out_dim])  # [bs,sentence_length,pinyin_out_dim]
+
+
+if __name__ == "__main__":
+    pyemb = PinyinEmbedding(384,128,"E:\code\比赛\ChineseBERT\ChineseBERT-base\config")
+
+    # pinyinids = paddle.rand([4,20,10])
+    pinyinids = paddle.to_tensor(np.random.randint(10,size=(4,20,10)))
+    print(pinyinids.shape)
+    out = pyemb(pinyinids)
+    print(out.shape)
