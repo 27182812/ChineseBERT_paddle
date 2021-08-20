@@ -34,11 +34,13 @@ class FusionBertEmbeddings(nn.Layer):
         # any TensorFlow checkpoint file
         self.glyph_map = nn.Linear(1728, config.hidden_size)
         self.map_fc = nn.Linear(config.hidden_size * 3, config.hidden_size)
-        self.LayerNorm = nn.LayerNorm(config.hidden_size, eps=config.layer_norm_eps)
+        #self.LayerNorm = nn.LayerNorm(config.hidden_size, eps=config.layer_norm_eps)
+        self.LayerNorm = nn.LayerNorm(config.hidden_size, epsilon=config.layer_norm_eps)
         self.dropout = nn.Dropout(config.hidden_dropout_prob)
 
         # position_ids (1, len position emb) is contiguous in memory and exported when serialized
-        self.register_buffer("position_ids", torch.arange(config.max_position_embeddings).expand((1, -1)))
+        # self.register_buffer("position_ids", torch.arange(config.max_position_embeddings).expand((1, -1)))
+        self.register_buffer("position_ids", paddle.expand(paddle.arange(config.max_position_embeddings),[1, -1]))
 
     def forward(self, input_ids=None, pinyin_ids=None, token_type_ids=None, position_ids=None, inputs_embeds=None):
         if input_ids is not None:
@@ -52,7 +54,8 @@ class FusionBertEmbeddings(nn.Layer):
             position_ids = self.position_ids[:, :seq_length]
 
         if token_type_ids is None:
-            token_type_ids = torch.zeros(input_shape, dtype=torch.long, device=self.position_ids.device)
+            # token_type_ids = torch.zeros(input_shape, dtype=torch.long, device=self.position_ids.device)
+            token_type_ids = paddle.zeros_like(input_ids, dtype="int64")
 
         if inputs_embeds is None:
             inputs_embeds = self.word_embeddings(input_ids)
@@ -62,13 +65,15 @@ class FusionBertEmbeddings(nn.Layer):
         pinyin_embeddings = self.pinyin_embeddings(pinyin_ids)  # [bs,l,hidden_size]
         glyph_embeddings = self.glyph_map(self.glyph_embeddings(input_ids))  # [bs,l,hidden_size]
         # fusion layer
-        concat_embeddings = torch.cat((word_embeddings, pinyin_embeddings, glyph_embeddings), 2)
+        # concat_embeddings = torch.cat((word_embeddings, pinyin_embeddings, glyph_embeddings), 2)
+        concat_embeddings = paddle.concat((word_embeddings, pinyin_embeddings, glyph_embeddings), 2)
         inputs_embeds = self.map_fc(concat_embeddings)
 
         position_embeddings = self.position_embeddings(position_ids)
         token_type_embeddings = self.token_type_embeddings(token_type_ids)
 
         embeddings = inputs_embeds + position_embeddings + token_type_embeddings
+        #embeddings = self.LayerNorm(embeddings)
         embeddings = self.LayerNorm(embeddings)
         embeddings = self.dropout(embeddings)
         return embeddings
