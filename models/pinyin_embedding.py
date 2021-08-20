@@ -38,12 +38,17 @@ class PinyinEmbedding(nn.Layer):
         # input pinyin ids for 1-D conv
         embed = self.embedding(pinyin_ids)  # [bs,sentence_length,pinyin_locs,embed_size]
         bs, sentence_length, pinyin_locs, embed_size = embed.shape
+        
         # view_embed = embed.view(-1, pinyin_locs, embed_size)  # [(bs*sentence_length),pinyin_locs,embed_size]
         view_embed = paddle.reshape(embed,[-1, pinyin_locs, embed_size])
+        
         # input_embed = view_embed.permute(0, 2, 1)  # [(bs*sentence_length), embed_size, pinyin_locs]
         input_embed = paddle.transpose(view_embed,perm=[0,2,1]) # [(bs*sentence_length), embed_size, pinyin_locs]
+        
         # conv + max_pooling
         pinyin_conv = self.conv(input_embed)  # [(bs*sentence_length),pinyin_out_dim,H]
+        
         pinyin_embed = F.max_pool1d(pinyin_conv, pinyin_conv.shape[-1])  # [(bs*sentence_length),pinyin_out_dim,1]
+        
         # return pinyin_embed.view(bs, sentence_length, self.pinyin_out_dim)  # [bs,sentence_length,pinyin_out_dim]
         return paddle.reshape(pinyin_embed,[bs, sentence_length, self.pinyin_out_dim])  # [bs,sentence_length,pinyin_out_dim]
