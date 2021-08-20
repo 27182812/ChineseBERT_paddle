@@ -26,7 +26,7 @@ class GlyphEmbedding(nn.Layer):
             num_embeddings=self.vocab_size,
             embedding_dim=self.font_size ** 2 * self.font_num,
             # _weight=torch.from_numpy(font_array.reshape([self.vocab_size, -1]))
-            _weight=paddle.to_tensor(font_array.reshape([self.vocab_size, -1]))
+            weight_attr=paddle.to_tensor(font_array.reshape([self.vocab_size, -1]))
         )
 
     def forward(self, input_ids):

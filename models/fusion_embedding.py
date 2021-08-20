@@ -32,7 +32,7 @@ class FusionBertEmbeddings(nn.Layer):
 
         # self.LayerNorm is not snake-cased to stick with TensorFlow models variable name and be able to load
         # any TensorFlow checkpoint file
-        self.glyph_map = nn.Linear(1728, config.hidden_size)
+        self.glyph_map = nn.linear(1728, config.hidden_size)
         self.map_fc = nn.Linear(config.hidden_size * 3, config.hidden_size)
         #self.LayerNorm = nn.LayerNorm(config.hidden_size, eps=config.layer_norm_eps)
         self.LayerNorm = nn.LayerNorm(config.hidden_size, epsilon=config.layer_norm_eps)
