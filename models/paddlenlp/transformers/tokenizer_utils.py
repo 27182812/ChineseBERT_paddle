@@ -529,6 +529,8 @@ class PretrainedTokenizer(object):
                 resolved_vocab_files[file_id] = file_path
                 continue
             path = os.path.join(default_root, file_path.split('/')[-1])
+            ###自己加的
+            path = "C:/Users/QYS/Desktop/ChineseBert-main/ChineseBERT-base/vocab.txt"
             if os.path.exists(path):
                 logger.info("Already cached %s" % path)
                 resolved_vocab_files[file_id] = path
@@ -547,11 +549,14 @@ class PretrainedTokenizer(object):
                         "- or a correct model-identifier of community-contributed pretrained models,\n"
                         "- or the correct path to a directory containing relevant tokenizer files.\n"
                     )
-
+        # print(resolved_vocab_files)
         # Prepare tokenizer initialization kwargs
         # Did we saved some inputs and kwargs to reload ?
         tokenizer_config_file = resolved_vocab_files.pop(
             "tokenizer_config_file", None)
+        # print(tokenizer_config_file)
+        # print("*"*20)
+        tokenizer_config_file = None
         if tokenizer_config_file is not None:
             with io.open(tokenizer_config_file, encoding="utf-8") as f:
                 init_kwargs = json.load(f)

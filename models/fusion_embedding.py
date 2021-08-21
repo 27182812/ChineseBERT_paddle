@@ -7,8 +7,8 @@ import os
 import paddle
 from paddle import nn 
 
-from models.glyph_embedding import GlyphEmbedding
-from models.pinyin_embedding import PinyinEmbedding
+from glyph_embedding import GlyphEmbedding
+from pinyin_embedding import PinyinEmbedding
 
 
 class FusionBertEmbeddings(nn.Layer):
@@ -17,12 +17,12 @@ class FusionBertEmbeddings(nn.Layer):
     """
 
     def __init__(self,
-                 vocab_size,
+                 vocab_size=23236,
                  hidden_size=768,
                  hidden_dropout_prob=0.1,
                  max_position_embeddings=512,
                  type_vocab_size=16,
-                 name_or_path="config path ",
+                 name_or_path="C:/Users/QYS/Desktop/ChineseBert-main/ChineseBERT-base/",
                  layer_norm_eps=1e-12):
 
         super(FusionBertEmbeddings, self).__init__()
@@ -51,12 +51,19 @@ class FusionBertEmbeddings(nn.Layer):
         self.register_buffer("position_ids", paddle.expand(paddle.arange(max_position_embeddings),[1, -1]))
 
     def forward(self, input_ids=None, pinyin_ids=None, token_type_ids=None, position_ids=None, inputs_embeds=None):
+        # print(input_ids)
+        # exit()
+        # print(input_ids.size())
+        # print(input_ids.shape)
+        # exit()
         if input_ids is not None:
-            input_shape = input_ids.size()
+            # input_shape = input_ids.size()
+            input_shape = input_ids.shape
         else:
             input_shape = inputs_embeds.size()[:-1]
 
         seq_length = input_shape[1]
+
 
         if position_ids is None:
             position_ids = self.position_ids[:, :seq_length]

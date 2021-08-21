@@ -249,6 +249,7 @@ class BertTokenizer(PretrainedTokenizer):
     resource_files_names = {"vocab_file": "vocab.txt"}  # for save_pretrained
     pretrained_resource_files_map = {
         "vocab_file": {
+            "ChineseBERT-base":"C:/Users/QYS/Desktop/ChineseBert-main/ChineseBERT-base/vocab.txt",
             "bert-base-uncased":
             "https://paddle-hapi.bj.bcebos.com/models/bert/bert-base-uncased-vocab.txt",
             "bert-large-uncased":

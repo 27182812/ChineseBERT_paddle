@@ -4,7 +4,7 @@
 from typing import List
 
 import numpy as np
-# import torch
+import torch
 import paddle
 # from torch import nn
 from paddle import nn 
@@ -22,12 +22,18 @@ class GlyphEmbedding(nn.Layer):
         self.font_size = font_arrays[0].shape[-1]
         # N, C, H, W
         font_array = np.stack(font_arrays, axis=1)
+        # print(torch.from_numpy(font_array.reshape([self.vocab_size, -1])))
+        # print(paddle.to_tensor(font_array.reshape([self.vocab_size, -1])))
+        # exit()
+
         self.embedding = nn.Embedding(
             num_embeddings=self.vocab_size,
             embedding_dim=self.font_size ** 2 * self.font_num,
             # _weight=torch.from_numpy(font_array.reshape([self.vocab_size, -1]))
-            weight_attr=paddle.to_tensor(font_array.reshape([self.vocab_size, -1]))
+            #weight_attr=paddle.to_tensor(font_array.reshape([self.vocab_size, -1]))
         )
+        self.embedding.weight.set_value(font_array.reshape([self.vocab_size, -1]))
+
 
     def forward(self, input_ids):
         """

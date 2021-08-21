@@ -23,14 +23,14 @@ from fusion_embedding import FusionBertEmbeddings
 
 
 __all__ = [
-    'BertModel',
-    "BertPretrainedModel",
-    'BertForPretraining',
-    'BertPretrainingCriterion',
-    'BertPretrainingHeads',
-    'BertForSequenceClassification',
-    'BertForTokenClassification',
-    'BertForQuestionAnswering',
+    'GlyceBertModel',
+    "GlyceBertPretrainedModel",
+    'GlyceBertForPretraining',
+    'GlyceBertPretrainingCriterion',
+    'GlyceBertPretrainingHeads',
+    'GlyceBertForSequenceClassification',
+    'GlyceBertForTokenClassification',
+    'GlyceBertForQuestionAnswering',
 ]
 
 
@@ -78,7 +78,7 @@ class GlyceBertPooler(BertPooler):
     """
 
     def __init__(self, hidden_size, pool_act="tanh"):
-        super(GlyceBertPooler, self).__init__()
+        super(GlyceBertPooler, self).__init__(hidden_size=768)
         self.dense = nn.Linear(hidden_size, hidden_size)
         self.activation = nn.Tanh()
         self.pool_act = pool_act
@@ -101,7 +101,7 @@ class GlyceBertPretrainedModel(BertPretrainedModel):
     loading pretrained models. See `PretrainedModel` for more details.
     """
 
-    model_config_file = "model_config.json"
+    model_config_file = "config.json"
     pretrained_init_configuration = {
         "ChineseBERT-base": {
             "vocab_size": 23236,
@@ -116,7 +116,6 @@ class GlyceBertPretrainedModel(BertPretrainedModel):
             "type_vocab_size": 2,
             "initializer_range": 0.02,
             "pad_token_id": 0,
-            "num_labels": 2,
         },
         "ChineseBERT-large": {
             "vocab_size": 23236,
@@ -131,14 +130,13 @@ class GlyceBertPretrainedModel(BertPretrainedModel):
             "type_vocab_size": 2,
             "initializer_range": 0.02,
             "pad_token_id": 0,
-            "num_labels": 2,
         },
     }
     resource_files_names = {"model_state": "model_state.pdparams"}
     pretrained_resource_files_map = {
         "model_state": {
             "ChineseBERT-base":
-            "https://paddlenlp.bj.bcebos.com/models/transformers/bert-base-uncased.pdparams",
+            "C:/Users/QYS/Desktop/ChineseBert-main/ChineseBERT-base/chinesebert-base.pdparams",
             "ChineseBERT-large":
             "https://paddlenlp.bj.bcebos.com/models/transformers/bert-large-uncased.pdparams",
         }
@@ -162,7 +160,7 @@ class GlyceBertPretrainedModel(BertPretrainedModel):
             layer._epsilon = 1e-12
 
 
-@register_base_model
+# @register_base_model
 class GlyceBertModel(GlyceBertPretrainedModel):
     """
     The bare BERT Model transformer outputting raw hidden-states without any specific head on top.
@@ -204,7 +202,7 @@ class GlyceBertModel(GlyceBertPretrainedModel):
     """
 
     def __init__(self,
-                 vocab_size,
+                 vocab_size = 23236,
                  hidden_size=768,
                  num_hidden_layers=12,
                  num_attention_heads=12,
@@ -221,6 +219,7 @@ class GlyceBertModel(GlyceBertPretrainedModel):
         super(GlyceBertModel, self).__init__()
         self.pad_token_id = pad_token_id
         self.initializer_range = initializer_range
+        vocab_size = 23236
         self.embeddings = FusionBertEmbeddings(
             vocab_size, hidden_size, hidden_dropout_prob,
             max_position_embeddings, type_vocab_size)
@@ -248,6 +247,8 @@ class GlyceBertModel(GlyceBertPretrainedModel):
                 (input_ids == self.pad_token_id
                  ).astype(self.pooler.dense.weight.dtype) * -1e9,
                 axis=[1, 2])
+        print(pinyin_ids)
+        print("*"*20)
         embedding_output = self.embeddings(
             input_ids=input_ids,
             pinyin_ids=pinyin_ids,
@@ -275,7 +276,7 @@ class GlyceBertForQuestionAnswering(GlyceBertPretrainedModel):
     def __init__(self, bert, dropout=None):
         super(GlyceBertForQuestionAnswering, self).__init__()
         self.bert = bert  # allow bert to be config
-        self.classifier = nn.Linear(self.bert.config["hidden_size"], self.bert.config["num_labels"])
+        self.classifier = nn.Linear(self.bert.config["hidden_size"], 2)
         self.apply(self.init_weights)
 
     def forward(self, input_ids,pinyin_ids=None ,token_type_ids=None):
@@ -304,14 +305,14 @@ class GlyceBertForSequenceClassification(GlyceBertPretrainedModel):
             instance `bert`. Default None
     """
 
-    def __init__(self, bert, dropout=None):
+    def __init__(self, bert, num_classes = 2, dropout=None):
         super(GlyceBertForSequenceClassification, self).__init__()
-        #self.num_classes = num_classes
+        self.num_classes = num_classes
         self.bert = bert  # allow bert to be config
         self.dropout = nn.Dropout(dropout if dropout is not None else
                                   self.bert.config["hidden_dropout_prob"])
         self.classifier = nn.Linear(self.bert.config["hidden_size"],
-                                    self.bert.config["num_labels"])
+                                    self.num_classes)
         self.apply(self.init_weights)
 
     def forward(self,
@@ -333,14 +334,14 @@ class GlyceBertForSequenceClassification(GlyceBertPretrainedModel):
 
 
 class GlyceBertForTokenClassification(GlyceBertPretrainedModel):
-    def __init__(self, bert, dropout=None):
+    def __init__(self, bert, num_classes = 2, dropout=None):
         super(GlyceBertForTokenClassification, self).__init__()
-        #self.num_classes = num_classes
+        self.num_classes = num_classes
         self.bert = bert  # allow bert to be config
         self.dropout = nn.Dropout(dropout if dropout is not None else
                                   self.bert.config["hidden_dropout_prob"])
         self.classifier = nn.Linear(self.bert.config["hidden_size"],
-                                    self.bert.config["num_labels"])
+                                    self.num_classes)
         self.apply(self.init_weights)
 
     def forward(self,

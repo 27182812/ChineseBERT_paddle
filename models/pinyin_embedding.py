@@ -27,6 +27,7 @@ class PinyinEmbedding(nn.Layer):
         self.conv = nn.Conv1D(in_channels=embedding_size, out_channels=self.pinyin_out_dim, kernel_size=2,
                               stride=1, padding=0)
 
+
     def forward(self, pinyin_ids):
         """
         Args:
@@ -36,6 +37,7 @@ class PinyinEmbedding(nn.Layer):
             pinyin_embed: (bs,sentence_length,pinyin_out_dim)
         """
         # input pinyin ids for 1-D conv
+        print(pinyin_ids)
         embed = self.embedding(pinyin_ids)  # [bs,sentence_length,pinyin_locs,embed_size]
         bs, sentence_length, pinyin_locs, embed_size = embed.shape
         
@@ -55,10 +57,10 @@ class PinyinEmbedding(nn.Layer):
 
 
 if __name__ == "__main__":
-    pyemb = PinyinEmbedding(384,128,"E:\code\比赛\ChineseBERT\ChineseBERT-base\config")
+    pyemb = PinyinEmbedding(384,128,"E:/ChineseBERT/ChineseBERT_paddle/ChineseBERT-base/config")
 
     # pinyinids = paddle.rand([4,20,10])
-    pinyinids = paddle.to_tensor(np.random.randint(10,size=(4,20,10)))
+    pinyinids = paddle.to_tensor(np.random.randint(10,size=(4*20*10,)))
     print(pinyinids.shape)
     out = pyemb(pinyinids)
     print(out.shape)
