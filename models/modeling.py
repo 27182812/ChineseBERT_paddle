@@ -247,8 +247,8 @@ class GlyceBertModel(GlyceBertPretrainedModel):
                 (input_ids == self.pad_token_id
                  ).astype(self.pooler.dense.weight.dtype) * -1e9,
                 axis=[1, 2])
-        print(pinyin_ids)
-        print("*"*20)
+        # print(pinyin_ids)
+        # print("*"*20)
         embedding_output = self.embeddings(
             input_ids=input_ids,
             pinyin_ids=pinyin_ids,
