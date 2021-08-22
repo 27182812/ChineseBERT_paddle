@@ -116,6 +116,7 @@ class GlyceBertPretrainedModel(BertPretrainedModel):
             "type_vocab_size": 2,
             "initializer_range": 0.02,
             "pad_token_id": 0,
+
         },
         "ChineseBERT-large": {
             "vocab_size": 23236,
@@ -327,7 +328,7 @@ class GlyceBertForSequenceClassification(GlyceBertPretrainedModel):
             token_type_ids=token_type_ids,
             position_ids=position_ids,
             attention_mask=attention_mask)
-
+     
         pooled_output = self.dropout(pooled_output)
         logits = self.classifier(pooled_output)
         return logits
