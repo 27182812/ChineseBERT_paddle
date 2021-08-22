@@ -1,21 +1,13 @@
 # encoding: utf-8
-"""
-@author: Yuxian Meng
-@contact: yuxian_meng@shannonai.com
 
-@version: 1.0
-@file: collate_functions
-@time: 2020/6/17 19:18
 
-    collate functions
-"""
-
-import torch
+# import torch
+import paddle
 import numpy as np
 from typing import List
 
 
-def collate_to_max_length(batch: List[List[torch.Tensor]], max_len: int = None, fill_values: List[float] = None) -> List[torch.Tensor]:
+def collate_to_max_length(batch, max_len = None, fill_values = None):
     """
     pad to maximum length of this batch
     Args:
@@ -35,7 +27,7 @@ def collate_to_max_length(batch: List[List[torch.Tensor]], max_len: int = None, 
         assert max_lengths.max() <= max_len
         max_lengths = np.ones_like(max_lengths) * max_len
 
-    output = [torch.full([batch_size, max_lengths[field_idx]],
+    output = [paddle.full([batch_size, max_lengths[field_idx]],
                          fill_value=fill_values[field_idx],
                          dtype=batch[0][field_idx].dtype)
               for field_idx in range(num_fields)]

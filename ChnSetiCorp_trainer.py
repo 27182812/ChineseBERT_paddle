@@ -9,20 +9,23 @@ import random
 from functools import partial
 
 import pytorch_lightning as pl
-import torch
+# import torch
 import paddle
 from pytorch_lightning import Trainer
 from pytorch_lightning.callbacks.model_checkpoint import ModelCheckpoint
 from pytorch_lightning.loggers import TensorBoardLogger
 
-from torch.nn import functional as F
+# from torch.nn import functional as F
 from paddle.nn import functional as F
-from torch.nn.modules import CrossEntropyLoss
+# from torch.nn.modules import CrossEntropyLoss
 from paddle.nn.layer import CrossEntropyLoss
 
-from torch.utils.data.dataloader import DataLoader
+# from torch.utils.data.dataloader import DataLoader
+from paddle.io import DataLoader
 
 from transformers import AdamW, BertConfig, get_linear_schedule_with_warmup
+from paddlenlp.transformers import LinearDecayWithWarmup
+
 
 from datasets.chn_senti_corp_dataset import ChnSentCorpDataset
 from datasets.collate_functions import collate_to_max_length
@@ -46,38 +49,72 @@ class ChnSentiClassificationTask(pl.LightningModule):
         if isinstance(args, argparse.Namespace):
             self.save_hyperparameters(args)
         self.bert_dir = args.bert_path
-        self.bert_config = BertConfig.from_pretrained(self.bert_dir, output_hidden_states=False)
+        # self.bert_config = BertConfig.from_pretrained(self.bert_dir, output_hidden_states=False)
         self.model = GlyceBertForSequenceClassification.from_pretrained(self.bert_dir)
 
         self.loss_fn = CrossEntropyLoss()
-        self.acc = pl.metrics.Accuracy(num_classes=self.bert_config.num_labels)
+        self.metric = paddle.metric.Accuracy()
+
+        # self.acc = pl.metrics.Accuracy(num_classes=self.bert_config.num_labels)
+
+        # self.acc = pl.metrics.Accuracy(num_classes=2)
+
         gpus_string = self.args.gpus if not self.args.gpus.endswith(',') else self.args.gpus[:-1]
         self.num_gpus = len(gpus_string.split(","))
 
     def configure_optimizers(self):
         """Prepare optimizer and schedule (linear warmup and decay)"""
         model = self.model
-        no_decay = ["bias", "LayerNorm.weight"]
-        optimizer_grouped_parameters = [
-            {
-                "params": [p for n, p in model.named_parameters() if not any(nd in n for nd in no_decay)],
-                "weight_decay": self.args.weight_decay,
-            },
-            {
-                "params": [p for n, p in model.named_parameters() if any(nd in n for nd in no_decay)],
-                "weight_decay": 0.0,
-            },
-        ]
-        optimizer = AdamW(optimizer_grouped_parameters,
-                          betas=(0.9, 0.98),  # according to RoBERTa paper
-                          lr=self.args.lr,
-                          eps=self.args.adam_epsilon)
+       
+
+        # no_decay = ["bias", "LayerNorm.weight"]
+        # optimizer_grouped_parameters = [
+        #     {
+        #         "params": [p for n, p in model.named_parameters() if not any(nd in n for nd in no_decay)],
+        #         "weight_decay": self.args.weight_decay,
+        #     },
+        #     {
+        #         "params": [p for n, p in model.named_parameters() if any(nd in n for nd in no_decay)],
+        #         "weight_decay": 0.0,
+        #     },
+        # ]
+        
+        # optimizer = AdamW(optimizer_grouped_parameters,
+        #                   betas=(0.9, 0.98),  # according to RoBERTa paper
+        #                   lr=self.args.lr,
+        #                   eps=self.args.adam_epsilon)
+        # optimizer = paddle.optimizer.AdamW(model.parameters(),
+        #                     beta1 = 0.9,
+        #                     beta2 = 0.98,
+        #                     learning_rate=self.args.lr,
+        #                     epsilon=self.args.adam_epsilon)
+
+        # t_total = len(self.train_dataloader()) // self.args.accumulate_grad_batches * self.args.max_epochs
+        # warmup_steps = int(self.args.warmup_proporation * t_total)
+
+        # scheduler = get_linear_schedule_with_warmup(optimizer, num_warmup_steps=warmup_steps,
+        #                                             num_training_steps=t_total)
+
         t_total = len(self.train_dataloader()) // self.args.accumulate_grad_batches * self.args.max_epochs
         warmup_steps = int(self.args.warmup_proporation * t_total)
-        scheduler = get_linear_schedule_with_warmup(optimizer, num_warmup_steps=warmup_steps,
-                                                    num_training_steps=t_total)
 
-        return [optimizer], [{"scheduler": scheduler, "interval": "step"}]
+        lr_scheduler = LinearDecayWithWarmup(self.args.lr, t_total, warmup_steps)
+
+        decay_params = [
+            p.name for n, p in model.named_parameters() 
+            if not any(nd in n for nd in ["bias", "norm2.weight"])
+        ]
+    
+        optimizer = paddle.optimizer.AdamW(
+            learning_rate=lr_scheduler,
+            parameters=model.parameters(),
+            weight_decay=self.args.weight_decay,
+            apply_decay_param_fun=lambda x: x in decay_params)
+
+
+
+        # return [optimizer], [{"scheduler": scheduler, "interval": "step"}]
+        return optimizer
 
     def forward(self, input_ids, pinyin_ids):
         """"""
@@ -87,8 +124,10 @@ class ChnSentiClassificationTask(pl.LightningModule):
     def compute_loss_and_acc(self, batch):
         input_ids, pinyin_ids, labels = batch
         batch_size, length = input_ids.shape
-        pinyin_ids = pinyin_ids.view(batch_size, length, 8)
-        y = labels.view(-1)
+        # pinyin_ids = pinyin_ids.view(batch_size, length, 8)
+        pinyin_ids = paddle.reshape(pinyin_ids,[batch_size, length, 8])
+        # y = labels.view(-1)
+        y = paddle.reshape(labels,[-1])
         y_hat = self.forward(
             input_ids=input_ids,
             pinyin_ids=pinyin_ids
@@ -96,9 +135,14 @@ class ChnSentiClassificationTask(pl.LightningModule):
         # compute loss
         loss = self.loss_fn(y_hat[0], y)
         # compute acc
-        predict_scores = F.softmax(y_hat[0], dim=1)
-        predict_labels = torch.argmax(predict_scores, dim=-1)
-        acc = self.acc(predict_labels, y)
+        predict_scores = F.softmax(y_hat[0], axis=1)
+
+        predict_labels = paddle.argmax(predict_scores, axis=-1)
+        
+        correct = self.metric.compute(predict_labels, y)
+        self.metric.update(correct)
+        acc = self.metric.accumulate()
+
         return loss, acc
 
     def training_step(self, batch, batch_idx):
@@ -107,7 +151,6 @@ class ChnSentiClassificationTask(pl.LightningModule):
         tf_board_logs = {
             "train_loss": loss,
             "train_acc": acc,
-            "lr": self.trainer.optimizers[0].param_groups[0]['lr']
         }
         return {'loss': loss, 'log': tf_board_logs}
 
@@ -118,8 +161,8 @@ class ChnSentiClassificationTask(pl.LightningModule):
 
     def validation_epoch_end(self, outputs):
         """"""
-        avg_loss = torch.stack([x['val_loss'] for x in outputs]).mean()
-        avg_acc = torch.stack([x['val_acc'] for x in outputs]).mean() / self.num_gpus
+        avg_loss = paddle.stack([x['val_loss'] for x in outputs]).mean()
+        avg_acc = paddle.stack([x['val_acc'] for x in outputs]).mean() / self.num_gpus
         tensorboard_logs = {'val_loss': avg_loss, 'val_acc': avg_acc}
         print(avg_loss, avg_acc)
         return {'val_loss': avg_loss, 'log': tensorboard_logs}
@@ -154,8 +197,8 @@ class ChnSentiClassificationTask(pl.LightningModule):
         return {'test_loss': loss, "test_acc": acc}
 
     def test_epoch_end(self, outputs):
-        test_loss = torch.stack([x['test_loss'] for x in outputs]).mean()
-        test_acc = torch.stack([x['test_acc'] for x in outputs]).mean() / self.num_gpus
+        test_loss = paddle.stack([x['test_loss'] for x in outputs]).mean()
+        test_acc = paddle.stack([x['test_acc'] for x in outputs]).mean() / self.num_gpus
         tensorboard_logs = {'test_loss': test_loss, 'test_acc': test_acc}
         print(test_loss, test_acc)
         return {'test_loss': test_loss, 'log': tensorboard_logs}
@@ -178,14 +221,23 @@ def get_parser():
     parser.add_argument("--save_topk", default=1, type=int, help="save topk checkpoint")
     parser.add_argument("--mode", default='train', type=str, help="train or evaluate")
     parser.add_argument("--warmup_proporation", default=0.01, type=float, help="warmup proporation")
+    parser.add_argument("--max_epoch", default=3, type=int, help="Total number of training epochs to perform.")
+    parser.add_argument("--gpus", default="0,", type=str, help="the index of gpu")
+    parser.add_argument("--device", choices=["cpu", "gpu", "xpu"], default="cpu", help="Select which device to train model, defaults to gpu.")
     return parser
 
 
 def main():
     """main"""
     parser = get_parser()
-    parser = Trainer.add_argparse_args(parser)
+    # print(parser.parse_args())
+    # print("*"*20)
+    # parser = Trainer.add_argparse_args(parser)
+    # print(parser.parse_args())
+    # exit()
     args = parser.parse_args()
+    # print(args)
+    # exit()
 
     # create save path if doesn't exit
     if not os.path.exists(args.save_path):
@@ -193,13 +245,20 @@ def main():
 
     model = ChnSentiClassificationTask(args)
 
-    checkpoint_callback = ModelCheckpoint(
-        dirpath=os.path.join(args.save_path, 'checkpoint', '{epoch}-{val_loss:.4f}-{val_acc:.4f}'),
-        save_top_k=args.save_topk,
-        save_last=False,
-        monitor="val_acc",
-        mode="max",
-    )
+    
+    for epoch in range(1, 1+ 1):
+        for step, batch in enumerate(model.train_dataloader(), start=1):
+            print(step, batch)
+
+    exit()
+
+    # checkpoint_callback = ModelCheckpoint(
+    #     dirpath=os.path.join(args.save_path, 'checkpoint', '{epoch}-{val_loss:.4f}-{val_acc:.4f}'),
+    #     save_top_k=args.save_topk,
+    #     save_last=False,
+    #     monitor="val_acc",
+    #     mode="max",
+    # )
     logger = TensorBoardLogger(
         save_dir=args.save_path,
         name='log'
@@ -221,6 +280,100 @@ def main():
     # print
     result = trainer.test()
     print(result)
+
+def do_train():
+    parser = get_parser()
+    args = parser.parse_args()
+    paddle.set_device(args.device)
+    rank = paddle.distributed.get_rank()
+    if paddle.distributed.get_world_size() > 1:
+        paddle.distributed.init_parallel_env()
+
+    # Load train dataset.
+    file_name = 'train.csv'
+    train_ds = load_dataset(read_custom_data, filename=os.path.join(
+        args.data_path, file_name), is_test=False, lazy=False)
+
+    # If you wanna use ernie pretrained model,
+    # pretrained_model = ppnlp.transformers.ErnieModel.from_pretrained("ernie-2.0-en")
+    pretrained_model = ppnlp.transformers.BertModel.from_pretrained("bert-base-uncased")
+
+    # If you wanna use ernie pretrained model,
+    # tokenizer = ppnlp.transformers.ErnieTokenizer.from_pretrained("ernie-2.0-en")
+    tokenizer = ppnlp.transformers.BertTokenizer.from_pretrained('bert-base-uncased')
+
+    trans_func = partial(
+        convert_example,
+        tokenizer=tokenizer,
+        max_seq_length=args.max_seq_length)
+    batchify_fn = lambda samples, fn=Tuple(
+        Pad(axis=0, pad_val=tokenizer.pad_token_id),  # input
+        Pad(axis=0, pad_val=tokenizer.pad_token_type_id),  # segment
+        Stack(dtype='float32')  # label
+    ): [data for data in fn(samples)]
+    train_data_loader = create_dataloader(
+        train_ds,
+        mode='train',
+        batch_size=args.batch_size,
+        batchify_fn=batchify_fn,
+        trans_fn=trans_func)
+
+    model = MultiLabelClassifier(pretrained_model, num_labels=len(train_ds.data[0]["label"]))
+
+    if args.init_from_ckpt and os.path.isfile(args.init_from_ckpt):
+        state_dict = paddle.load(args.init_from_ckpt)
+        model.set_dict(state_dict)
+    model = paddle.DataParallel(model)
+    num_training_steps = len(train_data_loader) * args.epochs
+
+    lr_scheduler = LinearDecayWithWarmup(args.learning_rate, 
+        num_training_steps, args.warmup_proportion)
+
+    # Generate parameter names needed to perform weight decay.
+    # All bias and LayerNorm parameters are excluded.
+    decay_params = [
+        p.name for n, p in model.named_parameters()
+        if not any(nd in n for nd in ["bias", "norm"])
+    ]
+    
+    optimizer = paddle.optimizer.AdamW(
+        learning_rate=lr_scheduler,
+        parameters=model.parameters(),
+        weight_decay=args.weight_decay,
+        apply_decay_param_fun=lambda x: x in decay_params)
+
+    metric = MultiLabelReport()
+    criterion = paddle.nn.BCEWithLogitsLoss()
+
+    global_step = 0
+    tic_train = time.time()
+    for epoch in range(1, args.epochs + 1):
+        for step, batch in enumerate(train_data_loader, start=1):
+            input_ids, token_type_ids, labels = batch
+            logits = model(input_ids, token_type_ids)
+            loss = criterion(logits, labels)
+            probs = F.sigmoid(logits)
+            metric.update(probs, labels)
+            auc, f1_score = metric.accumulate()
+
+            global_step += 1
+            if global_step % 10 == 0 and rank == 0:
+                print(
+                    "global step %d, epoch: %d, batch: %d, loss: %.5f, auc: %.5f, f1 score: %.5f, speed: %.2f step/s"
+                    % (global_step, epoch, step, loss, auc, f1_score,
+                       10 / (time.time() - tic_train)))
+                tic_train = time.time()
+            loss.backward()
+            optimizer.step()
+            lr_scheduler.step()
+            optimizer.clear_grad()
+            if global_step % 100 == 0 and rank == 0:
+                save_dir = os.path.join(args.save_dir, "model_%d" % global_step)
+                if not os.path.exists(save_dir):
+                    os.makedirs(save_dir)
+                save_param_path = os.path.join(save_dir, "model_state.pdparams")
+                paddle.save(model.state_dict(), save_param_path)
+                tokenizer.save_pretrained(save_dir)
 
 
 if __name__ == '__main__':

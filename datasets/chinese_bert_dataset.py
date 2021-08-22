@@ -1,13 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-"""
-@file  : chinese_bert_dataset.py
-@author: zijun
-@contact : zijun_sun@shannonai.com
-@date  : 2021/6/29 17:35
-@version: 1.0
-@desc  : Base Class for dataset
-"""
+
 import json
 import os
 from typing import List
@@ -15,7 +8,9 @@ from typing import List
 import tokenizers
 from pypinyin import pinyin, Style
 from tokenizers import BertWordPieceTokenizer
-from torch.utils.data import Dataset
+
+# from torch.utils.data import Dataset
+from paddle.io import Dataset
 
 
 class ChineseBertDataset(Dataset):

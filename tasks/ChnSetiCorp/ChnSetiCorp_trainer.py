@@ -9,20 +9,22 @@ import random
 from functools import partial
 
 import pytorch_lightning as pl
-import torch
+# import torch
 import paddle
 from pytorch_lightning import Trainer
 from pytorch_lightning.callbacks.model_checkpoint import ModelCheckpoint
 from pytorch_lightning.loggers import TensorBoardLogger
 
-from torch.nn import functional as F
+# from torch.nn import functional as F
 from paddle.nn import functional as F
-from torch.nn.modules import CrossEntropyLoss
+# from torch.nn.modules import CrossEntropyLoss
 from paddle.nn.layer import CrossEntropyLoss
 
-from torch.utils.data.dataloader import DataLoader
+# from torch.utils.data.dataloader import DataLoader
+from paddle.io import DataLoader
 
 from transformers import AdamW, BertConfig, get_linear_schedule_with_warmup
+from paddlenlp.transformers import LinearDecayWithWarmup
 
 from datasets.chn_senti_corp_dataset import ChnSentCorpDataset
 from datasets.collate_functions import collate_to_max_length
@@ -57,21 +59,30 @@ class ChnSentiClassificationTask(pl.LightningModule):
     def configure_optimizers(self):
         """Prepare optimizer and schedule (linear warmup and decay)"""
         model = self.model
-        no_decay = ["bias", "LayerNorm.weight"]
-        optimizer_grouped_parameters = [
-            {
-                "params": [p for n, p in model.named_parameters() if not any(nd in n for nd in no_decay)],
-                "weight_decay": self.args.weight_decay,
-            },
-            {
-                "params": [p for n, p in model.named_parameters() if any(nd in n for nd in no_decay)],
-                "weight_decay": 0.0,
-            },
-        ]
-        optimizer = AdamW(optimizer_grouped_parameters,
-                          betas=(0.9, 0.98),  # according to RoBERTa paper
-                          lr=self.args.lr,
-                          eps=self.args.adam_epsilon)
+
+        ##### 未来要解决的
+        # no_decay = ["bias", "LayerNorm.weight"]
+        # optimizer_grouped_parameters = [
+        #     {
+        #         "params": [p for n, p in model.named_parameters() if not any(nd in n for nd in no_decay)],
+        #         "weight_decay": self.args.weight_decay,
+        #     },
+        #     {
+        #         "params": [p for n, p in model.named_parameters() if any(nd in n for nd in no_decay)],
+        #         "weight_decay": 0.0,
+        #     },
+        # ]
+        
+        # optimizer = AdamW(optimizer_grouped_parameters,
+        #                   betas=(0.9, 0.98),  # according to RoBERTa paper
+        #                   lr=self.args.lr,
+        #                   eps=self.args.adam_epsilon)
+        optimizer = paddle.optimizer.AdamW(model.parameters(),
+                            beta1 = 0.9,
+                            beta2 = 0.98,
+                            learning_rate=self.args.lr,
+                            epsilon=self.args.adam_epsilon)
+
         t_total = len(self.train_dataloader()) // self.args.accumulate_grad_batches * self.args.max_epochs
         warmup_steps = int(self.args.warmup_proporation * t_total)
         scheduler = get_linear_schedule_with_warmup(optimizer, num_warmup_steps=warmup_steps,

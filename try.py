@@ -5,6 +5,10 @@ tokenizer = BertDataset("./ChineseBERT-base")
 chinese_bert = GlyceBertModel.from_pretrained("./ChineseBERT-base")
 sentence = '欢迎使用paddle'
 
+for i,j in chinese_bert.named_parameters():
+    print(i,j)
+exit()
+
 input_ids, pinyin_ids = tokenizer.tokenize_sentence(sentence)
 length = input_ids.shape[0]
 input_ids = input_ids.view(1, length)

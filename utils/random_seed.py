@@ -19,22 +19,14 @@
 #   trainer = Trainer(deterministic=True)
 
 import random
-import torch
 import paddle
 import numpy as np
-from pytorch_lightning import seed_everything
 
 def set_random_seed(seed: int):
     """set seeds for reproducibility"""
     random.seed(seed)
     np.random.seed(seed)
-    torch.manual_seed(seed)
-    ###
     paddle.seed(seed)
-    torch.cuda.manual_seed_all(seed)
-    seed_everything(seed=seed)
-    torch.backends.cudnn.deterministic = True
-    torch.backends.cudnn.benchmark = False
 
 
 if __name__ == '__main__':

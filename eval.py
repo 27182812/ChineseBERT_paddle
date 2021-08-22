@@ -9,8 +9,10 @@ paddle_model_name = "ChineseBERT-base"
 
 
 # paddle_model = BertForPretraining.from_pretrained(paddle_model_name)
-paddle_model = GlyceBertForSequenceClassification.from_pretrained(paddle_model_name)
 
+paddle_model = GlyceBertForSequenceClassification.from_pretrained(paddle_model_name)
+print(paddle_model.parameters())
+exit()
 
 
 from datasets.bert_dataset1 import BertDataset
