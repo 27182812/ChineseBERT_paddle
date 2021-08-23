@@ -8,7 +8,7 @@ from modeling import GlyceBertModel, GlyceBertForSequenceClassification
 paddle_model_name = "ChineseBERT-base"
 
 
-# paddle_model = BertForPretraining.from_pretrained(paddle_model_name)
+#paddle_model = GlyceBertModel.from_pretrained(paddle_model_name)
 paddle_model = GlyceBertForSequenceClassification.from_pretrained(paddle_model_name)
 
 
@@ -39,9 +39,11 @@ paddle_model.eval()
 paddle_outputs = paddle_model(input_ids,pinyin_ids)
 
 paddle_logits = paddle_outputs[0]
-paddle_array = paddle_logits.numpy()
-print("paddle_prediction_logits shape:{}".format(paddle_array.shape))
-print("paddle_prediction_logits:{}".format(paddle_array))
+paddle_pool = paddle_outputs[1]
+# paddle_array = paddle_logits.numpy()
+# print("paddle_prediction_logits shape:{}".format(paddle_array.shape))
+# print("paddle_prediction_logits:{}".format(paddle_array))
+print(paddle_outputs[1])
 
 
 # the output logits should have the same shape

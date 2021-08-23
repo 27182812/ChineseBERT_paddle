@@ -238,7 +238,7 @@ class GlyceBertModel(GlyceBertPretrainedModel):
 
     def forward(self,
                 input_ids,
-                pinyin_ids=None,
+                pinyin_ids,
                 token_type_ids=None,
                 position_ids=None,
                 attention_mask=None,
@@ -318,17 +318,17 @@ class GlyceBertForSequenceClassification(GlyceBertPretrainedModel):
 
     def forward(self,
                 input_ids,
-                pinyin_ids=None,
+                pinyin_ids,
                 token_type_ids=None,
                 position_ids=None,
                 attention_mask=None):
         _, pooled_output = self.bert(
             input_ids,
-            pinyin_ids,
+            pinyin_ids = pinyin_ids,
             token_type_ids=token_type_ids,
             position_ids=position_ids,
             attention_mask=attention_mask)
-        print(token_type_ids)
+        
         pooled_output = self.dropout(pooled_output)
         logits = self.classifier(pooled_output)
         return logits

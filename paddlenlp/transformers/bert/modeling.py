@@ -58,6 +58,7 @@ class BertEmbeddings(Layer):
 
             position_ids = seq_length - ones
             position_ids.stop_gradient = True
+        ####
         if token_type_ids is None:
             token_type_ids = paddle.zeros_like(input_ids, dtype="int64")
 
