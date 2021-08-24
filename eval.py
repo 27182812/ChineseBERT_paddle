@@ -5,13 +5,16 @@ from paddlenlp.transformers.bert.tokenizer import *
 import numpy as np
 from modeling import GlyceBertModel, GlyceBertForSequenceClassification
 
+
 paddle_model_name = "./ChineseBERT-base"
 
 
 paddle_model = GlyceBertModel.from_pretrained(paddle_model_name)
 
 # paddle_model = GlyceBertForSequenceClassification(paddle_model)
-# print(paddle_model.parameters())
+print(paddle_model)
+#print(paddle_model.parameters())
+exit()
 
 
 

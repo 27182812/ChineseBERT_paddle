@@ -20,6 +20,7 @@ import paddle.nn.functional as F
 from paddle.nn import TransformerEncoder, Linear, Layer, Embedding, LayerNorm, Tanh
 from paddlenlp.transformers.bert.modeling import BertPooler,BertPretrainedModel,BertLMPredictionHead,BertPretrainingHeads
 from fusion_embedding import FusionBertEmbeddings
+from paddlenlp.transformers.model_utils import PretrainedModel
 
 
 __all__ = [
@@ -33,44 +34,6 @@ __all__ = [
     'GlyceBertForQuestionAnswering',
 ]
 
-
-# class BertEmbeddings(Layer):
-#     """
-#     Include embeddings from word, position and token_type embeddings
-#     """
-
-#     def __init__(self,
-#                  vocab_size,
-#                  hidden_size=768,
-#                  hidden_dropout_prob=0.1,
-#                  max_position_embeddings=512,
-#                  type_vocab_size=16):
-#         super(BertEmbeddings, self).__init__()
-#         self.word_embeddings = nn.Embedding(vocab_size, hidden_size)
-#         self.position_embeddings = nn.Embedding(max_position_embeddings,
-#                                                 hidden_size)
-#         self.token_type_embeddings = nn.Embedding(type_vocab_size, hidden_size)
-#         self.layer_norm = nn.LayerNorm(hidden_size)
-#         self.dropout = nn.Dropout(hidden_dropout_prob)
-
-#     def forward(self, input_ids, token_type_ids=None, position_ids=None):
-#         if position_ids is None:
-#             ones = paddle.ones_like(input_ids, dtype="int64")
-#             seq_length = paddle.cumsum(ones, axis=-1)
-
-#             position_ids = seq_length - ones
-#             position_ids.stop_gradient = True
-#         if token_type_ids is None:
-#             token_type_ids = paddle.zeros_like(input_ids, dtype="int64")
-
-#         input_embedings = self.word_embeddings(input_ids)
-#         position_embeddings = self.position_embeddings(position_ids)
-#         token_type_embeddings = self.token_type_embeddings(token_type_ids)
-
-#         embeddings = input_embedings + position_embeddings + token_type_embeddings
-#         embeddings = self.layer_norm(embeddings)
-#         embeddings = self.dropout(embeddings)
-#         return embeddings
 
 
 class GlyceBertPooler(BertPooler):
@@ -142,7 +105,7 @@ class GlyceBertPretrainedModel(BertPretrainedModel):
             "https://paddlenlp.bj.bcebos.com/models/transformers/bert-large-uncased.pdparams",
         }
     }
-    # base_model_prefix = "bert"
+    base_model_prefix = "bert"
 
     def init_weights(self, layer):
         """ Initialization hook """
@@ -212,7 +175,7 @@ class GlyceBertModel(GlyceBertPretrainedModel):
                  hidden_dropout_prob=0.1,
                  attention_probs_dropout_prob=0.1,
                  max_position_embeddings=512,
-                 type_vocab_size=16,
+                 type_vocab_size=2,
                  initializer_range=0.02,
                  pad_token_id=0,
                  pool_act="tanh"):

@@ -21,7 +21,7 @@ class FusionBertEmbeddings(nn.Layer):
                  hidden_size=768,
                  hidden_dropout_prob=0.1,
                  max_position_embeddings=512,
-                 type_vocab_size=16,
+                 type_vocab_size=2,
                  name_or_path="C:/Users/QYS/Desktop/ChineseBert-main/ChineseBERT-base/",
                  layer_norm_eps=1e-12):
 

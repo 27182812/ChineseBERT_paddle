@@ -116,7 +116,7 @@ class GlyceBertPretrainedModel(BertPretrainedModel):
             "type_vocab_size": 2,
             "initializer_range": 0.02,
             "pad_token_id": 0,
-
+            
         },
         "ChineseBERT-large": {
             "vocab_size": 23236,
@@ -139,7 +139,7 @@ class GlyceBertPretrainedModel(BertPretrainedModel):
             "ChineseBERT-base":
             "C:/Users/QYS/Desktop/ChineseBert-main/ChineseBERT-base/chinesebert-base.pdparams",
             "ChineseBERT-large":
-            "https://paddlenlp.bj.bcebos.com/models/transformers/bert-large-uncased.pdparams",
+            "E:/ChineseBERT/ChineseBERT_paddle/ChineseBERT-base/chinesebert-base.pdparams",
         }
     }
     # base_model_prefix = "bert"
@@ -212,7 +212,7 @@ class GlyceBertModel(GlyceBertPretrainedModel):
                  hidden_dropout_prob=0.1,
                  attention_probs_dropout_prob=0.1,
                  max_position_embeddings=512,
-                 type_vocab_size=16,
+                 type_vocab_size=2,
                  initializer_range=0.02,
                  pad_token_id=0,
                  pool_act="tanh"):

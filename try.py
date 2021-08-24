@@ -1,13 +1,16 @@
 from datasets.bert_dataset import BertDataset
 from models1.modeling_glycebert import GlyceBertModel
 
+import tensorflow as tf
+
 tokenizer = BertDataset("./ChineseBERT-base")
-chinese_bert = GlyceBertModel.from_pretrained("./ChineseBERT-base")
+
+chinese_bert = GlyceBertModel.from_pretrained("E:\ChineseBERT\ChineseBERT_paddle\ChineseBERT-base")
 sentence = '欢迎使用paddle'
 
-for i,j in chinese_bert.named_parameters():
-    print(i,j)
-exit()
+# for i,j in chinese_bert.state_dict().items():
+#     print(i,j.shape)
+# exit()
 
 input_ids, pinyin_ids = tokenizer.tokenize_sentence(sentence)
 length = input_ids.shape[0]
@@ -30,6 +33,10 @@ paddle_model_name = "ChineseBERT-base"
 
 # paddle_model = BertForPretraining.from_pretrained(paddle_model_name)
 paddle_model = GlyceBertModel.from_pretrained(paddle_model_name)
+
+# for i,j in paddle_model.state_dict().items():
+#     print(i,j.shape)
+# exit()
 
 
 
