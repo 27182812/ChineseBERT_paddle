@@ -37,7 +37,7 @@ class PinyinEmbedding(nn.Layer):
             pinyin_embed: (bs,sentence_length,pinyin_out_dim)
         """
         # input pinyin ids for 1-D conv
-        print(pinyin_ids)
+        #print(pinyin_ids)
         embed = self.embedding(pinyin_ids)  # [bs,sentence_length,pinyin_locs,embed_size]
         bs, sentence_length, pinyin_locs, embed_size = embed.shape
         

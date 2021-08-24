@@ -53,7 +53,7 @@ class ChnSentiClassificationTask(pl.LightningModule):
         # self.bert_config = BertConfig.from_pretrained(self.bert_dir, output_hidden_states=False)
         self.model = GlyceBertForSequenceClassification.from_pretrained(self.bert_dir)
 
-        self.loss_fn = CrossEntropyLoss()
+        self.loss_fn = paddle.nn.loss.CrossEntropyLoss()
         self.metric = paddle.metric.Accuracy()
 
         # self.acc = pl.metrics.Accuracy(num_classes=self.bert_config.num_labels)
@@ -350,17 +350,26 @@ def do_train():
             # attention_mask = (input_ids != 0).long()
             attention_mask = paddle.to_tensor((input_ids != 0),dtype="int64")
             # print(input_ids.shape,attention_mask.shape)
-            y_hat = model(input_ids, pinyin_ids, attention_mask=attention_mask)
+            # y_hat = model(input_ids, pinyin_ids,attention_mask=attention_mask)
+            y_hat = model(input_ids, pinyin_ids)
+            ####### 改
+            # y_me = paddle.transpose(y_hat, perm=[1, 0])
+            # print(111,y_hat)
+            # # print(111,y_me[0])
+            # print(222,y)
+            # print(333,labels)
+            # exit()
             # compute loss
-            loss = criterion(y_hat[0], y)
+            loss = criterion(y_hat, labels)
             # compute acc
-            predict_scores = F.softmax(y_hat[0], axis=1)
+            predict_scores = F.softmax(y_hat, axis=1)
 
-            predict_labels = paddle.argmax(predict_scores, axis=-1)
+            # predict_labels = paddle.argmax(predict_scores, axis=-1)
         
-            correct = metric.compute(predict_labels, y)
+            correct = metric.compute(predict_scores, labels)
             metric.update(correct)
             acc = metric.accumulate()
+            print(acc)
 
             global_step += 1
             if global_step % 10 == 0 and rank == 0:
