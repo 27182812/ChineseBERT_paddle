@@ -1,32 +1,32 @@
-from datasets.bert_dataset import BertDataset
-from models1.modeling_glycebert import GlyceBertModel
-from paddlenlp.transformers.bert.modeling import BertModel
+# from datasets.bert_dataset import BertDataset
+# from models1.modeling_glycebert import GlyceBertModel
+# from paddlenlp.transformers.bert.modeling import BertModel
 
 # import tensorflow as tf
 
-tokenizer = BertDataset("./ChineseBERT-large")
+# tokenizer = BertDataset("./ChineseBERT-large")
 
-chinese_bert = GlyceBertModel.from_pretrained("E:\ChineseBERT\ChineseBERT_paddle\ChineseBERT-large")
-sentence = '欢迎使用paddle'
+# chinese_bert = GlyceBertModel.from_pretrained("E:\ChineseBERT\ChineseBERT_paddle\ChineseBERT-large")
+# sentence = '欢迎使用paddle'
 
-# for i,j in chinese_bert.state_dict().items():
-#     print(i,j.shape)
-# exit()
+# # for i,j in chinese_bert.state_dict().items():
+# #     print(i,j.shape)
+# # exit()
 
-input_ids, pinyin_ids = tokenizer.tokenize_sentence(sentence)
-length = input_ids.shape[0]
-input_ids = input_ids.view(1, length)
-pinyin_ids = pinyin_ids.view(1, length, 8)
-# print(input_ids)
-# print(pinyin_ids)
+# input_ids, pinyin_ids = tokenizer.tokenize_sentence(sentence)
+# length = input_ids.shape[0]
+# input_ids = input_ids.view(1, length)
+# pinyin_ids = pinyin_ids.view(1, length, 8)
+# # print(input_ids)
+# # print(pinyin_ids)
 
-chinese_bert.eval()
-# print(chinese_bert)
+# chinese_bert.eval()
+# # print(chinese_bert)
 
-output_hidden = chinese_bert.forward(input_ids, pinyin_ids)[0]
-torch_array = output_hidden.cpu().detach().numpy()
-print("torch_prediction_logits shape:{}".format(torch_array.shape))
-print("torch_prediction_logits:{}".format(torch_array))
+# output_hidden = chinese_bert.forward(input_ids, pinyin_ids)[0]
+# torch_array = output_hidden.cpu().detach().numpy()
+# print("torch_prediction_logits shape:{}".format(torch_array.shape))
+# print("torch_prediction_logits:{}".format(torch_array))
 # print(output_hidden.shape)
 # print(output_hidden)
 
@@ -90,7 +90,7 @@ print("paddle_prediction_logits:{}".format(paddle_array))
 
 
 # the output logits should have the same shape
-assert torch_array.shape == paddle_array.shape, "the output logits should have the same shape, but got : {} and {} instead".format(torch_array.shape, paddle_array.shape)
-diff = torch_array - paddle_array
-print(np.amax(abs(diff)))
+# assert torch_array.shape == paddle_array.shape, "the output logits should have the same shape, but got : {} and {} instead".format(torch_array.shape, paddle_array.shape)
+# diff = torch_array - paddle_array
+# print(np.amax(abs(diff)))
 
