@@ -137,7 +137,7 @@ class GlyceBertPretrainedModel(BertPretrainedModel):
     pretrained_resource_files_map = {
         "model_state": {
             "ChineseBERT-base":
-            "C:/Users/QYS/Desktop/ChineseBert-main/ChineseBERT-base/chinesebert-base.pdparams",
+            "E:\ChineseBERT\ChineseBERT_paddle\ChineseBERT-base\chinesebert-base.pdparams",
             "ChineseBERT-large":
             "E:/ChineseBERT/ChineseBERT_paddle/ChineseBERT-base/chinesebert-base.pdparams",
         }

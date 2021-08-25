@@ -318,10 +318,14 @@ class PretrainedModel(Layer, GenerationMixin):
 
         # Maybe need more ways to load resources.
         weight_path = resolved_resource_files["model_state"]
+        # print(weight_path)
         assert weight_path.endswith(
             ".pdparams"), "suffix of weight must be .pdparams"
         state_dict = paddle.load(weight_path)
-        # print(state_dict)
+        # print(state_dict["bert.embeddings.layer_norm.weight"])
+        # for i, j in state_dict.items():
+        #     print(i, j.shape)
+        # exit()
         # Make sure we are able to load base models as well as derived models
         # (with heads)
         start_prefix = ""
@@ -353,8 +357,16 @@ class PretrainedModel(Layer, GenerationMixin):
         if len(unexpected_keys) > 0:
             logger.info("Weights from pretrained model not used in {}: {}".
                         format(model.__class__.__name__, unexpected_keys))
+        # print(paddle.in_dynamic_mode())
+        # print(model_to_load)
+        # for i, j in state_to_load.items():
+        #     print(i, j.shape)
+        # print(state_to_load["embeddings.layer_norm.weight"])
+        # exit()
         if paddle.in_dynamic_mode():
             model_to_load.set_state_dict(state_to_load)
+            # print(model.parameters()[11])
+            # exit()
             return model
         return model, state_to_load
 

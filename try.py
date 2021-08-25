@@ -1,7 +1,8 @@
 from datasets.bert_dataset import BertDataset
 from models1.modeling_glycebert import GlyceBertModel
+from paddlenlp.transformers.bert.modeling import BertModel
 
-import tensorflow as tf
+# import tensorflow as tf
 
 tokenizer = BertDataset("./ChineseBERT-base")
 
@@ -16,24 +17,37 @@ input_ids, pinyin_ids = tokenizer.tokenize_sentence(sentence)
 length = input_ids.shape[0]
 input_ids = input_ids.view(1, length)
 pinyin_ids = pinyin_ids.view(1, length, 8)
+print(input_ids)
+print(pinyin_ids)
+
+chinese_bert.eval()
+# print(chinese_bert)
+
 output_hidden = chinese_bert.forward(input_ids, pinyin_ids)[0]
 torch_array = output_hidden.cpu().detach().numpy()
 print("torch_prediction_logits shape:{}".format(torch_array.shape))
 print("torch_prediction_logits:{}".format(torch_array))
-# print(output_hidden.shape)
-# print(output_hidden)
+print(output_hidden.shape)
+print(output_hidden)
 
 import paddle
 import paddlenlp
 import numpy as np
-from models.modeling import GlyceBertModel
+from modeling import GlyceBertModel
 
 paddle_model_name = "ChineseBERT-base"
 
 
-# paddle_model = BertForPretraining.from_pretrained(paddle_model_name)
+#paddle_model = BertModel.from_pretrained("bert-base-uncased")
 paddle_model = GlyceBertModel.from_pretrained(paddle_model_name)
 
+
+# for v in paddle_model.parameters():
+#     print(v.shape)
+# print(2222,paddle_model.parameters()[11])
+# exit()
+
+# exit()
 # for i,j in paddle_model.state_dict().items():
 #     print(i,j.shape)
 # exit()
@@ -44,15 +58,19 @@ from datasets.bert_dataset1 import BertDataset
 
 
 
-tokenizer = BertDataset("E:/ChineseBERT/ChineseBERT_paddle/ChineseBERT-base")
+tokenizer = BertDataset("./ChineseBERT-base")
 
 sentence = '欢迎使用paddle'
 
 input_ids, pinyin_ids = tokenizer.tokenize_sentence(sentence)
 length = input_ids.shape[0]
 
+
 input_ids = paddle.reshape(input_ids,[1,length])
 pinyin_ids = paddle.reshape(pinyin_ids,[1, length, 8])
+
+# print(input_ids)
+# print(pinyin_ids)
 
 paddle_model.eval()
 

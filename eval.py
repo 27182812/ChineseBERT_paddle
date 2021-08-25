@@ -12,9 +12,9 @@ paddle_model_name = "./ChineseBERT-base"
 paddle_model = GlyceBertModel.from_pretrained(paddle_model_name)
 
 # paddle_model = GlyceBertForSequenceClassification(paddle_model)
-print(paddle_model)
-#print(paddle_model.parameters())
-exit()
+# print(paddle_model)
+# #print(paddle_model.parameters())
+# exit()
 
 
 
@@ -24,7 +24,7 @@ from datasets.bert_dataset1 import BertDataset
 
 tokenizer = BertDataset("E:/ChineseBERT/ChineseBERT_paddle/ChineseBERT-base")
 
-sentence = '我不喜欢猫'
+sentence = '我喜欢猫'
 
 input_ids, pinyin_ids = tokenizer.tokenize_sentence(sentence)
 length = input_ids.shape[0]

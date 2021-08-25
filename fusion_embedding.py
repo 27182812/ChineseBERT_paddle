@@ -22,7 +22,7 @@ class FusionBertEmbeddings(nn.Layer):
                  hidden_dropout_prob=0.1,
                  max_position_embeddings=512,
                  type_vocab_size=2,
-                 name_or_path="C:/Users/QYS/Desktop/ChineseBert-main/ChineseBERT-base/",
+                 name_or_path="E:/ChineseBERT/ChineseBERT_paddle/ChineseBERT-base/",
                  layer_norm_eps=1e-12):
 
         super(FusionBertEmbeddings, self).__init__()
@@ -77,17 +77,29 @@ class FusionBertEmbeddings(nn.Layer):
         # get char embedding, pinyin embedding and glyph embedding
         word_embeddings = inputs_embeds  # [bs,l,hidden_size]
         pinyin_embeddings = self.pinyin_embeddings(pinyin_ids)  # [bs,l,hidden_size]
+        # print("glyph_embeddings1",self.glyph_embeddings(input_ids))
+        # # # exit()
+        # print("111111",self.glyph_map.weight)
         glyph_embeddings = self.glyph_map(self.glyph_embeddings(input_ids))  # [bs,l,hidden_size]
+        # print("glyph_embeddings2",glyph_embeddings)
+        # exit()
         # fusion layer
         # concat_embeddings = torch.cat((word_embeddings, pinyin_embeddings, glyph_embeddings), 2)
         concat_embeddings = paddle.concat((word_embeddings, pinyin_embeddings, glyph_embeddings), 2)
+        #print("concat_embeddings",concat_embeddings)
         inputs_embeds = self.map_fc(concat_embeddings)
-
+        #print("inputs_embeds",inputs_embeds)
         position_embeddings = self.position_embeddings(position_ids)
+        #print("position_embeddings",position_embeddings)
         token_type_embeddings = self.token_type_embeddings(token_type_ids)
+        #print("token_type_embeddings",token_type_embeddings)
 
         embeddings = inputs_embeds + position_embeddings + token_type_embeddings
         #embeddings = self.LayerNorm(embeddings)
+        #print("111",embeddings)
         embeddings = self.LayerNorm(embeddings)
+        #print("222",embeddings)
         embeddings = self.dropout(embeddings)
+        #print(embeddings)
+        # exit()
         return embeddings
