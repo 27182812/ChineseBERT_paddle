@@ -1,18 +1,11 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-"""
-@file  : xnli_dataset.py
-@author: zijun
-@contact : zijun_sun@shannonai.com
-@date  : 2021/6/29 23:59
-@version: 1.0
-@desc  :  Dataset for natural language inference
-"""
+
 
 from functools import partial
 
-import torch
-from torch.utils.data import DataLoader
+import paddle
+from paddle.io import DataLoader
 
 from datasets.chinese_bert_dataset import ChineseBertDataset
 from datasets.collate_functions import collate_to_max_length
@@ -51,9 +44,15 @@ class XNLIDataset(ChineseBertDataset):
         assert len(bert_tokens) <= self.max_length
         assert len(bert_tokens) == len(pinyin_tokens)
         # 转化list为tensor
-        input_ids = torch.LongTensor([101] + bert_tokens + [102])
-        pinyin_ids = torch.LongTensor([[0] * 8] + pinyin_tokens + [[0] * 8]).view(-1)
-        label = torch.LongTensor([int(label)])
+        # input_ids = torch.LongTensor([101] + bert_tokens + [102])
+        input_ids = paddle.to_tensor([101] + bert_tokens + [102], dtype="int64")
+
+        # pinyin_ids = torch.LongTensor([[0] * 8] + pinyin_tokens + [[0] * 8]).view(-1)
+        pinyin_ids = paddle.reshape(paddle.to_tensor([[0] * 8] + pinyin_tokens + [[0] * 8], dtype="int64"),[-1])
+        
+        # label = torch.LongTensor([int(label)])
+        label = paddle.to_tensor([int(label)], dtype="int64")
+        
         return input_ids, pinyin_ids, label
 
 
