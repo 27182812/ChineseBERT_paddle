@@ -1,0 +1,61 @@
+python ChnSetiCorp_trainer.py \
+  --bert_path /home/tjucic/bigdata/qys/ChineseBert-main/ChineseBERT-base \
+  --data_dir /home/tjucic/bigdata/qys/ChineseBert-main/data/ChnSetiCorp \
+  --save_path /home/tjucic/bigdata/qys/ChineseBert-main/outputs/ChnSetiCorp/ \
+  --max_epoch=10 \
+  --lr=2e-5 \
+  --warmup_proporation 0.1 \
+  --batch_size=16 \
+  --weight_decay=0.0001 \
+  --gpus=0,
+
+python THUCNews_trainer.py \
+  --bert_path /home/tjuwb/qys/ChineseBert-main/ChineseBERT-base \
+  --data_dir /home/tjuwb/qys/ChineseBert-main/data/THUCNews \
+  --save_path /home/tjuwb/qys/ChineseBert-main/outputs/THUCNews/ \
+  --max_epoch=5 \
+  --lr=2e-5 \
+  --batch_size=8 \
+  --gpus=0,1
+
+CUDA_VISIBLE_DEVICES=0 python TNews_trainer.py \
+--lr 3e-5 \
+--max_epochs 5 \
+--max_length 128 \
+--weight_decay 0.002 \
+--hidden_dropout_prob 0.2 \
+--warmup_proportion 0.02 \
+--batch_size 12 \
+--accumulate_grad_batches 2 \
+--save_topk 20 \
+--val_check_interval 0.25 \
+--bert_path /home/tjuwb/qys/ChineseBert-main/ChineseBERT-base \
+--data_dir /home/tjuwb/qys/ChineseBert-main/data/TNews \
+--save_path /home/tjuwb/qys/ChineseBert-main/outputs/TNews/ \
+--gpus="1" \
+--precision=16
+
+python XNLI_trainer.py \
+  --bert_path /home/tjuwb/qys/ChineseBert-main/ChineseBERT-base \
+  --data_dir /home/tjuwb/qys/ChineseBert-main/data/XNLI \
+  --save_path /home/tjuwb/qys/ChineseBert-main/outputs/XNLI \
+  --max_epoch=5 \
+  --batch_size=8 \
+  --lr=3e-5 \
+  --gpus=0,1
+
+
+python ChnSetiCorp_trainer.py \
+  --bert_path E:/ChineseBERT/ChineseBERT_paddle/ChineseBERT-base \
+  --data_dir E:/ChineseBERT/ChineseBERT_paddle/data/ChnSetiCorp \
+  --save_path E:/ChineseBERT/ChineseBERT_paddle/outputs/ChnSetiCorp/ \
+  --max_epoch=10 \
+  --lr=2e-5 \
+  --warmup_proporation 0.1 \
+  --batch_size=16 \
+  --weight_decay=0.0001 \
+  --gpus=0,
+
+python ChnSetiCorp_trainer.py --bert_path E:/ChineseBERT/ChineseBERT_paddle/ChineseBERT-base --data_dir E:/ChineseBERT/ChineseBERT_paddle/data/ChnSetiCorp --save_path E:/ChineseBERT/ChineseBERT_paddle/outputs/ChnSetiCorp/ --max_epoch=10 --lr=2e-5 --warmup_proporation 0.1 --batch_size=16 --weight_decay=0.0001 --gpus=0,
+
+python XNLI_trainer.py --bert_path E:/ChineseBERT/ChineseBERT_paddle/ChineseBERT-large --data_dir E:/ChineseBERT/ChineseBERT_paddle/data/XNLI --save_path E:/ChineseBERT/ChineseBERT_paddle/outputs/XNLI/ --max_epoch=5 --lr=3e-5 --batch_size=16 --gpus=0,

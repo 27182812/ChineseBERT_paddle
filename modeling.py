@@ -97,8 +97,10 @@ class GlyceBertPretrainedModel(PretrainedModel):
         "model_state": {
             "ChineseBERT-base":
             "./ChineseBERT-base/chinesebert-base.pdparams",
+            
             "ChineseBERT-large":
             "./ChineseBERT-large/chinesebert-large.pdparams",
+            # "C:/Users/QYS/Desktop/CHinesebertALL/home/aistudio/work/outputs/ChnSetiCorp/model_12000/model_state.pdparams",
         }
     }
     
