@@ -2,47 +2,49 @@
 # -*- coding: utf-8 -*-
 
 import argparse
+import collections
 import json
-import time 
 import os
+import time
 import random
 from functools import partial
 
 import paddle
-
-from paddle.nn import functional as F
 from paddle.nn.layer import CrossEntropyLoss
-
+from paddle.nn import functional as F
+from tokenizers import BertWordPieceTokenizer
 from paddle.io import DataLoader
-
+# from transformers import AdamW, BertConfig, get_linear_schedule_with_warmup
 from paddlenlp.transformers import LinearDecayWithWarmup
 
-from datasets.chn_senti_corp_dataset import ChnSentCorpDataset
+from datasets.cmrc_2018_dataset import CMRC2018Dataset
 from datasets.collate_functions import collate_to_max_length
-# from models.modeling_glycebert import GlyceBertForSequenceClassification
-from modeling import GlyceBertForSequenceClassification,GlyceBertModel
-
+from modeling import GlyceBertForQuestionAnswering
 from utils.random_seed import set_random_seed
 
-set_random_seed(2333)
+from paddlenlp.datasets import CMRC2018
 
+exit()
+
+
+set_random_seed(2333)
+RawResult = collections.namedtuple("RawResult",
+                                   ["unique_id", "start_logits", "end_logits"])
 
 def get_parser():
     parser = argparse.ArgumentParser(description="Training")
     parser.add_argument("--bert_path", required=True, type=str, help="bert config file")
-    parser.add_argument("--data_dir", required=True, type=str, help="train data path")
-    parser.add_argument("--save_path", required=True, type=str, help="train data path")
     parser.add_argument("--batch_size", type=int, default=8, help="batch size")
-    parser.add_argument("--lr", type=float, default=2e-5, help="learning rate")
-    parser.add_argument("--workers", type=int, default=3, help="num workers for dataloader")
+    parser.add_argument("--lr", type=float, default=3e-5, help="learning rate")
+    parser.add_argument("--workers", type=int, default=4, help="num workers for dataloader")
     parser.add_argument("--weight_decay", default=0.0, type=float, help="Weight decay if we apply some.")
     parser.add_argument("--adam_epsilon", default=1e-8, type=float, help="Epsilon for Adam optimizer.")
     parser.add_argument("--warmup_steps", default=0, type=int, help="warmup steps")
     parser.add_argument("--use_memory", action="store_true", help="load datasets to memory to accelerate.")
     parser.add_argument("--max_length", default=512, type=int, help="max length of datasets")
-    parser.add_argument("--checkpoint_path", type=str, help="train checkpoint")
+    parser.add_argument("--data_dir", required=True, type=str, help="train data path")
+    parser.add_argument("--save_path", required=True, type=str, help="train data path")
     parser.add_argument("--save_topk", default=1, type=int, help="save topk checkpoint")
-    parser.add_argument("--mode", default='train', type=str, help="train or evaluate")
     parser.add_argument("--warmup_proporation", default=0.01, type=float, help="warmup proporation")
     parser.add_argument("--max_epoch", default=3, type=int, help="Total number of training epochs to perform.")
     parser.add_argument("--gpus", default="0,", type=str, help="the index of gpu")
@@ -50,6 +52,7 @@ def get_parser():
     parser.add_argument("--init_from_ckpt", type=str, default=None, help="The path of checkpoint to be loaded.")
     parser.add_argument("--is_init_from_ckpt", type=bool, default=False, help="Whether to load the existing checkpoint to continue to train.")
     return parser
+
 
 
 def do_train():
@@ -62,8 +65,7 @@ def do_train():
 
     # model_GlyceBertModel = GlyceBertModel.from_pretrained("ChineseBERT-large")
     # model = GlyceBertForSequenceClassification(model_GlyceBertModel)
-    model = GlyceBertForSequenceClassification.from_pretrained("ChineseBERT-large")
-
+    model = GlyceBertForQuestionAnswering.from_pretrained("ChineseBERT-large")
     
     if args.is_init_from_ckpt and os.path.exists(args.init_from_ckpt):
         # print(args.init_from_ckpt)
@@ -75,7 +77,7 @@ def do_train():
 
     prefix = "train"
 
-    dataset = ChnSentCorpDataset(data_path=os.path.join(args.data_dir, prefix + '.tsv'),
+    dataset = CMRC2018Dataset(data_path=os.path.join(args.data_dir, prefix + '.tsv'),
                                      chinese_bert_path=args.bert_path,
                                      max_length=args.max_length)
 
@@ -114,13 +116,18 @@ def do_train():
     tic_train = time.time()
     for epoch in range(1, args.max_epoch + 1):
         for step, batch in enumerate(train_data_loader, start=1):
-            input_ids, pinyin_ids, labels = batch
+            # input_ids, pinyin_ids, labels = batch
+            input_ids, pinyin_ids, input_mask, span_mask, segment_ids, start, end = batch
+
             batch_size, length = input_ids.shape
             pinyin_ids = paddle.reshape(pinyin_ids,[batch_size, length, 8])
-            y = paddle.reshape(labels,[-1])
+            
+            # y = paddle.reshape(labels,[-1])
             
             # attention_mask = (input_ids != 0).long()
             attention_mask = paddle.to_tensor((input_ids != 0),dtype="int64")
+            output =  model(input_ids, pinyin_ids, attention_mask=attention_mask,
+                            token_type_ids=segment_ids, start_positions=start, end_positions=end)
 
             y_hat = model(input_ids, pinyin_ids)
 
@@ -159,5 +166,4 @@ if __name__ == '__main__':
     from multiprocessing import freeze_support
 
     freeze_support()
-    # main()
-    do_train()
+    main()

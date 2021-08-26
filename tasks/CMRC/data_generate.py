@@ -1,13 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-"""
-@file  : data_generate.py
-@author: zijun
-@contact : zijun_sun@shannonai.com
-@date  : 2021/5/29 22:34
-@version: 1.0
-@desc  : 
-"""
+
 import argparse
 import json
 import os

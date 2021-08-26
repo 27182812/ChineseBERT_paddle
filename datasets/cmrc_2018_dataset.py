@@ -9,7 +9,7 @@ from paddle.io import Dataset,DataLoader
 from torch._C import dtype
 from tqdm import tqdm
 
-from ..tasks.CMRC.processor import read_squad_examples, convert_examples_to_features
+from tasks.CMRC.processor import read_squad_examples, convert_examples_to_features
 
 
 class CMRC2018Dataset(Dataset):
@@ -68,7 +68,7 @@ class CMRC2018EvalDataset(Dataset):
         return len(self.samples)
 
     def __getitem__(self, idx):
-        input_ids = torch.LongTensor(self.samples[idx].input_ids)
+        # input_ids = torch.LongTensor(self.samples[idx].input_ids)
         input_ids = paddle.to_tensor(self.samples[idx].input_ids, dtype="int64")
 
         # pinyin_ids = torch.LongTensor(self.samples[idx].pinyin_ids).view(-1)
