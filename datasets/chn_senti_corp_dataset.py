@@ -38,13 +38,10 @@ class ChnSentCorpDataset(ChineseBertDataset):
         # convert list to tensor
         # input_ids = torch.LongTensor(bert_tokens)
         input_ids = paddle.to_tensor(bert_tokens,dtype="int64")
-
         # pinyin_ids = torch.LongTensor(pinyin_tokens).view(-1)
         pinyin_ids = paddle.reshape(paddle.to_tensor(pinyin_tokens,dtype="int64"),[-1])
-
         # label = torch.LongTensor([int(label)])
         label = paddle.to_tensor([int(label)],dtype="int64")
-        
         return input_ids, pinyin_ids, label
 
 def unit_test():
