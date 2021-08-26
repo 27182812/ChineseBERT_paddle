@@ -1,18 +1,12 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-"""
-@file  : cmrc_2018_dataset.py
-@author: zijun
-@contact : zijun_sun@shannonai.com
-@date  : 2021/5/29 16:46
-@version: 1.0
-@desc  : 
-"""
+
 import json
 import os
 
-import torch
-from torch.utils.data import Dataset, DataLoader
+import paddle
+from paddle.io import Dataset,DataLoader
+from torch._C import dtype
 from tqdm import tqdm
 
 from tasks.CMRC.processor import read_squad_examples, convert_examples_to_features
@@ -23,20 +17,33 @@ class CMRC2018Dataset(Dataset):
     def __init__(self, directory, prefix):
         super().__init__()
         file = os.path.join(directory, prefix + '.json')
-        with open(file, 'r') as f:
+        with open(file, 'r', encoding="utf8") as f:
             self.data = json.load(f)
 
     def __len__(self):
         return len(self.data['input_ids'])
 
     def __getitem__(self, idx):
-        input_ids = torch.LongTensor(self.data['input_ids'][idx])
-        pinyin_ids = torch.LongTensor(self.data['pinyin_ids'][idx]).view(-1)
-        input_mask = torch.LongTensor(self.data['input_mask'][idx])
-        span_mask = torch.LongTensor(self.data['span_mask'][idx])
-        segment_ids = torch.LongTensor(self.data['segment_ids'][idx])
-        start = torch.LongTensor([self.data['start'][idx]])
-        end = torch.LongTensor([self.data['end'][idx]])
+        # input_ids = torch.LongTensor(self.data['input_ids'][idx])
+        input_ids = paddle.to_tensor(self.data['input_ids'][idx],dtype="int64")
+
+        # pinyin_ids = torch.LongTensor(self.data['pinyin_ids'][idx]).view(-1)
+        pinyin_ids = paddle.reshape(paddle.to_tensor(self.data['pinyin_ids'][idx],dtype="int64"),[-1])
+
+        # input_mask = torch.LongTensor(self.data['input_mask'][idx])
+        input_mask = paddle.to_tensor(self.data['input_mask'][idx],dtype="int64")
+
+        # span_mask = torch.LongTensor(self.data['span_mask'][idx])
+        span_mask = paddle.to_tensor(self.data['span_mask'][idx],dtype="int64")
+
+        # segment_ids = torch.LongTensor(self.data['segment_ids'][idx])
+        segment_ids = paddle.to_tensor(self.data['segment_ids'][idx],dtype="int64")
+
+        # start = torch.LongTensor([self.data['start'][idx]])
+        start = paddle.to_tensor([self.data['start'][idx]], dtype="int64")
+        
+        # end = torch.LongTensor([self.data['end'][idx]])
+        end = paddle.to_tensor([self.data['end'][idx]],dtype="int64")
 
         return input_ids, pinyin_ids, input_mask, span_mask, segment_ids, start, end
 
@@ -61,13 +68,26 @@ class CMRC2018EvalDataset(Dataset):
         return len(self.samples)
 
     def __getitem__(self, idx):
-        input_ids = torch.LongTensor(self.samples[idx].input_ids)
-        pinyin_ids = torch.LongTensor(self.samples[idx].pinyin_ids).view(-1)
-        input_mask = torch.LongTensor(self.samples[idx].input_mask)
-        span_mask = torch.LongTensor(self.samples[idx].input_span_mask)
-        segment_ids = torch.LongTensor(self.samples[idx].segment_ids)
-        unique_ids = torch.LongTensor([self.samples[idx].unique_id])
-        indexes = torch.LongTensor([idx])
+        # input_ids = torch.LongTensor(self.samples[idx].input_ids)
+        input_ids = paddle.to_tensor(self.samples[idx].input_ids, dtype="int64")
+
+        # pinyin_ids = torch.LongTensor(self.samples[idx].pinyin_ids).view(-1)
+        pinyin_ids = paddle.reshape(paddle.to_tensor(self.samples[idx].pinyin_ids, dtype="int64"),[-1])
+
+        # input_mask = torch.LongTensor(self.samples[idx].input_mask)
+        input_mask = paddle.to_tensor(self.samples[idx].input_mask, dtype="int64")
+
+        # span_mask = torch.LongTensor(self.samples[idx].input_span_mask)
+        span_mask = paddle.to_tensor(self.samples[idx].input_span_mask, dtype="int64")
+
+        # segment_ids = torch.LongTensor(self.samples[idx].segment_ids)
+        segment_ids = paddle.to_tensor(self.samples[idx].segment_ids,dtype="int64")
+
+        # unique_ids = torch.LongTensor([self.samples[idx].unique_id])
+        unique_ids = paddle.to_tensor([self.samples[idx].unique_id], dtype="int64")
+
+        # indexes = torch.LongTensor([idx])
+        indexes = paddle.to_tensor([idx],dtype="int64")
         return input_ids, pinyin_ids, input_mask, span_mask, segment_ids, unique_ids, indexes
 
 

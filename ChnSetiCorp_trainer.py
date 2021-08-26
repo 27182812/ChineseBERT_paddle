@@ -31,7 +31,8 @@ from paddlenlp.transformers import LinearDecayWithWarmup
 from datasets.chn_senti_corp_dataset import ChnSentCorpDataset
 from datasets.collate_functions import collate_to_max_length
 # from models.modeling_glycebert import GlyceBertForSequenceClassification
-from models.modeling import GlyceBertForSequenceClassification,GlyceBertModel
+from modeling import GlyceBertForSequenceClassification,GlyceBertModel
+import numpy as np
 
 from utils.random_seed import set_random_seed
 
@@ -207,9 +208,9 @@ class ChnSentiClassificationTask(pl.LightningModule):
 
 def get_parser():
     parser = argparse.ArgumentParser(description="Training")
-    parser.add_argument("--bert_path", required=True, type=str, help="bert config file")
-    parser.add_argument("--data_dir", required=True, type=str, help="train data path")
-    parser.add_argument("--save_path", required=True, type=str, help="train data path")
+    parser.add_argument("--bert_path", type=str, default="E:/ChineseBERT/ChineseBERT_paddle/ChineseBERT-large",help="bert config file")
+    parser.add_argument("--data_dir",  type=str, help="train data path")
+    parser.add_argument("--save_path", type=str, help="train data path")
     parser.add_argument("--batch_size", type=int, default=8, help="batch size")
     parser.add_argument("--lr", type=float, default=2e-5, help="learning rate")
     parser.add_argument("--workers", type=int, default=3, help="num workers for dataloader")
@@ -390,10 +391,101 @@ def do_train():
                 ###??
                 # tokenizer.save_pretrained(save_dir)
 
+def do_test():
+    parser = get_parser()
+    args = parser.parse_args()
+    # paddle.set_device(args.device)
+    args.data_dir = "E:/ChineseBERT/ChineseBERT_paddle/data/ChnSetiCorp"
+
+    model = GlyceBertForSequenceClassification.from_pretrained("ChineseBERT-large")
+   
+        
+
+    prefix = "test"
+    
+    dataset = ChnSentCorpDataset(data_path=os.path.join(args.data_dir, prefix + '.tsv'),
+                                     chinese_bert_path=args.bert_path,
+                                     max_length=args.max_length)
+
+    test_data_loader = DataLoader(
+        dataset= dataset,
+        batch_size= args.batch_size,
+        num_workers= args.workers,
+        collate_fn= partial(collate_to_max_length, fill_values=[0, 0, 0]),
+        drop_last= False
+    )
+
+    # params_path = './ChineseBERT-large/ChineseBERT-large.pdparams'
+
+    # if params_path and os.path.isfile(params_path):
+    #     state_dict = paddle.load(params_path)
+    #     model.set_dict(state_dict)
+    #     print("Loaded parameters from %s" % params_path)
+
+    label_map = {0: '0', 1: '1'}
+    results = []
+    model.eval()
+    for batch in test_data_loader:
+        input_ids, pinyin_ids, qids = batch
+        batch_size, length = input_ids.shape
+        pinyin_ids = paddle.reshape(pinyin_ids,[batch_size, length, 8])
+        logits = model(input_ids, pinyin_ids)
+        probs = F.softmax(logits, axis=1)
+        print("probs",probs)
+        idx = paddle.argmax(probs, axis=1).numpy()
+        idx = idx.tolist()
+        print("idx",idx)
+
+        labels = [label_map[i] for i in idx]
+
+        qids = qids.numpy().tolist()
+        print("qids",qids)
+
+        results.extend(zip(qids, labels))
+
+    res_dir = "./results"
+    if not os.path.exists(res_dir):
+        os.makedirs(res_dir)
+
+    with open(os.path.join(res_dir, "ChnSetiCorp.tsv"), 'w', encoding="utf8") as f:
+        f.write("true\tprediction\n")
+        for qid, label in results:
+            f.write(str(qid[0])+"\t"+label+"\n")
+
+
+@paddle.no_grad()
+def evaluate(model, criterion, metric, data_loader):
+    """
+    Given a dataset, it evals model and computes the metric.
+
+    Args:
+        model(obj:`paddle.nn.Layer`): A model to classify texts.
+        criterion(obj:`paddle.nn.Layer`): It can compute the loss.
+        metric(obj:`paddle.metric.Metric`): The evaluation metric.
+        data_loader(obj:`paddle.io.DataLoader`): The dataset loader which generates batches.
+    """
+    model.eval()
+    metric.reset()
+    losses = []
+    for batch in data_loader:
+        input_ids, token_type_ids, labels = batch
+        logits = model(input_ids, token_type_ids)
+        loss = criterion(logits, labels)
+        losses.append(loss.numpy())
+        correct = metric.compute(logits, labels)
+        metric.update(correct)
+        accu = metric.accumulate()
+    print("eval loss: %.5f, accu: %.5f" % (np.mean(losses), accu))
+    model.train()
+    metric.reset()
+
+
+
 
 if __name__ == '__main__':
     from multiprocessing import freeze_support
 
     freeze_support()
     # main()
-    do_train()
+    # do_train()
+    do_test()

@@ -1,18 +1,15 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-"""
-@file  : xnli_dataset.py
-@author: zijun
-@contact : zijun_sun@shannonai.com
-@date  : 2021/6/29 23:59
-@version: 1.0
-@desc  :  Dataset for natural language inference
-"""
+
 
 from functools import partial
 
-import torch
-from torch.utils.data import DataLoader
+# import torch
+import paddle
+# from torch.utils.data import DataLoader
+from paddle.io import DataLoader
+# from torch._C import dtype
+
 
 from datasets.chinese_bert_dataset import ChineseBertDataset
 from datasets.collate_functions import collate_to_max_length
@@ -25,7 +22,7 @@ class XNLIDataset(ChineseBertDataset):
         self.label_map = {"entailment": 0, "neutral": 1, "contradiction": 2, "contradictory": 2}
 
     def get_lines(self):
-        with open(self.data_path, 'r') as f:
+        with open(self.data_path, 'r', encoding="utf-8") as f:
             lines = f.readlines()
         return lines
 
@@ -39,6 +36,7 @@ class XNLIDataset(ChineseBertDataset):
         first_pinyin_tokens = self.convert_sentence_to_pinyin_ids(first, first_output)
         second_output = self.tokenizer.encode(second, add_special_tokens=False)
         second_pinyin_tokens = self.convert_sentence_to_pinyin_ids(second, second_output)
+
         label = self.label_map[third]
         # convert sentence to id
         bert_tokens = first_output.ids + [102] + second_output.ids
@@ -51,15 +49,21 @@ class XNLIDataset(ChineseBertDataset):
         assert len(bert_tokens) <= self.max_length
         assert len(bert_tokens) == len(pinyin_tokens)
         # 转化list为tensor
-        input_ids = torch.LongTensor([101] + bert_tokens + [102])
-        pinyin_ids = torch.LongTensor([[0] * 8] + pinyin_tokens + [[0] * 8]).view(-1)
-        label = torch.LongTensor([int(label)])
+        # input_ids = torch.LongTensor([101] + bert_tokens + [102])
+        input_ids = paddle.to_tensor([101] + bert_tokens + [102],dtype="int64")
+        
+        # pinyin_ids = torch.LongTensor([[0] * 8] + pinyin_tokens + [[0] * 8]).view(-1)
+        pinyin_ids = paddle.reshape(paddle.to_tensor([[0] * 8] + pinyin_tokens + [[0] * 8],dtype="int64"),[-1])
+        
+        # label = torch.LongTensor([int(label)])
+        label = paddle.to_tensor([int(label)],dtype="int64")
+
         return input_ids, pinyin_ids, label
 
 
 def unit_test():
-    data_path = "/data/nfsdata2/sunzijun/glyce/tasks/XNLI/xnli_train"
-    model_path = "/data/nfsdata2/sunzijun/glyce/best/ChineseBERT-base"
+    data_path = "E:/ChineseBERT/ChineseBERT_paddle/data/XNLI/test.tsv"
+    model_path = "E:/ChineseBERT/ChineseBERT_paddle/ChineseBERT-large"
     dataset = XNLIDataset(data_path=data_path,
                           chinese_bert_path=model_path)
 
@@ -73,9 +77,15 @@ def unit_test():
     for input_ids, pinyin_ids, label in dataloader:
         bs, length = input_ids.shape
         print(input_ids.shape)
-        print(pinyin_ids.reshape(bs, length, -1).shape)
-        print(label.view(-1).shape)
+        print(input_ids)
+        # print(pinyin_ids.reshape(bs, length, -1).shape)
+        print(paddle.reshape(pinyin_ids,[bs, length, -1]).shape)
+        print(pinyin_ids)
+        # print(label.view(-1).shape)
+        print(paddle.reshape(label,[-1]).shape)
+        print(label)
         print()
+        break
 
 
 if __name__ == '__main__':

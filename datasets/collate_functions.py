@@ -1,7 +1,6 @@
-# encoding: utf-8
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 
-
-# import torch
 import paddle
 import numpy as np
 from typing import List
@@ -35,16 +34,8 @@ def collate_to_max_length(batch, max_len = None, fill_values = None):
         for field_idx in range(num_fields):
             # seq_length
             data = batch[sample_idx][field_idx]
-            # print(data)
-            # print("1"*20)
-            # print(output[field_idx][sample_idx])
-            # print("2"*20)
-            # print(data.shape[0])
-            # print("3"*20)
-            # print(output[field_idx][sample_idx][: data.shape[0]])
-            # print("*"*20)
+
             for i in range(0, data.shape[0]):
                 output[field_idx][sample_idx,i] = data[i]
-            # print(output[field_idx][sample_idx][: data.shape[0]])
-            # output[field_idx][sample_idx][ : data.shape[0]] = data
+
     return output

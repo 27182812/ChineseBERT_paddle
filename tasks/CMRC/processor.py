@@ -1,21 +1,15 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-"""
-@file  : mrc.py
-@author: zijun
-@contact : zijun_sun@shannonai.com
-@date  : 2021/5/29 16:39
-@version: 1.0
-@desc  : 
-"""
+
 import collections
 import json
+from json import encoder
 import math
 import os
 import pdb
 
 import six
-import tensorflow.compat.v1 as tf
+# import tensorflow.compat.v1 as tf
 import tokenization
 from pypinyin import Style, pinyin
 from tokenizers import BertWordPieceTokenizer
@@ -136,8 +130,12 @@ class ChineseFullTokenizer(object):
 #
 def read_squad_examples(input_file, is_training):
     """Read a SQuAD json file into a list of SquadExample."""
-    with tf.gfile.Open(input_file, "r") as reader:
+    # with tf.gfile.Open(input_file, "r") as reader:
+    #     input_data = json.load(reader)["data"]
+    
+    with open(input_file,"r") as reader:
         input_data = json.load(reader)["data"]
+
 
     # todo: 10要改回来
     examples = []
@@ -184,7 +182,8 @@ def read_squad_examples(input_file, is_training):
                     orig_answer_text = answer["text"]
 
                     if orig_answer_text not in paragraph_text:
-                        tf.logging.warning("Could not find answer")
+                        # tf.logging.warning("Could not find answer")
+                        print("Could not find answer")
                     else:
                         answer_offset = paragraph_text.index(orig_answer_text)
                         answer_length = len(orig_answer_text)
@@ -205,7 +204,8 @@ def read_squad_examples(input_file, is_training):
                             cleaned_answer_text = cleaned_answer_text.lower()
                         if actual_text.find(cleaned_answer_text) == -1:
                             pdb.set_trace()
-                            tf.logging.warning("Could not find answer: '%s' vs. '%s'", actual_text, cleaned_answer_text)
+                            # tf.logging.warning("Could not find answer: '%s' vs. '%s'", actual_text, cleaned_answer_text)
+                            print("Could not find answer: '%s' vs. '%s'", actual_text, cleaned_answer_text)
                             continue
 
                 example = SquadExample(
@@ -217,7 +217,8 @@ def read_squad_examples(input_file, is_training):
                     start_position=start_position,
                     end_position=end_position)
                 examples.append(example)
-    tf.logging.info("**********read_squad_examples complete!**********")
+    # tf.logging.info("**********read_squad_examples complete!**********")
+    print("**********read_squad_examples complete!**********")
 
     return examples
 
@@ -406,30 +407,35 @@ def convert_examples_to_features(bert_path, examples, max_seq_length,
                     end_position = tok_end_position - doc_start + doc_offset
 
             if example_index < 3:
-                tf.logging.info("*** Example ***")
-                tf.logging.info("unique_id: %s" % (unique_id))
-                tf.logging.info("example_index: %s" % (example_index))
-                tf.logging.info("doc_span_index: %s" % (doc_span_index))
-                tf.logging.info("tokens: %s" % " ".join(
-                    [tokenization.printable_text(x) for x in tokens]))
-                tf.logging.info("token_to_orig_map: %s" % " ".join(
-                    ["%d:%d" % (x, y) for (x, y) in six.iteritems(token_to_orig_map)]))
-                tf.logging.info("token_is_max_context: %s" % " ".join([
-                    "%d:%s" % (x, y) for (x, y) in six.iteritems(token_is_max_context)
-                ]))
-                tf.logging.info("input_ids: %s" % " ".join([str(x) for x in input_ids]))
-                tf.logging.info(
-                    "input_mask: %s" % " ".join([str(x) for x in input_mask]))
-                tf.logging.info(
-                    "segment_ids: %s" % " ".join([str(x) for x in segment_ids]))
-                tf.logging.info(
-                    "input_span_mask: %s" % " ".join([str(x) for x in input_span_mask]))
+                # tf.logging.info("*** Example ***")
+                print("*** Example ***")
+                # tf.logging.info("unique_id: %s" % (unique_id))
+                # tf.logging.info("example_index: %s" % (example_index))
+                # tf.logging.info("doc_span_index: %s" % (doc_span_index))
+                # tf.logging.info("tokens: %s" % " ".join(
+                #     [tokenization.printable_text(x) for x in tokens]))
+                # tf.logging.info("token_to_orig_map: %s" % " ".join(
+                #     ["%d:%d" % (x, y) for (x, y) in six.iteritems(token_to_orig_map)]))
+                # tf.logging.info("token_is_max_context: %s" % " ".join([
+                #     "%d:%s" % (x, y) for (x, y) in six.iteritems(token_is_max_context)
+                # ]))
+                # tf.logging.info("input_ids: %s" % " ".join([str(x) for x in input_ids]))
+                # tf.logging.info(
+                #     "input_mask: %s" % " ".join([str(x) for x in input_mask]))
+                # tf.logging.info(
+                #     "segment_ids: %s" % " ".join([str(x) for x in segment_ids]))
+                # tf.logging.info(
+                #     "input_span_mask: %s" % " ".join([str(x) for x in input_span_mask]))
+
+
+
                 if is_training:
                     answer_text = " ".join(tokens[start_position:(end_position + 1)])
-                    tf.logging.info("start_position: %d" % (start_position))
-                    tf.logging.info("end_position: %d" % (end_position))
-                    tf.logging.info(
-                        "answer: %s" % (tokenization.printable_text(answer_text)))
+                    
+                    # tf.logging.info("start_position: %d" % (start_position))
+                    # tf.logging.info("end_position: %d" % (end_position))
+                    # tf.logging.info(
+                    #     "answer: %s" % (tokenization.printable_text(answer_text)))
 
             feature = InputFeatures(
                 unique_id=unique_id,
@@ -588,8 +594,10 @@ def get_final_text(pred_text, orig_text, do_lower_case):
     start_position = tok_text.find(pred_text)
     if start_position == -1:
         if False:
-            tf.logging.info(
-                "Unable to find text: '%s' in '%s'" % (pred_text, orig_text))
+            # tf.logging.info(
+            #     "Unable to find text: '%s' in '%s'" % (pred_text, orig_text))
+            print("Unable to find text: '%s' in '%s'" % (pred_text, orig_text))
+
         return orig_text
     end_position = start_position + len(pred_text) - 1
 
@@ -598,7 +606,9 @@ def get_final_text(pred_text, orig_text, do_lower_case):
 
     if len(orig_ns_text) != len(tok_ns_text):
         if False:
-            tf.logging.info("Length not equal after stripping spaces: '%s' vs '%s'",
+            # tf.logging.info("Length not equal after stripping spaces: '%s' vs '%s'",
+            #                 orig_ns_text, tok_ns_text)
+            print("Length not equal after stripping spaces: '%s' vs '%s'",
                             orig_ns_text, tok_ns_text)
         return orig_text
 
@@ -616,7 +626,8 @@ def get_final_text(pred_text, orig_text, do_lower_case):
 
     if orig_start_position is None:
         if False:
-            tf.logging.info("Couldn't map start position")
+            # tf.logging.info("Couldn't map start position")
+            print("Couldn't map start position")
         return orig_text
 
     orig_end_position = None
@@ -627,7 +638,8 @@ def get_final_text(pred_text, orig_text, do_lower_case):
 
     if orig_end_position is None:
         if False:
-            tf.logging.info("Couldn't map end position")
+            # tf.logging.info("Couldn't map end position")
+            print("Couldn't map end position")
         return orig_text
 
     output_text = orig_text[orig_start_position:(orig_end_position + 1)]
@@ -661,8 +673,11 @@ def write_predictions(all_examples, all_features, all_results, n_best_size,
                       max_answer_length, do_lower_case, output_prediction_file,
                       output_nbest_file):
     """Write final predictions to the json file and log-odds of null if needed."""
-    tf.logging.info("Writing predictions to: %s" % (output_prediction_file))
-    tf.logging.info("Writing nbest to: %s" % (output_nbest_file))
+    # tf.logging.info("Writing predictions to: %s" % (output_prediction_file))
+    # tf.logging.info("Writing nbest to: %s" % (output_nbest_file))
+
+    print("Writing predictions to: %s" % (output_prediction_file))
+    print("Writing nbest to: %s" % (output_nbest_file))
 
     example_index_to_features = collections.defaultdict(list)
     for feature in all_features:
@@ -797,8 +812,16 @@ def write_predictions(all_examples, all_features, all_results, n_best_size,
         all_predictions[example.qas_id] = best_non_null_entry.text
         all_nbest_json[example.qas_id] = nbest_json
 
-    with tf.gfile.GFile(output_prediction_file, "w") as writer:
+    # with tf.gfile.GFile(output_prediction_file, "w") as writer:
+    #     writer.write(json.dumps(all_predictions, indent=4, ensure_ascii=False) + "\n")
+
+    with open(output_prediction_file,"w") as writer:
         writer.write(json.dumps(all_predictions, indent=4, ensure_ascii=False) + "\n")
 
-    with tf.gfile.GFile(output_nbest_file, "w") as writer:
+
+    # with tf.gfile.GFile(output_nbest_file, "w") as writer:
+    #     writer.write(json.dumps(all_nbest_json, indent=4) + "\n")
+
+    with open(output_nbest_file,"w"):
         writer.write(json.dumps(all_nbest_json, indent=4) + "\n")
+

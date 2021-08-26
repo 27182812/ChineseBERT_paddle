@@ -1,22 +1,15 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""
-@file  : ontonotes_ner_dataset.py
-@author: xiaoya li
-@contact : xiaoya_li@shannonai.com
-@date  : 2021/01/14 15:30
-@version: 1.0
-@desc  :
-"""
+
 
 import os
 import json
 from typing import List
 from pypinyin import pinyin, Style
 
-import torch
+import paddle
 import tokenizers
-from torch.utils.data import Dataset, DataLoader
+from paddle.io import Dataset,DataLoader
 from tokenizers import BertWordPieceTokenizer
 
 
@@ -67,9 +60,16 @@ class OntoNotesNERDataset(Dataset):
         assert len(bert_tokens) <= self.max_length
         assert len(bert_tokens) == len(pinyin_tokens)
         assert len(bert_tokens) == len(label_sequence)
-        input_ids = torch.LongTensor(bert_tokens)
-        pinyin_ids = torch.LongTensor(pinyin_tokens).view(-1)
-        label = torch.LongTensor(label_sequence)
+        # input_ids = torch.LongTensor(bert_tokens)
+        input_ids = paddle.to_tensor(bert_tokens,dtype="int64")
+        
+        # pinyin_ids = torch.LongTensor(pinyin_tokens).view(-1)
+        pinyin_ids = paddle.resahpe(paddle.to_tensor(pinyin_tokens,dtype="int64"),[-1])
+
+
+        # label = torch.LongTensor(label_sequence)
+        label = paddle.to_tensor(label_sequence,dtype="int64")
+
         return input_ids, pinyin_ids, label
 
     def _update_labels_using_tokenize_offsets(self, offsets, original_sequence_labels):
