@@ -6,10 +6,11 @@ import os
 
 import paddle
 from paddle.io import Dataset,DataLoader
-from torch._C import dtype
+# from torch._C import dtype
 from tqdm import tqdm
 
 from tasks.CMRC.processor import read_squad_examples, convert_examples_to_features
+
 
 
 class CMRC2018Dataset(Dataset):
@@ -31,10 +32,10 @@ class CMRC2018Dataset(Dataset):
         pinyin_ids = paddle.reshape(paddle.to_tensor(self.data['pinyin_ids'][idx],dtype="int64"),[-1])
 
         # input_mask = torch.LongTensor(self.data['input_mask'][idx])
-        input_mask = paddle.to_tensor(self.data['input_mask'][idx],dtype="int64")
+        # input_mask = paddle.to_tensor(self.data['input_mask'][idx],dtype="int64")
 
         # span_mask = torch.LongTensor(self.data['span_mask'][idx])
-        span_mask = paddle.to_tensor(self.data['span_mask'][idx],dtype="int64")
+        # span_mask = paddle.to_tensor(self.data['span_mask'][idx],dtype="int64")
 
         # segment_ids = torch.LongTensor(self.data['segment_ids'][idx])
         segment_ids = paddle.to_tensor(self.data['segment_ids'][idx],dtype="int64")
@@ -45,7 +46,7 @@ class CMRC2018Dataset(Dataset):
         # end = torch.LongTensor([self.data['end'][idx]])
         end = paddle.to_tensor([self.data['end'][idx]],dtype="int64")
 
-        return input_ids, pinyin_ids, input_mask, span_mask, segment_ids, start, end
+        return input_ids, pinyin_ids, segment_ids, start, end
 
 
 class CMRC2018EvalDataset(Dataset):

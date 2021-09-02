@@ -9,8 +9,9 @@ import os
 import pdb
 
 import six
-# import tensorflow.compat.v1 as tf
-import tokenization
+
+# import tokenization
+from tasks.CMRC import tokenization
 from pypinyin import Style, pinyin
 from tokenizers import BertWordPieceTokenizer
 from tqdm import tqdm
@@ -822,6 +823,6 @@ def write_predictions(all_examples, all_features, all_results, n_best_size,
     # with tf.gfile.GFile(output_nbest_file, "w") as writer:
     #     writer.write(json.dumps(all_nbest_json, indent=4) + "\n")
 
-    with open(output_nbest_file,"w"):
+    with open(output_nbest_file,"w") as writer:
         writer.write(json.dumps(all_nbest_json, indent=4) + "\n")
 
