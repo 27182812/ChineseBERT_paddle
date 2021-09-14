@@ -4,9 +4,7 @@
 from typing import List
 
 import numpy as np
-import torch
 import paddle
-# from torch import nn
 from paddle import nn 
 
 class GlyphEmbedding(nn.Layer):
