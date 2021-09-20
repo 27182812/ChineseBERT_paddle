@@ -1,1 +1,5 @@
-paddle==2.1
+paddlepaddle-gpu==2.1.2.post101
+pypinyin
+paddlenlp==2.0.8
+nltk
+
