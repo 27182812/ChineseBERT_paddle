@@ -1,5 +1,4 @@
 # Python:
 *.py[cod]
-*.pyc
 *.zip
 __pycache__
