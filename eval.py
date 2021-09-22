@@ -50,6 +50,6 @@ print("paddle_prediction_logits:{}".format(paddle_array))
 
 
 # the output logits should have the same shape
-assert torch_array.shape == paddle_array.shape, "the output logits should have the same shape, but got : {} and {} instead".format(torch_array.shape, paddle_array.shape)
-diff = torch_array - paddle_array
-print(np.amax(abs(diff)))
+# assert torch_array.shape == paddle_array.shape, "the output logits should have the same shape, but got : {} and {} instead".format(torch_array.shape, paddle_array.shape)
+# diff = torch_array - paddle_array
+# print(np.amax(abs(diff)))
