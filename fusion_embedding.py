@@ -22,7 +22,7 @@ class FusionBertEmbeddings(nn.Layer):
                  hidden_dropout_prob=0.1,
                  max_position_embeddings=512,
                  type_vocab_size=2,
-                 name_or_path="./ChineseBERT-large/",
+                 name_or_path="E:/code/Code-NLP/ChineseBERT/ChineseBERT-large",
                  layer_norm_eps=1e-12):
 
         super(FusionBertEmbeddings, self).__init__()

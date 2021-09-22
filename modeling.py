@@ -99,8 +99,8 @@ class GlyceBertPretrainedModel(PretrainedModel):
             "./ChineseBERT-base/chinesebert-base.pdparams",
             
             "ChineseBERT-large":
-            "./ChineseBERT-large/chinesebert-large.pdparams",
-            # "C:/Users/QYS/Desktop/CHinesebertALL/home/aistudio/work/outputs/ChnSetiCorp/model_12000/model_state.pdparams",
+            # "./ChineseBERT-large/chinesebert-large.pdparams",
+            "E:/code/Code-NLP/ChineseBERT/ChineseBERT-large-paddle/chinesebert-large.pdparams",
         }
     }
     
