@@ -191,7 +191,7 @@ class PretrainedModel(Layer, GenerationMixin):
         pretrained_models = list(cls.pretrained_init_configuration.keys())
         resource_files = {}
         init_configuration = {}
-        
+
         # From built-in pretrained models
         if pretrained_model_name_or_path in pretrained_models:
             for file_id, map_list in cls.pretrained_resource_files_map.items():
@@ -218,7 +218,7 @@ class PretrainedModel(Layer, GenerationMixin):
             resource_files["model_config_file"] = os.path.join(
                 COMMUNITY_MODEL_PREFIX, pretrained_model_name_or_path,
                 cls.model_config_file)
-          
+
         default_root = os.path.join(MODEL_HOME, pretrained_model_name_or_path)
         resolved_resource_files = {}
         for file_id, file_path in resource_files.items():
@@ -248,13 +248,12 @@ class PretrainedModel(Layer, GenerationMixin):
         # Prepare model initialization kwargs
         # Did we saved some inputs and kwargs to reload ?
         model_config_file = resolved_resource_files.pop("model_config_file",
-                                                        None)                                             
+                                                        None)
         if model_config_file is not None:
             with io.open(model_config_file, encoding="utf-8") as f:
                 init_kwargs = json.load(f)
         else:
             init_kwargs = init_configuration
-        
         # position args are stored in kwargs, maybe better not include
         init_args = init_kwargs.pop("init_args", ())
         # class name corresponds to this configuration
@@ -319,14 +318,11 @@ class PretrainedModel(Layer, GenerationMixin):
 
         # Maybe need more ways to load resources.
         weight_path = resolved_resource_files["model_state"]
-        # print(weight_path)
         assert weight_path.endswith(
             ".pdparams"), "suffix of weight must be .pdparams"
+
         state_dict = paddle.load(weight_path)
-        # print(state_dict["bert.embeddings.layer_norm.weight"])
-        # for i, j in state_dict.items():
-        #     print(i, j.shape)
-        # exit()
+
         # Make sure we are able to load base models as well as derived models
         # (with heads)
         start_prefix = ""
@@ -358,16 +354,8 @@ class PretrainedModel(Layer, GenerationMixin):
         if len(unexpected_keys) > 0:
             logger.info("Weights from pretrained model not used in {}: {}".
                         format(model.__class__.__name__, unexpected_keys))
-        # print(paddle.in_dynamic_mode())
-        # print(model_to_load)
-        # for i, j in state_to_load.items():
-        #     print(i, j.shape)
-        # print(state_to_load["embeddings.layer_norm.weight"])
-        # exit()
         if paddle.in_dynamic_mode():
             model_to_load.set_state_dict(state_to_load)
-            # print(model.parameters()[11])
-            # exit()
             return model
         return model, state_to_load
 
