@@ -68,15 +68,6 @@ max difference: 4.3660402e-05
 
 
 
-
-
-
-
-
-
-
-
-
 ### （二）下游任务微调
 
 #### 1、ChnSentiCorp
@@ -107,15 +98,8 @@ python train_chn.py \
 在dev和test数据集上acc分别为95.8和96.08，达到论文精度要求，结果如下
 
 <p>
- <img src="imgs/chn_test.png" width="66%" align=left /> 
+ <img src="imgs/chn_test.png" width="66%" /> 
 </p>
-
-
-
-
-
-
-
 
 #### 2、XNLI
 
@@ -139,9 +123,7 @@ python train_xnli.py \
 
 test数据集 acc最好结果为81.657,达到论文精度要求，结果如下
 
-<img src="imgs/xnli_test.png" width="66%" align=left />
-
-
+<img src="imgs/xnli_test.png" width="66%" />
 
 #### 模型链接
 
@@ -189,7 +171,7 @@ python train_cmrc2018.py \
 
 ```
 
-<img src="imgs/cmrcdev.png" width="80%" align=left />
+<img src="imgs/cmrcdev.png" width="80%" />
 
 
 #### （2）运行eval.py，生成test数据集预测答案
@@ -205,7 +187,7 @@ python eval.py --model_name_or_path outputs/step-340 --n_best_size 35 --max_answ
 test EM为78.55，达到论文精度要求，结果如下：
 
 <p align="center">
- <img src="imgs/cmrctest.png" width="100%" align=left />
+ <img src="imgs/cmrctest.png" width="100%"/>
 </p>
 
 # Reference
