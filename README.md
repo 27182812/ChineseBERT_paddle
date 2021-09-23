@@ -107,10 +107,8 @@ python train_chn.py \
 
 在dev和test数据集上acc分别为95.8和96.08，达到论文精度要求，结果如下
 
-<p align="center">
-    <img src="imgs/chn_test.png" width="66%" align=left />
-</p>
-
+ <img src="imgs/chn_test.png" width="66%" align=left /> 
+<br />
 
 
 
@@ -140,9 +138,16 @@ python train_xnli.py \
 
 test数据集 acc最好结果为81.657,达到论文精度要求，结果如下
 
-<p align="center">
-    <img src="imgs/xnli_test.png" width="66%" align=left />
-</p>
+
+ <img src="imgs/xnli_test.png" width="66%" align=left />
+
+
+
+
+
+
+
+
 
 #### 模型链接
 
