@@ -6,13 +6,12 @@ from functools import lru_cache
 class ChineseBertTokenizer(BertTokenizer):
     pretrained_resource_files_map = {
         "vocab_file": {
-            "ChineseBERT-base": "E:/code/Code-NLP/ChineseBERT/ChineseBERT-large-paddle/vocab.txt",
-            "ChineseBERT-large": "E:/code/Code-NLP/ChineseBERT/ChineseBERT-large-paddle/vocab.txt",
+            "ChineseBERT-base": "/home/aistudio/work/vocab.txt",
+            "ChineseBERT-large": "/home/aistudio/data/data109231/vocab.txt",
         },
         "tokenizer_config_file": {
-            "ChineseBERT-base": "E:/code/Code-NLP/ChineseBERT/ChineseBERT-large-paddle/tokenizer_config.json",
-            # "ChineseBERT-large": "/home/aistudio/data/data106015/ChineseBERT-large-paddle/tokenizer_config.json",
-            "ChineseBERT-large": "E:/code/Code-NLP/ChineseBERT/ChineseBERT-large-paddle/tokenizer_config.json",
+            "ChineseBERT-base": "/home/aistudio/work/tokenizer_config.json",
+            "ChineseBERT-large": "/home/aistudio/work/tokenizer_config.json",
         },
     }
     pretrained_init_configuration = {

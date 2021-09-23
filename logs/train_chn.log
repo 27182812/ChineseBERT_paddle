@@ -1,0 +1,1368 @@
+W0920 20:38:31.218493   281 device_context.cc:404] Please NOTE: device: 0, GPU Compute Capability: 7.0, Driver API Version: 10.1, Runtime API Version: 10.1
+W0920 20:38:31.223811   281 device_context.cc:422] device: 0, cuDNN Version: 7.6.
+global step 10, epoch: 1, batch: 10, loss: 0.63498, accu: 0.52500, speed: 2.82 step/s
+global step 20, epoch: 1, batch: 20, loss: 0.75031, accu: 0.50625, speed: 2.19 step/s
+global step 30, epoch: 1, batch: 30, loss: 0.68618, accu: 0.48750, speed: 1.91 step/s
+global step 40, epoch: 1, batch: 40, loss: 0.73260, accu: 0.48125, speed: 1.97 step/s
+global step 50, epoch: 1, batch: 50, loss: 0.69775, accu: 0.48000, speed: 2.40 step/s
+global step 60, epoch: 1, batch: 60, loss: 0.72010, accu: 0.48750, speed: 2.84 step/s
+global step 70, epoch: 1, batch: 70, loss: 0.68694, accu: 0.47857, speed: 1.97 step/s
+global step 80, epoch: 1, batch: 80, loss: 0.69134, accu: 0.49062, speed: 2.24 step/s
+global step 90, epoch: 1, batch: 90, loss: 0.64941, accu: 0.48194, speed: 2.33 step/s
+global step 100, epoch: 1, batch: 100, loss: 0.69606, accu: 0.48750, speed: 2.60 step/s
+eval loss: 0.68762, accu: 0.54833
+eval loss: 0.68779, accu: 0.54083
+global step 110, epoch: 1, batch: 110, loss: 0.65404, accu: 0.60000, speed: 0.23 step/s
+global step 120, epoch: 1, batch: 120, loss: 0.71707, accu: 0.55625, speed: 2.54 step/s
+global step 130, epoch: 1, batch: 130, loss: 0.68934, accu: 0.56250, speed: 3.12 step/s
+global step 140, epoch: 1, batch: 140, loss: 0.65823, accu: 0.57188, speed: 3.12 step/s
+global step 150, epoch: 1, batch: 150, loss: 0.61630, accu: 0.60000, speed: 2.53 step/s
+global step 160, epoch: 1, batch: 160, loss: 0.62196, accu: 0.59583, speed: 2.19 step/s
+global step 170, epoch: 1, batch: 170, loss: 0.37769, accu: 0.63929, speed: 2.13 step/s
+global step 180, epoch: 1, batch: 180, loss: 0.16979, accu: 0.67656, speed: 2.36 step/s
+global step 190, epoch: 1, batch: 190, loss: 0.08499, accu: 0.70000, speed: 2.22 step/s
+global step 200, epoch: 1, batch: 200, loss: 0.16992, accu: 0.72375, speed: 2.41 step/s
+eval loss: 0.32927, accu: 0.89250
+eval loss: 0.33293, accu: 0.88500
+global step 210, epoch: 1, batch: 210, loss: 0.21803, accu: 0.87500, speed: 0.23 step/s
+global step 220, epoch: 1, batch: 220, loss: 0.12069, accu: 0.88125, speed: 2.07 step/s
+global step 230, epoch: 1, batch: 230, loss: 0.14843, accu: 0.89583, speed: 2.43 step/s
+global step 240, epoch: 1, batch: 240, loss: 0.07208, accu: 0.89687, speed: 2.50 step/s
+global step 250, epoch: 1, batch: 250, loss: 0.18524, accu: 0.89000, speed: 2.58 step/s
+global step 260, epoch: 1, batch: 260, loss: 0.30295, accu: 0.89167, speed: 2.75 step/s
+global step 270, epoch: 1, batch: 270, loss: 0.10632, accu: 0.88750, speed: 2.12 step/s
+global step 280, epoch: 1, batch: 280, loss: 0.19014, accu: 0.89062, speed: 2.53 step/s
+global step 290, epoch: 1, batch: 290, loss: 0.36734, accu: 0.89167, speed: 2.42 step/s
+global step 300, epoch: 1, batch: 300, loss: 0.13217, accu: 0.89250, speed: 2.56 step/s
+eval loss: 0.27451, accu: 0.90333
+eval loss: 0.26380, accu: 0.90250
+global step 310, epoch: 1, batch: 310, loss: 0.84389, accu: 0.91250, speed: 0.23 step/s
+global step 320, epoch: 1, batch: 320, loss: 0.18245, accu: 0.90625, speed: 2.46 step/s
+global step 330, epoch: 1, batch: 330, loss: 0.12082, accu: 0.90000, speed: 2.12 step/s
+global step 340, epoch: 1, batch: 340, loss: 0.80880, accu: 0.90312, speed: 1.98 step/s
+global step 350, epoch: 1, batch: 350, loss: 0.11360, accu: 0.89750, speed: 2.30 step/s
+global step 360, epoch: 1, batch: 360, loss: 0.50633, accu: 0.90417, speed: 2.20 step/s
+global step 370, epoch: 1, batch: 370, loss: 0.15938, accu: 0.89821, speed: 2.58 step/s
+global step 380, epoch: 1, batch: 380, loss: 0.41666, accu: 0.89844, speed: 2.46 step/s
+global step 390, epoch: 1, batch: 390, loss: 0.08450, accu: 0.89861, speed: 2.00 step/s
+global step 400, epoch: 1, batch: 400, loss: 0.08491, accu: 0.89875, speed: 2.69 step/s
+eval loss: 0.27305, accu: 0.89917
+eval loss: 0.23997, accu: 0.91417
+global step 410, epoch: 1, batch: 410, loss: 0.08668, accu: 0.91250, speed: 0.23 step/s
+global step 420, epoch: 1, batch: 420, loss: 0.46977, accu: 0.90000, speed: 2.75 step/s
+global step 430, epoch: 1, batch: 430, loss: 0.04525, accu: 0.92083, speed: 2.59 step/s
+global step 440, epoch: 1, batch: 440, loss: 0.04767, accu: 0.92812, speed: 2.62 step/s
+global step 450, epoch: 1, batch: 450, loss: 0.74152, accu: 0.90750, speed: 2.98 step/s
+global step 460, epoch: 1, batch: 460, loss: 0.12011, accu: 0.90833, speed: 2.43 step/s
+global step 470, epoch: 1, batch: 470, loss: 0.28368, accu: 0.90179, speed: 2.26 step/s
+global step 480, epoch: 1, batch: 480, loss: 0.34367, accu: 0.90312, speed: 2.16 step/s
+global step 490, epoch: 1, batch: 490, loss: 0.18177, accu: 0.90556, speed: 2.44 step/s
+global step 500, epoch: 1, batch: 500, loss: 0.38712, accu: 0.91000, speed: 2.09 step/s
+eval loss: 0.24550, accu: 0.91167
+eval loss: 0.24717, accu: 0.90417
+global step 510, epoch: 1, batch: 510, loss: 0.30209, accu: 0.93750, speed: 0.23 step/s
+global step 520, epoch: 1, batch: 520, loss: 0.29581, accu: 0.93125, speed: 2.71 step/s
+global step 530, epoch: 1, batch: 530, loss: 0.19135, accu: 0.91667, speed: 1.94 step/s
+global step 540, epoch: 1, batch: 540, loss: 0.33592, accu: 0.92500, speed: 2.48 step/s
+global step 550, epoch: 1, batch: 550, loss: 0.05341, accu: 0.92750, speed: 2.40 step/s
+global step 560, epoch: 1, batch: 560, loss: 0.03493, accu: 0.92292, speed: 2.28 step/s
+global step 570, epoch: 1, batch: 570, loss: 0.27340, accu: 0.92500, speed: 2.64 step/s
+global step 580, epoch: 1, batch: 580, loss: 0.21657, accu: 0.92344, speed: 2.33 step/s
+global step 590, epoch: 1, batch: 590, loss: 0.09435, accu: 0.92639, speed: 3.36 step/s
+global step 600, epoch: 1, batch: 600, loss: 0.38774, accu: 0.92250, speed: 2.16 step/s
+eval loss: 0.21431, accu: 0.91917
+eval loss: 0.22086, accu: 0.91083
+global step 610, epoch: 1, batch: 610, loss: 0.07212, accu: 0.91250, speed: 0.23 step/s
+global step 620, epoch: 1, batch: 620, loss: 0.81511, accu: 0.92500, speed: 2.27 step/s
+global step 630, epoch: 1, batch: 630, loss: 0.43204, accu: 0.92083, speed: 2.48 step/s
+global step 640, epoch: 1, batch: 640, loss: 0.09814, accu: 0.93125, speed: 2.24 step/s
+global step 650, epoch: 1, batch: 650, loss: 0.08663, accu: 0.93000, speed: 2.49 step/s
+global step 660, epoch: 1, batch: 660, loss: 0.11957, accu: 0.92917, speed: 3.14 step/s
+global step 670, epoch: 1, batch: 670, loss: 0.19093, accu: 0.92500, speed: 2.94 step/s
+global step 680, epoch: 1, batch: 680, loss: 0.06649, accu: 0.91719, speed: 2.35 step/s
+global step 690, epoch: 1, batch: 690, loss: 0.05457, accu: 0.92083, speed: 2.45 step/s
+global step 700, epoch: 1, batch: 700, loss: 0.20075, accu: 0.91625, speed: 2.38 step/s
+eval loss: 0.20974, accu: 0.92250
+eval loss: 0.22311, accu: 0.91917
+global step 710, epoch: 1, batch: 710, loss: 0.10321, accu: 0.95000, speed: 0.23 step/s
+global step 720, epoch: 1, batch: 720, loss: 0.01915, accu: 0.96250, speed: 2.56 step/s
+global step 730, epoch: 1, batch: 730, loss: 0.18821, accu: 0.95417, speed: 2.65 step/s
+global step 740, epoch: 1, batch: 740, loss: 0.06300, accu: 0.94063, speed: 2.29 step/s
+global step 750, epoch: 1, batch: 750, loss: 0.05370, accu: 0.92750, speed: 2.17 step/s
+global step 760, epoch: 1, batch: 760, loss: 0.13417, accu: 0.92708, speed: 2.69 step/s
+global step 770, epoch: 1, batch: 770, loss: 0.43533, accu: 0.92321, speed: 2.63 step/s
+global step 780, epoch: 1, batch: 780, loss: 0.30011, accu: 0.91875, speed: 2.28 step/s
+global step 790, epoch: 1, batch: 790, loss: 0.06963, accu: 0.92083, speed: 2.12 step/s
+global step 800, epoch: 1, batch: 800, loss: 0.02215, accu: 0.92000, speed: 2.69 step/s
+eval loss: 0.21731, accu: 0.91667
+eval loss: 0.19638, accu: 0.93083
+global step 810, epoch: 1, batch: 810, loss: 0.24525, accu: 0.91250, speed: 0.23 step/s
+global step 820, epoch: 1, batch: 820, loss: 0.37779, accu: 0.92500, speed: 2.12 step/s
+global step 830, epoch: 1, batch: 830, loss: 0.30007, accu: 0.92500, speed: 2.37 step/s
+global step 840, epoch: 1, batch: 840, loss: 0.09366, accu: 0.92812, speed: 2.69 step/s
+global step 850, epoch: 1, batch: 850, loss: 0.40823, accu: 0.92000, speed: 2.68 step/s
+global step 860, epoch: 1, batch: 860, loss: 0.30781, accu: 0.91250, speed: 2.61 step/s
+global step 870, epoch: 1, batch: 870, loss: 0.14984, accu: 0.90536, speed: 2.65 step/s
+global step 880, epoch: 1, batch: 880, loss: 0.07710, accu: 0.90938, speed: 2.17 step/s
+global step 890, epoch: 1, batch: 890, loss: 0.35126, accu: 0.90139, speed: 2.16 step/s
+global step 900, epoch: 1, batch: 900, loss: 0.21817, accu: 0.89875, speed: 2.85 step/s
+eval loss: 0.23147, accu: 0.91583
+eval loss: 0.23206, accu: 0.91583
+global step 910, epoch: 1, batch: 910, loss: 0.38119, accu: 0.91250, speed: 0.23 step/s
+global step 920, epoch: 1, batch: 920, loss: 0.48811, accu: 0.90625, speed: 1.76 step/s
+global step 930, epoch: 1, batch: 930, loss: 0.08040, accu: 0.90417, speed: 2.19 step/s
+global step 940, epoch: 1, batch: 940, loss: 0.05658, accu: 0.90625, speed: 2.75 step/s
+global step 950, epoch: 1, batch: 950, loss: 0.51979, accu: 0.90250, speed: 2.40 step/s
+global step 960, epoch: 1, batch: 960, loss: 0.22156, accu: 0.91042, speed: 2.23 step/s
+global step 970, epoch: 1, batch: 970, loss: 0.50394, accu: 0.91607, speed: 2.87 step/s
+global step 980, epoch: 1, batch: 980, loss: 0.21087, accu: 0.92344, speed: 3.04 step/s
+global step 990, epoch: 1, batch: 990, loss: 0.05889, accu: 0.91944, speed: 2.40 step/s
+global step 1000, epoch: 1, batch: 1000, loss: 0.07719, accu: 0.92375, speed: 1.91 step/s
+eval loss: 0.21691, accu: 0.92250
+eval loss: 0.21927, accu: 0.92083
+global step 1010, epoch: 1, batch: 1010, loss: 0.20356, accu: 0.87500, speed: 0.23 step/s
+global step 1020, epoch: 1, batch: 1020, loss: 1.43386, accu: 0.91250, speed: 2.18 step/s
+global step 1030, epoch: 1, batch: 1030, loss: 0.12616, accu: 0.91250, speed: 2.91 step/s
+global step 1040, epoch: 1, batch: 1040, loss: 0.30307, accu: 0.91563, speed: 3.18 step/s
+global step 1050, epoch: 1, batch: 1050, loss: 0.65486, accu: 0.92750, speed: 2.55 step/s
+global step 1060, epoch: 1, batch: 1060, loss: 0.05072, accu: 0.92708, speed: 2.87 step/s
+global step 1070, epoch: 1, batch: 1070, loss: 0.09454, accu: 0.93036, speed: 2.40 step/s
+global step 1080, epoch: 1, batch: 1080, loss: 0.03423, accu: 0.93125, speed: 2.20 step/s
+global step 1090, epoch: 1, batch: 1090, loss: 0.27372, accu: 0.92500, speed: 2.23 step/s
+global step 1100, epoch: 1, batch: 1100, loss: 0.40441, accu: 0.92000, speed: 2.66 step/s
+eval loss: 0.21391, accu: 0.92917
+eval loss: 0.21260, accu: 0.92917
+global step 1110, epoch: 1, batch: 1110, loss: 0.53910, accu: 0.91250, speed: 0.23 step/s
+global step 1120, epoch: 1, batch: 1120, loss: 0.03671, accu: 0.93125, speed: 2.19 step/s
+global step 1130, epoch: 1, batch: 1130, loss: 0.10937, accu: 0.92500, speed: 2.49 step/s
+global step 1140, epoch: 1, batch: 1140, loss: 0.03067, accu: 0.92500, speed: 2.60 step/s
+global step 1150, epoch: 1, batch: 1150, loss: 0.10558, accu: 0.93500, speed: 2.00 step/s
+global step 1160, epoch: 1, batch: 1160, loss: 0.02032, accu: 0.93750, speed: 2.16 step/s
+global step 1170, epoch: 1, batch: 1170, loss: 0.34542, accu: 0.93571, speed: 2.31 step/s
+global step 1180, epoch: 1, batch: 1180, loss: 0.31922, accu: 0.92344, speed: 2.67 step/s
+global step 1190, epoch: 1, batch: 1190, loss: 0.12922, accu: 0.92222, speed: 2.11 step/s
+global step 1200, epoch: 1, batch: 1200, loss: 0.09285, accu: 0.92375, speed: 2.84 step/s
+eval loss: 0.23321, accu: 0.91917
+eval loss: 0.23653, accu: 0.91333
+global step 1210, epoch: 2, batch: 10, loss: 0.21433, accu: 0.87500, speed: 0.24 step/s
+global step 1220, epoch: 2, batch: 20, loss: 0.08843, accu: 0.88750, speed: 2.14 step/s
+global step 1230, epoch: 2, batch: 30, loss: 0.07621, accu: 0.89583, speed: 1.87 step/s
+global step 1240, epoch: 2, batch: 40, loss: 0.61704, accu: 0.88750, speed: 1.92 step/s
+global step 1250, epoch: 2, batch: 50, loss: 0.19070, accu: 0.89750, speed: 2.36 step/s
+global step 1260, epoch: 2, batch: 60, loss: 0.07482, accu: 0.90000, speed: 2.78 step/s
+global step 1270, epoch: 2, batch: 70, loss: 0.02655, accu: 0.90893, speed: 1.93 step/s
+global step 1280, epoch: 2, batch: 80, loss: 0.17542, accu: 0.91094, speed: 2.19 step/s
+global step 1290, epoch: 2, batch: 90, loss: 0.37120, accu: 0.90694, speed: 2.23 step/s
+global step 1300, epoch: 2, batch: 100, loss: 0.57273, accu: 0.89750, speed: 2.56 step/s
+eval loss: 0.21498, accu: 0.92583
+eval loss: 0.19955, accu: 0.93000
+global step 1310, epoch: 2, batch: 110, loss: 0.14001, accu: 0.95000, speed: 0.23 step/s
+global step 1320, epoch: 2, batch: 120, loss: 0.39520, accu: 0.95625, speed: 2.46 step/s
+global step 1330, epoch: 2, batch: 130, loss: 0.45798, accu: 0.95000, speed: 3.08 step/s
+global step 1340, epoch: 2, batch: 140, loss: 0.08178, accu: 0.95000, speed: 3.06 step/s
+global step 1350, epoch: 2, batch: 150, loss: 0.65253, accu: 0.94250, speed: 2.49 step/s
+global step 1360, epoch: 2, batch: 160, loss: 0.03086, accu: 0.94375, speed: 2.20 step/s
+global step 1370, epoch: 2, batch: 170, loss: 0.09332, accu: 0.94286, speed: 2.12 step/s
+global step 1380, epoch: 2, batch: 180, loss: 0.10818, accu: 0.94375, speed: 2.34 step/s
+global step 1390, epoch: 2, batch: 190, loss: 0.19049, accu: 0.93889, speed: 2.20 step/s
+global step 1400, epoch: 2, batch: 200, loss: 0.09524, accu: 0.94125, speed: 2.39 step/s
+eval loss: 0.21346, accu: 0.92500
+eval loss: 0.21624, accu: 0.92500
+global step 1410, epoch: 2, batch: 210, loss: 0.18692, accu: 0.91250, speed: 0.23 step/s
+global step 1420, epoch: 2, batch: 220, loss: 0.19681, accu: 0.91875, speed: 2.06 step/s
+global step 1430, epoch: 2, batch: 230, loss: 0.09053, accu: 0.92083, speed: 2.41 step/s
+global step 1440, epoch: 2, batch: 240, loss: 0.03532, accu: 0.92500, speed: 2.51 step/s
+global step 1450, epoch: 2, batch: 250, loss: 0.06005, accu: 0.92000, speed: 2.56 step/s
+global step 1460, epoch: 2, batch: 260, loss: 0.30462, accu: 0.91875, speed: 2.73 step/s
+global step 1470, epoch: 2, batch: 270, loss: 0.20434, accu: 0.91429, speed: 2.11 step/s
+global step 1480, epoch: 2, batch: 280, loss: 0.05111, accu: 0.91719, speed: 2.48 step/s
+global step 1490, epoch: 2, batch: 290, loss: 0.18754, accu: 0.91806, speed: 2.42 step/s
+global step 1500, epoch: 2, batch: 300, loss: 0.15337, accu: 0.91750, speed: 2.56 step/s
+eval loss: 0.23720, accu: 0.90417
+eval loss: 0.22506, accu: 0.91500
+global step 1510, epoch: 2, batch: 310, loss: 0.52491, accu: 0.95000, speed: 0.23 step/s
+global step 1520, epoch: 2, batch: 320, loss: 0.16123, accu: 0.94375, speed: 2.39 step/s
+global step 1530, epoch: 2, batch: 330, loss: 0.11607, accu: 0.93333, speed: 2.11 step/s
+global step 1540, epoch: 2, batch: 340, loss: 0.03630, accu: 0.93125, speed: 1.98 step/s
+global step 1550, epoch: 2, batch: 350, loss: 0.08909, accu: 0.92750, speed: 2.33 step/s
+global step 1560, epoch: 2, batch: 360, loss: 0.16953, accu: 0.92500, speed: 2.20 step/s
+global step 1570, epoch: 2, batch: 370, loss: 0.11421, accu: 0.92143, speed: 2.58 step/s
+global step 1580, epoch: 2, batch: 380, loss: 0.09625, accu: 0.92500, speed: 2.43 step/s
+global step 1590, epoch: 2, batch: 390, loss: 0.04299, accu: 0.92361, speed: 1.98 step/s
+global step 1600, epoch: 2, batch: 400, loss: 0.22624, accu: 0.92000, speed: 2.68 step/s
+eval loss: 0.22244, accu: 0.91083
+eval loss: 0.19773, accu: 0.92750
+global step 1610, epoch: 2, batch: 410, loss: 0.05063, accu: 0.95000, speed: 0.23 step/s
+global step 1620, epoch: 2, batch: 420, loss: 0.25586, accu: 0.93750, speed: 2.75 step/s
+global step 1630, epoch: 2, batch: 430, loss: 0.09031, accu: 0.93750, speed: 2.57 step/s
+global step 1640, epoch: 2, batch: 440, loss: 0.22302, accu: 0.93437, speed: 2.60 step/s
+global step 1650, epoch: 2, batch: 450, loss: 0.02418, accu: 0.94250, speed: 2.97 step/s
+global step 1660, epoch: 2, batch: 460, loss: 0.01069, accu: 0.94375, speed: 2.42 step/s
+global step 1670, epoch: 2, batch: 470, loss: 0.02459, accu: 0.93929, speed: 2.25 step/s
+global step 1680, epoch: 2, batch: 480, loss: 0.02598, accu: 0.93906, speed: 2.12 step/s
+global step 1690, epoch: 2, batch: 490, loss: 0.12617, accu: 0.93611, speed: 2.43 step/s
+global step 1700, epoch: 2, batch: 500, loss: 0.53036, accu: 0.93875, speed: 2.08 step/s
+eval loss: 0.26975, accu: 0.90417
+eval loss: 0.29868, accu: 0.90000
+global step 1710, epoch: 2, batch: 510, loss: 0.17156, accu: 0.93750, speed: 0.23 step/s
+global step 1720, epoch: 2, batch: 520, loss: 0.01728, accu: 0.94375, speed: 2.71 step/s
+global step 1730, epoch: 2, batch: 530, loss: 0.02987, accu: 0.92917, speed: 1.94 step/s
+global step 1740, epoch: 2, batch: 540, loss: 0.39586, accu: 0.93125, speed: 2.53 step/s
+global step 1750, epoch: 2, batch: 550, loss: 0.04948, accu: 0.93000, speed: 2.41 step/s
+global step 1760, epoch: 2, batch: 560, loss: 0.04361, accu: 0.92292, speed: 2.28 step/s
+global step 1770, epoch: 2, batch: 570, loss: 0.16986, accu: 0.92679, speed: 2.64 step/s
+global step 1780, epoch: 2, batch: 580, loss: 0.06049, accu: 0.93125, speed: 2.33 step/s
+global step 1790, epoch: 2, batch: 590, loss: 0.19642, accu: 0.93750, speed: 3.37 step/s
+global step 1800, epoch: 2, batch: 600, loss: 0.18971, accu: 0.93500, speed: 2.16 step/s
+eval loss: 0.24613, accu: 0.91167
+eval loss: 0.25072, accu: 0.91583
+global step 1810, epoch: 2, batch: 610, loss: 0.06292, accu: 0.95000, speed: 0.23 step/s
+global step 1820, epoch: 2, batch: 620, loss: 0.73214, accu: 0.95625, speed: 2.26 step/s
+global step 1830, epoch: 2, batch: 630, loss: 0.14089, accu: 0.95417, speed: 2.48 step/s
+global step 1840, epoch: 2, batch: 640, loss: 0.27624, accu: 0.95000, speed: 2.24 step/s
+global step 1850, epoch: 2, batch: 650, loss: 0.05541, accu: 0.94500, speed: 2.49 step/s
+global step 1860, epoch: 2, batch: 660, loss: 0.11713, accu: 0.94375, speed: 3.15 step/s
+global step 1870, epoch: 2, batch: 670, loss: 0.18030, accu: 0.94464, speed: 2.86 step/s
+global step 1880, epoch: 2, batch: 680, loss: 0.02076, accu: 0.94688, speed: 2.34 step/s
+global step 1890, epoch: 2, batch: 690, loss: 0.05192, accu: 0.94861, speed: 2.45 step/s
+global step 1900, epoch: 2, batch: 700, loss: 0.11948, accu: 0.94500, speed: 2.37 step/s
+eval loss: 0.19452, accu: 0.92167
+eval loss: 0.19350, accu: 0.93083
+global step 1910, epoch: 2, batch: 710, loss: 0.05435, accu: 0.96250, speed: 0.23 step/s
+global step 1920, epoch: 2, batch: 720, loss: 0.01034, accu: 0.97500, speed: 2.56 step/s
+global step 1930, epoch: 2, batch: 730, loss: 0.06816, accu: 0.97917, speed: 2.64 step/s
+global step 1940, epoch: 2, batch: 740, loss: 0.12718, accu: 0.96250, speed: 2.31 step/s
+global step 1950, epoch: 2, batch: 750, loss: 0.02102, accu: 0.95500, speed: 2.18 step/s
+global step 1960, epoch: 2, batch: 760, loss: 0.01737, accu: 0.95000, speed: 2.69 step/s
+global step 1970, epoch: 2, batch: 770, loss: 0.72227, accu: 0.94643, speed: 2.63 step/s
+global step 1980, epoch: 2, batch: 780, loss: 0.64814, accu: 0.94219, speed: 2.28 step/s
+global step 1990, epoch: 2, batch: 790, loss: 0.07544, accu: 0.94722, speed: 2.13 step/s
+global step 2000, epoch: 2, batch: 800, loss: 0.01682, accu: 0.94750, speed: 2.69 step/s
+eval loss: 0.21403, accu: 0.93000
+eval loss: 0.20875, accu: 0.93417
+global step 2010, epoch: 2, batch: 810, loss: 0.15761, accu: 0.98750, speed: 0.23 step/s
+global step 2020, epoch: 2, batch: 820, loss: 0.20664, accu: 0.96875, speed: 2.11 step/s
+global step 2030, epoch: 2, batch: 830, loss: 0.02234, accu: 0.96250, speed: 2.36 step/s
+global step 2040, epoch: 2, batch: 840, loss: 0.01989, accu: 0.95937, speed: 2.71 step/s
+global step 2050, epoch: 2, batch: 850, loss: 0.00801, accu: 0.95750, speed: 2.68 step/s
+global step 2060, epoch: 2, batch: 860, loss: 0.01071, accu: 0.95625, speed: 2.61 step/s
+global step 2070, epoch: 2, batch: 870, loss: 0.02798, accu: 0.94643, speed: 2.58 step/s
+global step 2080, epoch: 2, batch: 880, loss: 0.16854, accu: 0.94375, speed: 2.17 step/s
+global step 2090, epoch: 2, batch: 890, loss: 0.24733, accu: 0.94167, speed: 2.16 step/s
+global step 2100, epoch: 2, batch: 900, loss: 0.23837, accu: 0.94250, speed: 2.86 step/s
+eval loss: 0.30637, accu: 0.91833
+eval loss: 0.27041, accu: 0.91917
+global step 2110, epoch: 2, batch: 910, loss: 0.29144, accu: 0.90000, speed: 0.23 step/s
+global step 2120, epoch: 2, batch: 920, loss: 0.43580, accu: 0.89375, speed: 1.76 step/s
+global step 2130, epoch: 2, batch: 930, loss: 0.09905, accu: 0.90000, speed: 2.19 step/s
+global step 2140, epoch: 2, batch: 940, loss: 0.09927, accu: 0.90312, speed: 2.76 step/s
+global step 2150, epoch: 2, batch: 950, loss: 0.18092, accu: 0.91000, speed: 2.41 step/s
+global step 2160, epoch: 2, batch: 960, loss: 0.22848, accu: 0.92083, speed: 2.23 step/s
+global step 2170, epoch: 2, batch: 970, loss: 0.36596, accu: 0.93036, speed: 2.87 step/s
+global step 2180, epoch: 2, batch: 980, loss: 0.01788, accu: 0.93594, speed: 3.03 step/s
+global step 2190, epoch: 2, batch: 990, loss: 0.01811, accu: 0.93750, speed: 2.40 step/s
+global step 2200, epoch: 2, batch: 1000, loss: 0.01311, accu: 0.94000, speed: 1.91 step/s
+eval loss: 0.23850, accu: 0.92750
+eval loss: 0.24963, accu: 0.92833
+global step 2210, epoch: 2, batch: 1010, loss: 0.05624, accu: 0.96250, speed: 0.23 step/s
+global step 2220, epoch: 2, batch: 1020, loss: 0.81116, accu: 0.95625, speed: 2.18 step/s
+global step 2230, epoch: 2, batch: 1030, loss: 0.22884, accu: 0.95417, speed: 2.90 step/s
+global step 2240, epoch: 2, batch: 1040, loss: 0.03072, accu: 0.95312, speed: 3.19 step/s
+global step 2250, epoch: 2, batch: 1050, loss: 0.51991, accu: 0.95750, speed: 2.56 step/s
+global step 2260, epoch: 2, batch: 1060, loss: 0.02685, accu: 0.95625, speed: 2.86 step/s
+global step 2270, epoch: 2, batch: 1070, loss: 0.01314, accu: 0.96250, speed: 2.36 step/s
+global step 2280, epoch: 2, batch: 1080, loss: 0.07023, accu: 0.96250, speed: 2.20 step/s
+global step 2290, epoch: 2, batch: 1090, loss: 0.41736, accu: 0.95833, speed: 2.23 step/s
+global step 2300, epoch: 2, batch: 1100, loss: 0.19883, accu: 0.95125, speed: 2.72 step/s
+eval loss: 0.19330, accu: 0.93333
+eval loss: 0.18647, accu: 0.93333
+global step 2310, epoch: 2, batch: 1110, loss: 0.11982, accu: 0.95000, speed: 0.23 step/s
+global step 2320, epoch: 2, batch: 1120, loss: 0.16877, accu: 0.95000, speed: 2.19 step/s
+global step 2330, epoch: 2, batch: 1130, loss: 0.01084, accu: 0.95833, speed: 2.50 step/s
+global step 2340, epoch: 2, batch: 1140, loss: 0.01108, accu: 0.95625, speed: 2.61 step/s
+global step 2350, epoch: 2, batch: 1150, loss: 0.08010, accu: 0.96250, speed: 1.99 step/s
+global step 2360, epoch: 2, batch: 1160, loss: 0.02589, accu: 0.96042, speed: 2.15 step/s
+global step 2370, epoch: 2, batch: 1170, loss: 0.05938, accu: 0.96250, speed: 2.31 step/s
+global step 2380, epoch: 2, batch: 1180, loss: 0.14544, accu: 0.95781, speed: 2.68 step/s
+global step 2390, epoch: 2, batch: 1190, loss: 0.08397, accu: 0.95694, speed: 2.10 step/s
+global step 2400, epoch: 2, batch: 1200, loss: 0.02277, accu: 0.95875, speed: 2.84 step/s
+eval loss: 0.22549, accu: 0.92917
+eval loss: 0.21488, accu: 0.93333
+global step 2410, epoch: 3, batch: 10, loss: 0.06146, accu: 0.96250, speed: 0.23 step/s
+global step 2420, epoch: 3, batch: 20, loss: 0.24726, accu: 0.97500, speed: 2.13 step/s
+global step 2430, epoch: 3, batch: 30, loss: 0.02623, accu: 0.96667, speed: 1.87 step/s
+global step 2440, epoch: 3, batch: 40, loss: 0.05901, accu: 0.96875, speed: 1.92 step/s
+global step 2450, epoch: 3, batch: 50, loss: 0.01842, accu: 0.97500, speed: 2.32 step/s
+global step 2460, epoch: 3, batch: 60, loss: 0.00443, accu: 0.97500, speed: 2.77 step/s
+global step 2470, epoch: 3, batch: 70, loss: 0.00592, accu: 0.97679, speed: 1.93 step/s
+global step 2480, epoch: 3, batch: 80, loss: 0.04161, accu: 0.97500, speed: 2.19 step/s
+global step 2490, epoch: 3, batch: 90, loss: 0.32669, accu: 0.97083, speed: 2.28 step/s
+global step 2500, epoch: 3, batch: 100, loss: 0.53650, accu: 0.96875, speed: 2.56 step/s
+eval loss: 0.28932, accu: 0.92167
+eval loss: 0.26439, accu: 0.92500
+global step 2510, epoch: 3, batch: 110, loss: 0.03404, accu: 0.93750, speed: 0.23 step/s
+global step 2520, epoch: 3, batch: 120, loss: 0.05197, accu: 0.95625, speed: 2.51 step/s
+global step 2530, epoch: 3, batch: 130, loss: 0.33785, accu: 0.94583, speed: 3.10 step/s
+global step 2540, epoch: 3, batch: 140, loss: 0.01711, accu: 0.95312, speed: 3.08 step/s
+global step 2550, epoch: 3, batch: 150, loss: 1.00287, accu: 0.95250, speed: 2.50 step/s
+global step 2560, epoch: 3, batch: 160, loss: 0.01945, accu: 0.95208, speed: 2.20 step/s
+global step 2570, epoch: 3, batch: 170, loss: 0.06976, accu: 0.95357, speed: 2.12 step/s
+global step 2580, epoch: 3, batch: 180, loss: 0.02094, accu: 0.95937, speed: 2.34 step/s
+global step 2590, epoch: 3, batch: 190, loss: 0.02208, accu: 0.95833, speed: 2.21 step/s
+global step 2600, epoch: 3, batch: 200, loss: 0.15524, accu: 0.95875, speed: 2.39 step/s
+eval loss: 0.24923, accu: 0.92917
+eval loss: 0.23535, accu: 0.92583
+global step 2610, epoch: 3, batch: 210, loss: 0.01538, accu: 0.96250, speed: 0.23 step/s
+global step 2620, epoch: 3, batch: 220, loss: 0.01979, accu: 0.96875, speed: 2.07 step/s
+global step 2630, epoch: 3, batch: 230, loss: 0.07395, accu: 0.96667, speed: 2.41 step/s
+global step 2640, epoch: 3, batch: 240, loss: 0.01199, accu: 0.96562, speed: 2.48 step/s
+global step 2650, epoch: 3, batch: 250, loss: 0.07401, accu: 0.96000, speed: 2.56 step/s
+global step 2660, epoch: 3, batch: 260, loss: 0.10521, accu: 0.96042, speed: 2.74 step/s
+global step 2670, epoch: 3, batch: 270, loss: 0.08236, accu: 0.95714, speed: 2.11 step/s
+global step 2680, epoch: 3, batch: 280, loss: 0.19839, accu: 0.95469, speed: 2.52 step/s
+global step 2690, epoch: 3, batch: 290, loss: 0.01027, accu: 0.95417, speed: 2.41 step/s
+global step 2700, epoch: 3, batch: 300, loss: 0.04506, accu: 0.95375, speed: 2.55 step/s
+eval loss: 0.19053, accu: 0.93917
+eval loss: 0.17341, accu: 0.93667
+global step 2710, epoch: 3, batch: 310, loss: 0.56299, accu: 0.95000, speed: 0.23 step/s
+global step 2720, epoch: 3, batch: 320, loss: 0.05830, accu: 0.96250, speed: 2.45 step/s
+global step 2730, epoch: 3, batch: 330, loss: 0.06123, accu: 0.96667, speed: 2.11 step/s
+global step 2740, epoch: 3, batch: 340, loss: 0.01300, accu: 0.96562, speed: 1.98 step/s
+global step 2750, epoch: 3, batch: 350, loss: 0.01274, accu: 0.96000, speed: 2.32 step/s
+global step 2760, epoch: 3, batch: 360, loss: 0.17570, accu: 0.96042, speed: 2.19 step/s
+global step 2770, epoch: 3, batch: 370, loss: 0.06005, accu: 0.95714, speed: 2.56 step/s
+global step 2780, epoch: 3, batch: 380, loss: 0.04820, accu: 0.95625, speed: 2.45 step/s
+global step 2790, epoch: 3, batch: 390, loss: 0.15098, accu: 0.95556, speed: 1.99 step/s
+global step 2800, epoch: 3, batch: 400, loss: 0.03966, accu: 0.95375, speed: 2.64 step/s
+eval loss: 0.18646, accu: 0.94167
+eval loss: 0.16370, accu: 0.94667
+global step 2810, epoch: 3, batch: 410, loss: 0.01566, accu: 0.93750, speed: 0.23 step/s
+global step 2820, epoch: 3, batch: 420, loss: 0.00532, accu: 0.93750, speed: 2.75 step/s
+global step 2830, epoch: 3, batch: 430, loss: 0.02679, accu: 0.94583, speed: 2.59 step/s
+global step 2840, epoch: 3, batch: 440, loss: 0.00629, accu: 0.94688, speed: 2.58 step/s
+global step 2850, epoch: 3, batch: 450, loss: 0.07616, accu: 0.95000, speed: 2.98 step/s
+global step 2860, epoch: 3, batch: 460, loss: 0.01024, accu: 0.95417, speed: 2.44 step/s
+global step 2870, epoch: 3, batch: 470, loss: 0.01046, accu: 0.95357, speed: 2.26 step/s
+global step 2880, epoch: 3, batch: 480, loss: 0.06488, accu: 0.95781, speed: 2.16 step/s
+global step 2890, epoch: 3, batch: 490, loss: 0.01283, accu: 0.95694, speed: 2.43 step/s
+global step 2900, epoch: 3, batch: 500, loss: 0.00961, accu: 0.96000, speed: 2.09 step/s
+eval loss: 0.22558, accu: 0.94083
+eval loss: 0.20596, accu: 0.95000
+global step 2910, epoch: 3, batch: 510, loss: 0.02025, accu: 0.95000, speed: 0.23 step/s
+global step 2920, epoch: 3, batch: 520, loss: 0.02648, accu: 0.95000, speed: 2.72 step/s
+global step 2930, epoch: 3, batch: 530, loss: 0.04926, accu: 0.95000, speed: 1.95 step/s
+global step 2940, epoch: 3, batch: 540, loss: 0.39722, accu: 0.95625, speed: 2.52 step/s
+global step 2950, epoch: 3, batch: 550, loss: 0.03183, accu: 0.95750, speed: 2.40 step/s
+global step 2960, epoch: 3, batch: 560, loss: 0.01201, accu: 0.95833, speed: 2.28 step/s
+global step 2970, epoch: 3, batch: 570, loss: 0.00325, accu: 0.96071, speed: 2.65 step/s
+global step 2980, epoch: 3, batch: 580, loss: 0.00602, accu: 0.96094, speed: 2.33 step/s
+global step 2990, epoch: 3, batch: 590, loss: 0.01669, accu: 0.96389, speed: 3.36 step/s
+global step 3000, epoch: 3, batch: 600, loss: 0.81981, accu: 0.96625, speed: 2.13 step/s
+eval loss: 0.22812, accu: 0.94000
+eval loss: 0.20924, accu: 0.94500
+global step 3010, epoch: 3, batch: 610, loss: 0.00383, accu: 1.00000, speed: 0.23 step/s
+global step 3020, epoch: 3, batch: 620, loss: 0.55922, accu: 0.97500, speed: 2.26 step/s
+global step 3030, epoch: 3, batch: 630, loss: 0.03620, accu: 0.97083, speed: 2.43 step/s
+global step 3040, epoch: 3, batch: 640, loss: 0.15647, accu: 0.96875, speed: 2.24 step/s
+global step 3050, epoch: 3, batch: 650, loss: 0.01488, accu: 0.97250, speed: 2.49 step/s
+global step 3060, epoch: 3, batch: 660, loss: 0.05099, accu: 0.97083, speed: 3.13 step/s
+global step 3070, epoch: 3, batch: 670, loss: 0.02454, accu: 0.97321, speed: 2.94 step/s
+global step 3080, epoch: 3, batch: 680, loss: 0.01205, accu: 0.97344, speed: 2.35 step/s
+global step 3090, epoch: 3, batch: 690, loss: 0.00330, accu: 0.97500, speed: 2.45 step/s
+global step 3100, epoch: 3, batch: 700, loss: 0.25753, accu: 0.97375, speed: 2.39 step/s
+eval loss: 0.30412, accu: 0.92250
+eval loss: 0.25474, accu: 0.93000
+global step 3110, epoch: 3, batch: 710, loss: 0.00904, accu: 0.95000, speed: 0.23 step/s
+global step 3120, epoch: 3, batch: 720, loss: 0.00496, accu: 0.96250, speed: 2.56 step/s
+global step 3130, epoch: 3, batch: 730, loss: 0.06723, accu: 0.97083, speed: 2.64 step/s
+global step 3140, epoch: 3, batch: 740, loss: 0.00762, accu: 0.96875, speed: 2.30 step/s
+global step 3150, epoch: 3, batch: 750, loss: 0.00667, accu: 0.96250, speed: 2.17 step/s
+global step 3160, epoch: 3, batch: 760, loss: 0.01676, accu: 0.96458, speed: 2.70 step/s
+global step 3170, epoch: 3, batch: 770, loss: 0.02854, accu: 0.96429, speed: 2.64 step/s
+global step 3180, epoch: 3, batch: 780, loss: 0.59711, accu: 0.96250, speed: 2.28 step/s
+global step 3190, epoch: 3, batch: 790, loss: 0.00391, accu: 0.96389, speed: 2.11 step/s
+global step 3200, epoch: 3, batch: 800, loss: 0.00586, accu: 0.96500, speed: 2.68 step/s
+eval loss: 0.21417, accu: 0.94000
+eval loss: 0.17336, accu: 0.95417
+global step 3210, epoch: 3, batch: 810, loss: 0.11719, accu: 0.98750, speed: 0.23 step/s
+global step 3220, epoch: 3, batch: 820, loss: 0.02769, accu: 0.98125, speed: 2.12 step/s
+global step 3230, epoch: 3, batch: 830, loss: 0.01739, accu: 0.97500, speed: 2.35 step/s
+global step 3240, epoch: 3, batch: 840, loss: 0.88295, accu: 0.96875, speed: 2.72 step/s
+global step 3250, epoch: 3, batch: 850, loss: 0.00402, accu: 0.96750, speed: 2.67 step/s
+global step 3260, epoch: 3, batch: 860, loss: 0.01897, accu: 0.96458, speed: 2.61 step/s
+global step 3270, epoch: 3, batch: 870, loss: 0.00707, accu: 0.96429, speed: 2.65 step/s
+global step 3280, epoch: 3, batch: 880, loss: 0.04213, accu: 0.96562, speed: 2.17 step/s
+global step 3290, epoch: 3, batch: 890, loss: 0.05707, accu: 0.96111, speed: 2.16 step/s
+global step 3300, epoch: 3, batch: 900, loss: 0.03493, accu: 0.96125, speed: 2.85 step/s
+eval loss: 0.16302, accu: 0.94583
+eval loss: 0.15279, accu: 0.94917
+global step 3310, epoch: 3, batch: 910, loss: 0.39414, accu: 0.95000, speed: 0.23 step/s
+global step 3320, epoch: 3, batch: 920, loss: 0.24141, accu: 0.96250, speed: 1.76 step/s
+global step 3330, epoch: 3, batch: 930, loss: 0.01131, accu: 0.96250, speed: 2.20 step/s
+global step 3340, epoch: 3, batch: 940, loss: 0.03894, accu: 0.96562, speed: 2.76 step/s
+global step 3350, epoch: 3, batch: 950, loss: 0.07694, accu: 0.97000, speed: 2.40 step/s
+global step 3360, epoch: 3, batch: 960, loss: 0.01395, accu: 0.97083, speed: 2.23 step/s
+global step 3370, epoch: 3, batch: 970, loss: 0.55721, accu: 0.97321, speed: 2.88 step/s
+global step 3380, epoch: 3, batch: 980, loss: 0.01024, accu: 0.97344, speed: 3.02 step/s
+global step 3390, epoch: 3, batch: 990, loss: 0.01263, accu: 0.97361, speed: 2.38 step/s
+global step 3400, epoch: 3, batch: 1000, loss: 0.00427, accu: 0.97625, speed: 1.92 step/s
+eval loss: 0.35914, accu: 0.92750
+eval loss: 0.35897, accu: 0.92750
+global step 3410, epoch: 3, batch: 1010, loss: 0.01236, accu: 0.98750, speed: 0.23 step/s
+global step 3420, epoch: 3, batch: 1020, loss: 0.36759, accu: 0.97500, speed: 2.19 step/s
+global step 3430, epoch: 3, batch: 1030, loss: 0.14613, accu: 0.96250, speed: 2.91 step/s
+global step 3440, epoch: 3, batch: 1040, loss: 0.00703, accu: 0.95625, speed: 3.19 step/s
+global step 3450, epoch: 3, batch: 1050, loss: 0.21621, accu: 0.96250, speed: 2.56 step/s
+global step 3460, epoch: 3, batch: 1060, loss: 0.03215, accu: 0.96250, speed: 2.86 step/s
+global step 3470, epoch: 3, batch: 1070, loss: 0.03051, accu: 0.96607, speed: 2.40 step/s
+global step 3480, epoch: 3, batch: 1080, loss: 0.00562, accu: 0.96719, speed: 2.20 step/s
+global step 3490, epoch: 3, batch: 1090, loss: 0.16086, accu: 0.96528, speed: 2.23 step/s
+global step 3500, epoch: 3, batch: 1100, loss: 0.13586, accu: 0.96500, speed: 2.72 step/s
+eval loss: 0.21439, accu: 0.94000
+eval loss: 0.20039, accu: 0.93917
+global step 3510, epoch: 3, batch: 1110, loss: 0.05887, accu: 0.96250, speed: 0.23 step/s
+global step 3520, epoch: 3, batch: 1120, loss: 0.00527, accu: 0.96875, speed: 2.20 step/s
+global step 3530, epoch: 3, batch: 1130, loss: 0.01390, accu: 0.97917, speed: 2.49 step/s
+global step 3540, epoch: 3, batch: 1140, loss: 0.00712, accu: 0.97500, speed: 2.62 step/s
+global step 3550, epoch: 3, batch: 1150, loss: 0.00632, accu: 0.97750, speed: 2.00 step/s
+global step 3560, epoch: 3, batch: 1160, loss: 0.00440, accu: 0.97917, speed: 2.17 step/s
+global step 3570, epoch: 3, batch: 1170, loss: 0.00335, accu: 0.97857, speed: 2.32 step/s
+global step 3580, epoch: 3, batch: 1180, loss: 0.00499, accu: 0.97813, speed: 2.67 step/s
+global step 3590, epoch: 3, batch: 1190, loss: 0.04422, accu: 0.97778, speed: 2.10 step/s
+global step 3600, epoch: 3, batch: 1200, loss: 0.00219, accu: 0.98000, speed: 2.83 step/s
+eval loss: 0.22720, accu: 0.94500
+eval loss: 0.19564, accu: 0.94583
+global step 3610, epoch: 4, batch: 10, loss: 0.00676, accu: 0.98750, speed: 0.24 step/s
+global step 3620, epoch: 4, batch: 20, loss: 0.02345, accu: 0.98125, speed: 2.14 step/s
+global step 3630, epoch: 4, batch: 30, loss: 0.00187, accu: 0.97500, speed: 1.87 step/s
+global step 3640, epoch: 4, batch: 40, loss: 0.46712, accu: 0.96875, speed: 1.93 step/s
+global step 3650, epoch: 4, batch: 50, loss: 0.00878, accu: 0.97500, speed: 2.35 step/s
+global step 3660, epoch: 4, batch: 60, loss: 0.01255, accu: 0.97500, speed: 2.79 step/s
+global step 3670, epoch: 4, batch: 70, loss: 0.03016, accu: 0.97679, speed: 1.93 step/s
+global step 3680, epoch: 4, batch: 80, loss: 0.02212, accu: 0.97500, speed: 2.19 step/s
+global step 3690, epoch: 4, batch: 90, loss: 0.40270, accu: 0.97500, speed: 2.28 step/s
+global step 3700, epoch: 4, batch: 100, loss: 0.48786, accu: 0.97375, speed: 2.57 step/s
+eval loss: 0.22097, accu: 0.94250
+eval loss: 0.19083, accu: 0.95417
+global step 3710, epoch: 4, batch: 110, loss: 0.02206, accu: 0.97500, speed: 0.23 step/s
+global step 3720, epoch: 4, batch: 120, loss: 0.22134, accu: 0.96250, speed: 2.50 step/s
+global step 3730, epoch: 4, batch: 130, loss: 0.16428, accu: 0.95833, speed: 3.09 step/s
+global step 3740, epoch: 4, batch: 140, loss: 0.00618, accu: 0.95937, speed: 3.07 step/s
+global step 3750, epoch: 4, batch: 150, loss: 0.34641, accu: 0.96500, speed: 2.51 step/s
+global step 3760, epoch: 4, batch: 160, loss: 0.00501, accu: 0.96875, speed: 2.20 step/s
+global step 3770, epoch: 4, batch: 170, loss: 0.04748, accu: 0.97143, speed: 2.12 step/s
+global step 3780, epoch: 4, batch: 180, loss: 0.00211, accu: 0.97500, speed: 2.31 step/s
+global step 3790, epoch: 4, batch: 190, loss: 0.00326, accu: 0.97222, speed: 2.21 step/s
+global step 3800, epoch: 4, batch: 200, loss: 0.00561, accu: 0.97375, speed: 2.40 step/s
+eval loss: 0.25670, accu: 0.93000
+eval loss: 0.23225, accu: 0.93250
+global step 3810, epoch: 4, batch: 210, loss: 0.01869, accu: 0.97500, speed: 0.23 step/s
+global step 3820, epoch: 4, batch: 220, loss: 0.31581, accu: 0.96875, speed: 2.06 step/s
+global step 3830, epoch: 4, batch: 230, loss: 0.01484, accu: 0.97083, speed: 2.41 step/s
+global step 3840, epoch: 4, batch: 240, loss: 0.00452, accu: 0.96562, speed: 2.51 step/s
+global step 3850, epoch: 4, batch: 250, loss: 0.10433, accu: 0.96500, speed: 2.56 step/s
+global step 3860, epoch: 4, batch: 260, loss: 0.07766, accu: 0.96667, speed: 2.73 step/s
+global step 3870, epoch: 4, batch: 270, loss: 0.34975, accu: 0.96250, speed: 2.10 step/s
+global step 3880, epoch: 4, batch: 280, loss: 0.01751, accu: 0.96562, speed: 2.50 step/s
+global step 3890, epoch: 4, batch: 290, loss: 0.12045, accu: 0.96528, speed: 2.40 step/s
+global step 3900, epoch: 4, batch: 300, loss: 0.00312, accu: 0.96750, speed: 2.55 step/s
+eval loss: 0.22183, accu: 0.93917
+eval loss: 0.16871, accu: 0.94833
+global step 3910, epoch: 4, batch: 310, loss: 0.57190, accu: 0.96250, speed: 0.23 step/s
+global step 3920, epoch: 4, batch: 320, loss: 0.06296, accu: 0.96250, speed: 2.45 step/s
+global step 3930, epoch: 4, batch: 330, loss: 0.03163, accu: 0.96667, speed: 2.11 step/s
+global step 3940, epoch: 4, batch: 340, loss: 0.00728, accu: 0.96875, speed: 1.97 step/s
+global step 3950, epoch: 4, batch: 350, loss: 0.00964, accu: 0.97250, speed: 2.32 step/s
+global step 3960, epoch: 4, batch: 360, loss: 0.00840, accu: 0.97083, speed: 2.17 step/s
+global step 3970, epoch: 4, batch: 370, loss: 0.00723, accu: 0.96964, speed: 2.57 step/s
+global step 3980, epoch: 4, batch: 380, loss: 0.00543, accu: 0.97344, speed: 2.45 step/s
+global step 3990, epoch: 4, batch: 390, loss: 0.00326, accu: 0.97361, speed: 2.00 step/s
+global step 4000, epoch: 4, batch: 400, loss: 0.01909, accu: 0.97250, speed: 2.69 step/s
+eval loss: 0.28728, accu: 0.92833
+eval loss: 0.22410, accu: 0.93667
+global step 4010, epoch: 4, batch: 410, loss: 0.09516, accu: 0.96250, speed: 0.23 step/s
+global step 4020, epoch: 4, batch: 420, loss: 0.01262, accu: 0.94375, speed: 2.75 step/s
+global step 4030, epoch: 4, batch: 430, loss: 0.00416, accu: 0.95417, speed: 2.58 step/s
+global step 4040, epoch: 4, batch: 440, loss: 0.00263, accu: 0.96562, speed: 2.62 step/s
+global step 4050, epoch: 4, batch: 450, loss: 0.61680, accu: 0.95750, speed: 2.98 step/s
+global step 4060, epoch: 4, batch: 460, loss: 0.01856, accu: 0.96250, speed: 2.43 step/s
+global step 4070, epoch: 4, batch: 470, loss: 0.00435, accu: 0.96250, speed: 2.26 step/s
+global step 4080, epoch: 4, batch: 480, loss: 0.00728, accu: 0.96562, speed: 2.16 step/s
+global step 4090, epoch: 4, batch: 490, loss: 0.07669, accu: 0.96528, speed: 2.43 step/s
+global step 4100, epoch: 4, batch: 500, loss: 0.02186, accu: 0.96875, speed: 2.09 step/s
+eval loss: 0.33868, accu: 0.93000
+eval loss: 0.27629, accu: 0.93667
+global step 4110, epoch: 4, batch: 510, loss: 0.06819, accu: 0.97500, speed: 0.23 step/s
+global step 4120, epoch: 4, batch: 520, loss: 0.00472, accu: 0.96250, speed: 2.72 step/s
+global step 4130, epoch: 4, batch: 530, loss: 0.02960, accu: 0.95833, speed: 1.95 step/s
+global step 4140, epoch: 4, batch: 540, loss: 0.11609, accu: 0.96250, speed: 2.53 step/s
+global step 4150, epoch: 4, batch: 550, loss: 0.08811, accu: 0.96250, speed: 2.40 step/s
+global step 4160, epoch: 4, batch: 560, loss: 0.58761, accu: 0.96042, speed: 2.29 step/s
+global step 4170, epoch: 4, batch: 570, loss: 0.02180, accu: 0.96250, speed: 2.65 step/s
+global step 4180, epoch: 4, batch: 580, loss: 0.01134, accu: 0.96406, speed: 2.32 step/s
+global step 4190, epoch: 4, batch: 590, loss: 0.01945, accu: 0.96389, speed: 3.36 step/s
+global step 4200, epoch: 4, batch: 600, loss: 0.09140, accu: 0.96625, speed: 2.16 step/s
+eval loss: 0.27385, accu: 0.93917
+eval loss: 0.25792, accu: 0.94333
+global step 4210, epoch: 4, batch: 610, loss: 0.00482, accu: 0.97500, speed: 0.23 step/s
+global step 4220, epoch: 4, batch: 620, loss: 0.93138, accu: 0.96875, speed: 2.27 step/s
+global step 4230, epoch: 4, batch: 630, loss: 0.12170, accu: 0.97500, speed: 2.47 step/s
+global step 4240, epoch: 4, batch: 640, loss: 0.01006, accu: 0.97813, speed: 2.24 step/s
+global step 4250, epoch: 4, batch: 650, loss: 0.13504, accu: 0.97750, speed: 2.48 step/s
+global step 4260, epoch: 4, batch: 660, loss: 0.00506, accu: 0.97292, speed: 3.13 step/s
+global step 4270, epoch: 4, batch: 670, loss: 0.03517, accu: 0.97321, speed: 2.94 step/s
+global step 4280, epoch: 4, batch: 680, loss: 0.00488, accu: 0.97188, speed: 2.34 step/s
+global step 4290, epoch: 4, batch: 690, loss: 0.10430, accu: 0.97361, speed: 2.46 step/s
+global step 4300, epoch: 4, batch: 700, loss: 0.00242, accu: 0.97625, speed: 2.38 step/s
+eval loss: 0.23178, accu: 0.94250
+eval loss: 0.20325, accu: 0.95167
+global step 4310, epoch: 4, batch: 710, loss: 0.00464, accu: 0.96250, speed: 0.23 step/s
+global step 4320, epoch: 4, batch: 720, loss: 0.00427, accu: 0.98125, speed: 2.57 step/s
+global step 4330, epoch: 4, batch: 730, loss: 0.01360, accu: 0.97917, speed: 2.63 step/s
+global step 4340, epoch: 4, batch: 740, loss: 0.00308, accu: 0.98125, speed: 2.31 step/s
+global step 4350, epoch: 4, batch: 750, loss: 0.01317, accu: 0.98500, speed: 2.17 step/s
+global step 4360, epoch: 4, batch: 760, loss: 0.00631, accu: 0.98333, speed: 2.67 step/s
+global step 4370, epoch: 4, batch: 770, loss: 0.05848, accu: 0.98036, speed: 2.62 step/s
+global step 4380, epoch: 4, batch: 780, loss: 0.84112, accu: 0.97969, speed: 2.28 step/s
+global step 4390, epoch: 4, batch: 790, loss: 0.00517, accu: 0.98056, speed: 2.13 step/s
+global step 4400, epoch: 4, batch: 800, loss: 0.01204, accu: 0.98000, speed: 2.68 step/s
+eval loss: 0.20875, accu: 0.94583
+eval loss: 0.18357, accu: 0.95167
+global step 4410, epoch: 4, batch: 810, loss: 0.17109, accu: 0.98750, speed: 0.23 step/s
+global step 4420, epoch: 4, batch: 820, loss: 0.01695, accu: 0.98750, speed: 2.12 step/s
+global step 4430, epoch: 4, batch: 830, loss: 0.00964, accu: 0.98333, speed: 2.36 step/s
+global step 4440, epoch: 4, batch: 840, loss: 0.05572, accu: 0.97813, speed: 2.70 step/s
+global step 4450, epoch: 4, batch: 850, loss: 0.00219, accu: 0.98000, speed: 2.68 step/s
+global step 4460, epoch: 4, batch: 860, loss: 0.00338, accu: 0.98125, speed: 2.62 step/s
+global step 4470, epoch: 4, batch: 870, loss: 0.00267, accu: 0.97679, speed: 2.65 step/s
+global step 4480, epoch: 4, batch: 880, loss: 0.00342, accu: 0.97500, speed: 2.16 step/s
+global step 4490, epoch: 4, batch: 890, loss: 0.20560, accu: 0.97222, speed: 2.16 step/s
+global step 4500, epoch: 4, batch: 900, loss: 0.00276, accu: 0.97250, speed: 2.85 step/s
+eval loss: 0.20704, accu: 0.94417
+eval loss: 0.17660, accu: 0.95000
+global step 4510, epoch: 4, batch: 910, loss: 0.15030, accu: 0.98750, speed: 0.23 step/s
+global step 4520, epoch: 4, batch: 920, loss: 0.03952, accu: 0.98750, speed: 1.77 step/s
+global step 4530, epoch: 4, batch: 930, loss: 0.49467, accu: 0.97500, speed: 2.19 step/s
+global step 4540, epoch: 4, batch: 940, loss: 0.00572, accu: 0.97500, speed: 2.76 step/s
+global step 4550, epoch: 4, batch: 950, loss: 0.17969, accu: 0.97500, speed: 2.41 step/s
+global step 4560, epoch: 4, batch: 960, loss: 0.09854, accu: 0.97500, speed: 2.21 step/s
+global step 4570, epoch: 4, batch: 970, loss: 0.63523, accu: 0.97679, speed: 2.88 step/s
+global step 4580, epoch: 4, batch: 980, loss: 0.00813, accu: 0.97813, speed: 3.04 step/s
+global step 4590, epoch: 4, batch: 990, loss: 0.00980, accu: 0.97639, speed: 2.40 step/s
+global step 4600, epoch: 4, batch: 1000, loss: 0.00422, accu: 0.97875, speed: 1.92 step/s
+eval loss: 0.23287, accu: 0.94250
+eval loss: 0.24763, accu: 0.94000
+global step 4610, epoch: 4, batch: 1010, loss: 0.00452, accu: 1.00000, speed: 0.23 step/s
+global step 4620, epoch: 4, batch: 1020, loss: 0.05073, accu: 1.00000, speed: 2.18 step/s
+global step 4630, epoch: 4, batch: 1030, loss: 0.00521, accu: 0.99583, speed: 2.92 step/s
+global step 4640, epoch: 4, batch: 1040, loss: 0.00374, accu: 0.99062, speed: 3.20 step/s
+global step 4650, epoch: 4, batch: 1050, loss: 0.78115, accu: 0.98750, speed: 2.56 step/s
+global step 4660, epoch: 4, batch: 1060, loss: 0.00340, accu: 0.97917, speed: 2.87 step/s
+global step 4670, epoch: 4, batch: 1070, loss: 0.02403, accu: 0.98036, speed: 2.40 step/s
+global step 4680, epoch: 4, batch: 1080, loss: 0.00273, accu: 0.98125, speed: 2.19 step/s
+global step 4690, epoch: 4, batch: 1090, loss: 0.07823, accu: 0.98056, speed: 2.24 step/s
+global step 4700, epoch: 4, batch: 1100, loss: 0.08705, accu: 0.98000, speed: 2.71 step/s
+eval loss: 0.19110, accu: 0.95083
+eval loss: 0.16444, accu: 0.95583
+global step 4710, epoch: 4, batch: 1110, loss: 0.09077, accu: 0.97500, speed: 0.23 step/s
+global step 4720, epoch: 4, batch: 1120, loss: 0.01544, accu: 0.98125, speed: 2.19 step/s
+global step 4730, epoch: 4, batch: 1130, loss: 0.00424, accu: 0.97917, speed: 2.50 step/s
+global step 4740, epoch: 4, batch: 1140, loss: 0.09981, accu: 0.97500, speed: 2.61 step/s
+global step 4750, epoch: 4, batch: 1150, loss: 0.01406, accu: 0.97750, speed: 1.99 step/s
+global step 4760, epoch: 4, batch: 1160, loss: 0.00419, accu: 0.98125, speed: 2.17 step/s
+global step 4770, epoch: 4, batch: 1170, loss: 0.00344, accu: 0.98393, speed: 2.31 step/s
+global step 4780, epoch: 4, batch: 1180, loss: 0.00228, accu: 0.98594, speed: 2.66 step/s
+global step 4790, epoch: 4, batch: 1190, loss: 0.00193, accu: 0.98472, speed: 2.10 step/s
+global step 4800, epoch: 4, batch: 1200, loss: 0.00204, accu: 0.98625, speed: 2.84 step/s
+eval loss: 0.31434, accu: 0.93750
+eval loss: 0.28037, accu: 0.94750
+global step 4810, epoch: 5, batch: 10, loss: 0.00201, accu: 1.00000, speed: 0.24 step/s
+global step 4820, epoch: 5, batch: 20, loss: 0.00176, accu: 0.99375, speed: 2.13 step/s
+global step 4830, epoch: 5, batch: 30, loss: 0.00158, accu: 0.99583, speed: 1.87 step/s
+global step 4840, epoch: 5, batch: 40, loss: 0.00382, accu: 0.98438, speed: 1.93 step/s
+global step 4850, epoch: 5, batch: 50, loss: 0.00693, accu: 0.98500, speed: 2.35 step/s
+global step 4860, epoch: 5, batch: 60, loss: 0.00363, accu: 0.98542, speed: 2.79 step/s
+global step 4870, epoch: 5, batch: 70, loss: 0.00345, accu: 0.98750, speed: 1.93 step/s
+global step 4880, epoch: 5, batch: 80, loss: 0.00329, accu: 0.98594, speed: 2.20 step/s
+global step 4890, epoch: 5, batch: 90, loss: 0.01071, accu: 0.98472, speed: 2.28 step/s
+global step 4900, epoch: 5, batch: 100, loss: 0.64617, accu: 0.98250, speed: 2.57 step/s
+eval loss: 0.25818, accu: 0.93583
+eval loss: 0.22034, accu: 0.94750
+global step 4910, epoch: 5, batch: 110, loss: 0.14411, accu: 0.96250, speed: 0.23 step/s
+global step 4920, epoch: 5, batch: 120, loss: 0.01918, accu: 0.98125, speed: 2.51 step/s
+global step 4930, epoch: 5, batch: 130, loss: 0.02834, accu: 0.98333, speed: 3.11 step/s
+global step 4940, epoch: 5, batch: 140, loss: 0.00354, accu: 0.98438, speed: 3.07 step/s
+global step 4950, epoch: 5, batch: 150, loss: 0.00962, accu: 0.98750, speed: 2.50 step/s
+global step 4960, epoch: 5, batch: 160, loss: 0.00227, accu: 0.98958, speed: 2.20 step/s
+global step 4970, epoch: 5, batch: 170, loss: 0.09453, accu: 0.98929, speed: 2.08 step/s
+global step 4980, epoch: 5, batch: 180, loss: 0.00140, accu: 0.99062, speed: 2.34 step/s
+global step 4990, epoch: 5, batch: 190, loss: 0.00138, accu: 0.99028, speed: 2.21 step/s
+global step 5000, epoch: 5, batch: 200, loss: 0.00101, accu: 0.99125, speed: 2.40 step/s
+eval loss: 0.40672, accu: 0.93000
+eval loss: 0.34277, accu: 0.93833
+global step 5010, epoch: 5, batch: 210, loss: 0.00225, accu: 0.97500, speed: 0.23 step/s
+global step 5020, epoch: 5, batch: 220, loss: 0.00255, accu: 0.97500, speed: 2.06 step/s
+global step 5030, epoch: 5, batch: 230, loss: 0.00216, accu: 0.97500, speed: 2.41 step/s
+global step 5040, epoch: 5, batch: 240, loss: 0.00232, accu: 0.96875, speed: 2.50 step/s
+global step 5050, epoch: 5, batch: 250, loss: 0.01067, accu: 0.97250, speed: 2.57 step/s
+global step 5060, epoch: 5, batch: 260, loss: 0.16797, accu: 0.97083, speed: 2.72 step/s
+global step 5070, epoch: 5, batch: 270, loss: 0.25793, accu: 0.96964, speed: 2.11 step/s
+global step 5080, epoch: 5, batch: 280, loss: 0.01637, accu: 0.97031, speed: 2.52 step/s
+global step 5090, epoch: 5, batch: 290, loss: 0.00277, accu: 0.97222, speed: 2.41 step/s
+global step 5100, epoch: 5, batch: 300, loss: 0.00135, accu: 0.97500, speed: 2.56 step/s
+eval loss: 0.25435, accu: 0.94083
+eval loss: 0.20547, accu: 0.95417
+global step 5110, epoch: 5, batch: 310, loss: 0.28914, accu: 0.97500, speed: 0.23 step/s
+global step 5120, epoch: 5, batch: 320, loss: 0.00454, accu: 0.98125, speed: 2.44 step/s
+global step 5130, epoch: 5, batch: 330, loss: 0.00273, accu: 0.98750, speed: 2.12 step/s
+global step 5140, epoch: 5, batch: 340, loss: 0.02355, accu: 0.98438, speed: 1.98 step/s
+global step 5150, epoch: 5, batch: 350, loss: 0.02519, accu: 0.98500, speed: 2.33 step/s
+global step 5160, epoch: 5, batch: 360, loss: 0.02427, accu: 0.98542, speed: 2.17 step/s
+global step 5170, epoch: 5, batch: 370, loss: 0.03325, accu: 0.98750, speed: 2.57 step/s
+global step 5180, epoch: 5, batch: 380, loss: 0.00130, accu: 0.98906, speed: 2.45 step/s
+global step 5190, epoch: 5, batch: 390, loss: 0.00141, accu: 0.98750, speed: 1.99 step/s
+global step 5200, epoch: 5, batch: 400, loss: 0.00570, accu: 0.98875, speed: 2.68 step/s
+eval loss: 0.28588, accu: 0.93000
+eval loss: 0.27544, accu: 0.92750
+global step 5210, epoch: 5, batch: 410, loss: 0.00590, accu: 0.95000, speed: 0.23 step/s
+global step 5220, epoch: 5, batch: 420, loss: 0.00120, accu: 0.94375, speed: 2.76 step/s
+global step 5230, epoch: 5, batch: 430, loss: 0.00288, accu: 0.95417, speed: 2.58 step/s
+global step 5240, epoch: 5, batch: 440, loss: 0.01771, accu: 0.96250, speed: 2.62 step/s
+global step 5250, epoch: 5, batch: 450, loss: 0.45729, accu: 0.96000, speed: 2.98 step/s
+global step 5260, epoch: 5, batch: 460, loss: 0.06765, accu: 0.96667, speed: 2.42 step/s
+global step 5270, epoch: 5, batch: 470, loss: 0.00141, accu: 0.96786, speed: 2.27 step/s
+global step 5280, epoch: 5, batch: 480, loss: 0.07613, accu: 0.97188, speed: 2.16 step/s
+global step 5290, epoch: 5, batch: 490, loss: 0.00111, accu: 0.97083, speed: 2.43 step/s
+global step 5300, epoch: 5, batch: 500, loss: 0.00259, accu: 0.97250, speed: 2.08 step/s
+eval loss: 0.32971, accu: 0.93750
+eval loss: 0.27685, accu: 0.94667
+global step 5310, epoch: 5, batch: 510, loss: 0.00086, accu: 0.98750, speed: 0.23 step/s
+global step 5320, epoch: 5, batch: 520, loss: 0.03646, accu: 0.98750, speed: 2.71 step/s
+global step 5330, epoch: 5, batch: 530, loss: 0.03187, accu: 0.97917, speed: 1.94 step/s
+global step 5340, epoch: 5, batch: 540, loss: 0.08042, accu: 0.98125, speed: 2.51 step/s
+global step 5350, epoch: 5, batch: 550, loss: 0.07127, accu: 0.97750, speed: 2.40 step/s
+global step 5360, epoch: 5, batch: 560, loss: 0.00163, accu: 0.97917, speed: 2.24 step/s
+global step 5370, epoch: 5, batch: 570, loss: 0.00076, accu: 0.97857, speed: 2.64 step/s
+global step 5380, epoch: 5, batch: 580, loss: 0.00826, accu: 0.97813, speed: 2.31 step/s
+global step 5390, epoch: 5, batch: 590, loss: 0.01582, accu: 0.98056, speed: 3.34 step/s
+global step 5400, epoch: 5, batch: 600, loss: 0.08031, accu: 0.98250, speed: 2.16 step/s
+eval loss: 0.30183, accu: 0.94000
+eval loss: 0.27972, accu: 0.95250
+global step 5410, epoch: 5, batch: 610, loss: 0.00106, accu: 0.96250, speed: 0.23 step/s
+global step 5420, epoch: 5, batch: 620, loss: 0.10363, accu: 0.96875, speed: 2.26 step/s
+global step 5430, epoch: 5, batch: 630, loss: 0.00194, accu: 0.97917, speed: 2.46 step/s
+global step 5440, epoch: 5, batch: 640, loss: 0.03027, accu: 0.98125, speed: 2.24 step/s
+global step 5450, epoch: 5, batch: 650, loss: 0.00236, accu: 0.98500, speed: 2.49 step/s
+global step 5460, epoch: 5, batch: 660, loss: 0.00098, accu: 0.98542, speed: 3.15 step/s
+global step 5470, epoch: 5, batch: 670, loss: 0.04109, accu: 0.98750, speed: 2.95 step/s
+global step 5480, epoch: 5, batch: 680, loss: 0.00079, accu: 0.98750, speed: 2.35 step/s
+global step 5490, epoch: 5, batch: 690, loss: 0.00099, accu: 0.98889, speed: 2.45 step/s
+global step 5500, epoch: 5, batch: 700, loss: 0.00058, accu: 0.99000, speed: 2.38 step/s
+eval loss: 0.31497, accu: 0.94250
+eval loss: 0.23531, accu: 0.96083
+global step 5510, epoch: 5, batch: 710, loss: 0.00118, accu: 0.97500, speed: 0.21 step/s
+global step 5520, epoch: 5, batch: 720, loss: 0.00079, accu: 0.98750, speed: 2.57 step/s
+global step 5530, epoch: 5, batch: 730, loss: 0.00109, accu: 0.99167, speed: 2.65 step/s
+global step 5540, epoch: 5, batch: 740, loss: 0.00122, accu: 0.98750, speed: 2.30 step/s
+global step 5550, epoch: 5, batch: 750, loss: 0.00156, accu: 0.98000, speed: 2.17 step/s
+global step 5560, epoch: 5, batch: 760, loss: 0.00185, accu: 0.98333, speed: 2.62 step/s
+global step 5570, epoch: 5, batch: 770, loss: 0.00332, accu: 0.98393, speed: 2.62 step/s
+global step 5580, epoch: 5, batch: 780, loss: 0.15859, accu: 0.98281, speed: 2.27 step/s
+global step 5590, epoch: 5, batch: 790, loss: 0.00140, accu: 0.98472, speed: 2.12 step/s
+global step 5600, epoch: 5, batch: 800, loss: 0.00409, accu: 0.98625, speed: 2.68 step/s
+eval loss: 0.27963, accu: 0.94583
+eval loss: 0.24177, accu: 0.94667
+global step 5610, epoch: 5, batch: 810, loss: 0.15432, accu: 0.98750, speed: 0.23 step/s
+global step 5620, epoch: 5, batch: 820, loss: 0.00792, accu: 0.98125, speed: 2.10 step/s
+global step 5630, epoch: 5, batch: 830, loss: 0.00740, accu: 0.98333, speed: 2.35 step/s
+global step 5640, epoch: 5, batch: 840, loss: 0.01925, accu: 0.98438, speed: 2.68 step/s
+global step 5650, epoch: 5, batch: 850, loss: 0.00059, accu: 0.98250, speed: 2.67 step/s
+global step 5660, epoch: 5, batch: 860, loss: 0.00112, accu: 0.97708, speed: 2.60 step/s
+global step 5670, epoch: 5, batch: 870, loss: 0.00086, accu: 0.97321, speed: 2.65 step/s
+global step 5680, epoch: 5, batch: 880, loss: 0.00068, accu: 0.97188, speed: 2.16 step/s
+global step 5690, epoch: 5, batch: 890, loss: 0.00079, accu: 0.97361, speed: 2.15 step/s
+global step 5700, epoch: 5, batch: 900, loss: 0.00096, accu: 0.97375, speed: 2.83 step/s
+eval loss: 0.28671, accu: 0.94167
+eval loss: 0.22905, accu: 0.94917
+global step 5710, epoch: 5, batch: 910, loss: 0.01144, accu: 1.00000, speed: 0.23 step/s
+global step 5720, epoch: 5, batch: 920, loss: 0.00961, accu: 0.99375, speed: 1.75 step/s
+global step 5730, epoch: 5, batch: 930, loss: 0.00404, accu: 0.99167, speed: 2.19 step/s
+global step 5740, epoch: 5, batch: 940, loss: 0.00364, accu: 0.99062, speed: 2.75 step/s
+global step 5750, epoch: 5, batch: 950, loss: 0.00255, accu: 0.99000, speed: 2.41 step/s
+global step 5760, epoch: 5, batch: 960, loss: 0.03219, accu: 0.99167, speed: 2.19 step/s
+global step 5770, epoch: 5, batch: 970, loss: 0.84977, accu: 0.98929, speed: 2.88 step/s
+global step 5780, epoch: 5, batch: 980, loss: 0.00278, accu: 0.99062, speed: 3.02 step/s
+global step 5790, epoch: 5, batch: 990, loss: 0.00426, accu: 0.99167, speed: 2.39 step/s
+global step 5800, epoch: 5, batch: 1000, loss: 0.00159, accu: 0.99250, speed: 1.91 step/s
+eval loss: 0.29137, accu: 0.94500
+eval loss: 0.20309, accu: 0.96083
+global step 5810, epoch: 5, batch: 1010, loss: 0.00190, accu: 1.00000, speed: 0.21 step/s
+global step 5820, epoch: 5, batch: 1020, loss: 0.00158, accu: 1.00000, speed: 2.19 step/s
+global step 5830, epoch: 5, batch: 1030, loss: 0.00216, accu: 0.99167, speed: 2.92 step/s
+global step 5840, epoch: 5, batch: 1040, loss: 0.00112, accu: 0.99062, speed: 3.20 step/s
+global step 5850, epoch: 5, batch: 1050, loss: 0.00278, accu: 0.99250, speed: 2.56 step/s
+global step 5860, epoch: 5, batch: 1060, loss: 0.00204, accu: 0.99167, speed: 2.88 step/s
+global step 5870, epoch: 5, batch: 1070, loss: 0.03959, accu: 0.99286, speed: 2.40 step/s
+global step 5880, epoch: 5, batch: 1080, loss: 0.00196, accu: 0.99219, speed: 2.19 step/s
+global step 5890, epoch: 5, batch: 1090, loss: 0.07421, accu: 0.99306, speed: 2.22 step/s
+global step 5900, epoch: 5, batch: 1100, loss: 0.00877, accu: 0.99375, speed: 2.71 step/s
+eval loss: 0.27264, accu: 0.94500
+eval loss: 0.20739, accu: 0.95250
+global step 5910, epoch: 5, batch: 1110, loss: 0.00251, accu: 0.98750, speed: 0.23 step/s
+global step 5920, epoch: 5, batch: 1120, loss: 0.00156, accu: 0.98750, speed: 2.19 step/s
+global step 5930, epoch: 5, batch: 1130, loss: 0.02152, accu: 0.98750, speed: 2.49 step/s
+global step 5940, epoch: 5, batch: 1140, loss: 0.00181, accu: 0.99062, speed: 2.61 step/s
+global step 5950, epoch: 5, batch: 1150, loss: 0.00263, accu: 0.99250, speed: 1.99 step/s
+global step 5960, epoch: 5, batch: 1160, loss: 0.00186, accu: 0.99375, speed: 2.15 step/s
+global step 5970, epoch: 5, batch: 1170, loss: 0.45863, accu: 0.98929, speed: 2.31 step/s
+global step 5980, epoch: 5, batch: 1180, loss: 0.00686, accu: 0.99062, speed: 2.67 step/s
+global step 5990, epoch: 5, batch: 1190, loss: 0.72733, accu: 0.98889, speed: 2.11 step/s
+global step 6000, epoch: 5, batch: 1200, loss: 0.00452, accu: 0.98875, speed: 2.83 step/s
+eval loss: 0.27516, accu: 0.93667
+eval loss: 0.20564, accu: 0.94667
+global step 6010, epoch: 6, batch: 10, loss: 0.00247, accu: 1.00000, speed: 0.24 step/s
+global step 6020, epoch: 6, batch: 20, loss: 0.00693, accu: 0.99375, speed: 2.13 step/s
+global step 6030, epoch: 6, batch: 30, loss: 0.00160, accu: 0.99583, speed: 1.87 step/s
+global step 6040, epoch: 6, batch: 40, loss: 0.00157, accu: 0.99062, speed: 1.93 step/s
+global step 6050, epoch: 6, batch: 50, loss: 0.01179, accu: 0.99250, speed: 2.34 step/s
+global step 6060, epoch: 6, batch: 60, loss: 0.00190, accu: 0.98958, speed: 2.78 step/s
+global step 6070, epoch: 6, batch: 70, loss: 0.01810, accu: 0.99107, speed: 1.93 step/s
+global step 6080, epoch: 6, batch: 80, loss: 0.00270, accu: 0.99062, speed: 2.19 step/s
+global step 6090, epoch: 6, batch: 90, loss: 0.00218, accu: 0.99167, speed: 2.28 step/s
+global step 6100, epoch: 6, batch: 100, loss: 0.60317, accu: 0.99125, speed: 2.56 step/s
+eval loss: 0.33741, accu: 0.93583
+eval loss: 0.24403, accu: 0.95167
+global step 6110, epoch: 6, batch: 110, loss: 0.11934, accu: 0.97500, speed: 0.23 step/s
+global step 6120, epoch: 6, batch: 120, loss: 0.01034, accu: 0.98750, speed: 2.51 step/s
+global step 6130, epoch: 6, batch: 130, loss: 0.00396, accu: 0.98333, speed: 3.12 step/s
+global step 6140, epoch: 6, batch: 140, loss: 0.00260, accu: 0.98125, speed: 3.08 step/s
+global step 6150, epoch: 6, batch: 150, loss: 0.00766, accu: 0.98500, speed: 2.45 step/s
+global step 6160, epoch: 6, batch: 160, loss: 0.00255, accu: 0.98750, speed: 2.20 step/s
+global step 6170, epoch: 6, batch: 170, loss: 0.00155, accu: 0.98929, speed: 2.11 step/s
+global step 6180, epoch: 6, batch: 180, loss: 0.00110, accu: 0.99062, speed: 2.34 step/s
+global step 6190, epoch: 6, batch: 190, loss: 0.00120, accu: 0.99028, speed: 2.20 step/s
+global step 6200, epoch: 6, batch: 200, loss: 0.00066, accu: 0.99125, speed: 2.39 step/s
+eval loss: 0.35791, accu: 0.93833
+eval loss: 0.24849, accu: 0.95500
+global step 6210, epoch: 6, batch: 210, loss: 0.00165, accu: 0.98750, speed: 0.23 step/s
+global step 6220, epoch: 6, batch: 220, loss: 0.00115, accu: 0.98750, speed: 2.05 step/s
+global step 6230, epoch: 6, batch: 230, loss: 0.00177, accu: 0.98333, speed: 2.41 step/s
+global step 6240, epoch: 6, batch: 240, loss: 0.00134, accu: 0.98125, speed: 2.49 step/s
+global step 6250, epoch: 6, batch: 250, loss: 0.00843, accu: 0.98250, speed: 2.57 step/s
+global step 6260, epoch: 6, batch: 260, loss: 0.11820, accu: 0.97917, speed: 2.72 step/s
+global step 6270, epoch: 6, batch: 270, loss: 0.16503, accu: 0.97857, speed: 2.11 step/s
+global step 6280, epoch: 6, batch: 280, loss: 0.02081, accu: 0.97969, speed: 2.51 step/s
+global step 6290, epoch: 6, batch: 290, loss: 0.02525, accu: 0.97917, speed: 2.41 step/s
+global step 6300, epoch: 6, batch: 300, loss: 0.00144, accu: 0.98125, speed: 2.56 step/s
+eval loss: 0.24979, accu: 0.94083
+eval loss: 0.17048, accu: 0.96250
+global step 6310, epoch: 6, batch: 310, loss: 0.11256, accu: 0.98750, speed: 0.21 step/s
+global step 6320, epoch: 6, batch: 320, loss: 0.07149, accu: 0.98750, speed: 2.45 step/s
+global step 6330, epoch: 6, batch: 330, loss: 0.00083, accu: 0.98750, speed: 2.10 step/s
+global step 6340, epoch: 6, batch: 340, loss: 0.04453, accu: 0.98750, speed: 1.98 step/s
+global step 6350, epoch: 6, batch: 350, loss: 0.00073, accu: 0.98750, speed: 2.33 step/s
+global step 6360, epoch: 6, batch: 360, loss: 0.00238, accu: 0.98958, speed: 2.19 step/s
+global step 6370, epoch: 6, batch: 370, loss: 0.00071, accu: 0.99107, speed: 2.57 step/s
+global step 6380, epoch: 6, batch: 380, loss: 0.00061, accu: 0.99219, speed: 2.46 step/s
+global step 6390, epoch: 6, batch: 390, loss: 0.00049, accu: 0.99306, speed: 1.98 step/s
+global step 6400, epoch: 6, batch: 400, loss: 0.00052, accu: 0.99375, speed: 2.69 step/s
+eval loss: 0.37973, accu: 0.94333
+eval loss: 0.27009, accu: 0.95417
+global step 6410, epoch: 6, batch: 410, loss: 0.00044, accu: 1.00000, speed: 0.23 step/s
+global step 6420, epoch: 6, batch: 420, loss: 0.00063, accu: 0.98750, speed: 2.75 step/s
+global step 6430, epoch: 6, batch: 430, loss: 0.00055, accu: 0.98750, speed: 2.59 step/s
+global step 6440, epoch: 6, batch: 440, loss: 0.00077, accu: 0.98750, speed: 2.61 step/s
+global step 6450, epoch: 6, batch: 450, loss: 0.06212, accu: 0.98000, speed: 2.96 step/s
+global step 6460, epoch: 6, batch: 460, loss: 0.00113, accu: 0.98125, speed: 2.42 step/s
+global step 6470, epoch: 6, batch: 470, loss: 0.00132, accu: 0.98036, speed: 2.25 step/s
+global step 6480, epoch: 6, batch: 480, loss: 0.00135, accu: 0.98125, speed: 2.15 step/s
+global step 6490, epoch: 6, batch: 490, loss: 0.00099, accu: 0.98056, speed: 2.42 step/s
+global step 6500, epoch: 6, batch: 500, loss: 0.00116, accu: 0.98250, speed: 2.05 step/s
+eval loss: 0.30840, accu: 0.93583
+eval loss: 0.23741, accu: 0.95167
+global step 6510, epoch: 6, batch: 510, loss: 0.00180, accu: 1.00000, speed: 0.23 step/s
+global step 6520, epoch: 6, batch: 520, loss: 0.00083, accu: 1.00000, speed: 2.72 step/s
+global step 6530, epoch: 6, batch: 530, loss: 0.00079, accu: 0.99583, speed: 1.93 step/s
+global step 6540, epoch: 6, batch: 540, loss: 0.00108, accu: 0.99687, speed: 2.52 step/s
+global step 6550, epoch: 6, batch: 550, loss: 0.00086, accu: 0.99250, speed: 2.41 step/s
+global step 6560, epoch: 6, batch: 560, loss: 0.02790, accu: 0.99167, speed: 2.28 step/s
+global step 6570, epoch: 6, batch: 570, loss: 0.00093, accu: 0.99286, speed: 2.65 step/s
+global step 6580, epoch: 6, batch: 580, loss: 0.00845, accu: 0.99062, speed: 2.32 step/s
+global step 6590, epoch: 6, batch: 590, loss: 0.00064, accu: 0.99167, speed: 3.35 step/s
+global step 6600, epoch: 6, batch: 600, loss: 0.38386, accu: 0.99125, speed: 2.16 step/s
+eval loss: 0.26617, accu: 0.94083
+eval loss: 0.19593, accu: 0.96333
+global step 6610, epoch: 6, batch: 610, loss: 0.00291, accu: 0.98750, speed: 0.21 step/s
+global step 6620, epoch: 6, batch: 620, loss: 0.05719, accu: 0.99375, speed: 2.27 step/s
+global step 6630, epoch: 6, batch: 630, loss: 0.00289, accu: 0.99167, speed: 2.48 step/s
+global step 6640, epoch: 6, batch: 640, loss: 0.00043, accu: 0.99375, speed: 2.24 step/s
+global step 6650, epoch: 6, batch: 650, loss: 0.00067, accu: 0.99500, speed: 2.49 step/s
+global step 6660, epoch: 6, batch: 660, loss: 0.00152, accu: 0.99167, speed: 3.13 step/s
+global step 6670, epoch: 6, batch: 670, loss: 0.00141, accu: 0.99107, speed: 2.95 step/s
+global step 6680, epoch: 6, batch: 680, loss: 0.00042, accu: 0.99219, speed: 2.34 step/s
+global step 6690, epoch: 6, batch: 690, loss: 0.00066, accu: 0.99306, speed: 2.40 step/s
+global step 6700, epoch: 6, batch: 700, loss: 0.00049, accu: 0.99375, speed: 2.38 step/s
+eval loss: 0.32721, accu: 0.94333
+eval loss: 0.23205, accu: 0.96500
+global step 6710, epoch: 6, batch: 710, loss: 0.00780, accu: 0.96250, speed: 0.21 step/s
+global step 6720, epoch: 6, batch: 720, loss: 0.00056, accu: 0.98125, speed: 2.56 step/s
+global step 6730, epoch: 6, batch: 730, loss: 0.03192, accu: 0.98750, speed: 2.64 step/s
+global step 6740, epoch: 6, batch: 740, loss: 0.00070, accu: 0.98750, speed: 2.31 step/s
+global step 6750, epoch: 6, batch: 750, loss: 0.00064, accu: 0.98750, speed: 2.17 step/s
+global step 6760, epoch: 6, batch: 760, loss: 0.00078, accu: 0.98750, speed: 2.70 step/s
+global step 6770, epoch: 6, batch: 770, loss: 0.00715, accu: 0.98750, speed: 2.64 step/s
+global step 6780, epoch: 6, batch: 780, loss: 0.32163, accu: 0.98594, speed: 2.28 step/s
+global step 6790, epoch: 6, batch: 790, loss: 0.00064, accu: 0.98750, speed: 2.12 step/s
+global step 6800, epoch: 6, batch: 800, loss: 0.06884, accu: 0.98875, speed: 2.69 step/s
+eval loss: 0.28227, accu: 0.94250
+eval loss: 0.21397, accu: 0.95667
+global step 6810, epoch: 6, batch: 810, loss: 0.11814, accu: 0.97500, speed: 0.23 step/s
+global step 6820, epoch: 6, batch: 820, loss: 0.01881, accu: 0.98125, speed: 2.11 step/s
+global step 6830, epoch: 6, batch: 830, loss: 0.00095, accu: 0.97917, speed: 2.36 step/s
+global step 6840, epoch: 6, batch: 840, loss: 0.11933, accu: 0.97813, speed: 2.69 step/s
+global step 6850, epoch: 6, batch: 850, loss: 0.00044, accu: 0.98250, speed: 2.68 step/s
+global step 6860, epoch: 6, batch: 860, loss: 0.00039, accu: 0.98542, speed: 2.61 step/s
+global step 6870, epoch: 6, batch: 870, loss: 0.00040, accu: 0.98571, speed: 2.65 step/s
+global step 6880, epoch: 6, batch: 880, loss: 0.00052, accu: 0.98281, speed: 2.17 step/s
+global step 6890, epoch: 6, batch: 890, loss: 0.05684, accu: 0.98472, speed: 2.16 step/s
+global step 6900, epoch: 6, batch: 900, loss: 0.00046, accu: 0.98625, speed: 2.86 step/s
+eval loss: 0.32011, accu: 0.94417
+eval loss: 0.26724, accu: 0.95000
+global step 6910, epoch: 6, batch: 910, loss: 0.00151, accu: 1.00000, speed: 0.23 step/s
+global step 6920, epoch: 6, batch: 920, loss: 0.02904, accu: 1.00000, speed: 1.74 step/s
+global step 6930, epoch: 6, batch: 930, loss: 0.00202, accu: 0.99583, speed: 2.19 step/s
+global step 6940, epoch: 6, batch: 940, loss: 0.00052, accu: 0.99375, speed: 2.75 step/s
+global step 6950, epoch: 6, batch: 950, loss: 0.00089, accu: 0.99250, speed: 2.41 step/s
+global step 6960, epoch: 6, batch: 960, loss: 0.00090, accu: 0.99375, speed: 2.22 step/s
+global step 6970, epoch: 6, batch: 970, loss: 0.89432, accu: 0.99286, speed: 2.86 step/s
+global step 6980, epoch: 6, batch: 980, loss: 0.00113, accu: 0.99375, speed: 3.02 step/s
+global step 6990, epoch: 6, batch: 990, loss: 0.00124, accu: 0.99444, speed: 2.40 step/s
+global step 7000, epoch: 6, batch: 1000, loss: 0.00092, accu: 0.99500, speed: 1.91 step/s
+eval loss: 0.28991, accu: 0.94917
+eval loss: 0.23808, accu: 0.95750
+global step 7010, epoch: 6, batch: 1010, loss: 0.02212, accu: 1.00000, speed: 0.23 step/s
+global step 7020, epoch: 6, batch: 1020, loss: 0.00085, accu: 1.00000, speed: 2.18 step/s
+global step 7030, epoch: 6, batch: 1030, loss: 0.00221, accu: 1.00000, speed: 2.91 step/s
+global step 7040, epoch: 6, batch: 1040, loss: 0.00061, accu: 0.99687, speed: 3.17 step/s
+global step 7050, epoch: 6, batch: 1050, loss: 0.00064, accu: 0.99750, speed: 2.55 step/s
+global step 7060, epoch: 6, batch: 1060, loss: 0.00059, accu: 0.99583, speed: 2.87 step/s
+global step 7070, epoch: 6, batch: 1070, loss: 0.00061, accu: 0.99643, speed: 2.40 step/s
+global step 7080, epoch: 6, batch: 1080, loss: 0.00055, accu: 0.99687, speed: 2.13 step/s
+global step 7090, epoch: 6, batch: 1090, loss: 0.10241, accu: 0.99444, speed: 2.21 step/s
+global step 7100, epoch: 6, batch: 1100, loss: 0.00061, accu: 0.99500, speed: 2.71 step/s
+eval loss: 0.35895, accu: 0.94667
+eval loss: 0.30287, accu: 0.95333
+global step 7110, epoch: 6, batch: 1110, loss: 0.00075, accu: 0.98750, speed: 0.23 step/s
+global step 7120, epoch: 6, batch: 1120, loss: 0.00067, accu: 0.99375, speed: 2.16 step/s
+global step 7130, epoch: 6, batch: 1130, loss: 0.00100, accu: 0.99167, speed: 2.50 step/s
+global step 7140, epoch: 6, batch: 1140, loss: 0.00190, accu: 0.99062, speed: 2.61 step/s
+global step 7150, epoch: 6, batch: 1150, loss: 0.00192, accu: 0.99250, speed: 1.99 step/s
+global step 7160, epoch: 6, batch: 1160, loss: 0.00166, accu: 0.99375, speed: 2.16 step/s
+global step 7170, epoch: 6, batch: 1170, loss: 0.00148, accu: 0.99464, speed: 2.32 step/s
+global step 7180, epoch: 6, batch: 1180, loss: 0.00169, accu: 0.99062, speed: 2.67 step/s
+global step 7190, epoch: 6, batch: 1190, loss: 0.00189, accu: 0.99167, speed: 2.10 step/s
+global step 7200, epoch: 6, batch: 1200, loss: 0.00148, accu: 0.99250, speed: 2.85 step/s
+eval loss: 0.30620, accu: 0.94750
+eval loss: 0.26096, accu: 0.95167
+global step 7210, epoch: 7, batch: 10, loss: 0.00185, accu: 0.98750, speed: 0.23 step/s
+global step 7220, epoch: 7, batch: 20, loss: 0.00208, accu: 0.98125, speed: 2.13 step/s
+global step 7230, epoch: 7, batch: 30, loss: 0.00190, accu: 0.98750, speed: 1.87 step/s
+global step 7240, epoch: 7, batch: 40, loss: 0.00180, accu: 0.98750, speed: 1.93 step/s
+global step 7250, epoch: 7, batch: 50, loss: 0.00473, accu: 0.99000, speed: 2.36 step/s
+global step 7260, epoch: 7, batch: 60, loss: 0.00163, accu: 0.98958, speed: 2.77 step/s
+global step 7270, epoch: 7, batch: 70, loss: 0.00876, accu: 0.99107, speed: 1.92 step/s
+global step 7280, epoch: 7, batch: 80, loss: 0.00865, accu: 0.99219, speed: 2.15 step/s
+global step 7290, epoch: 7, batch: 90, loss: 0.00167, accu: 0.99306, speed: 2.28 step/s
+global step 7300, epoch: 7, batch: 100, loss: 0.08414, accu: 0.99125, speed: 2.57 step/s
+eval loss: 0.26283, accu: 0.95417
+eval loss: 0.21619, accu: 0.95500
+global step 7310, epoch: 7, batch: 110, loss: 0.00121, accu: 1.00000, speed: 0.23 step/s
+global step 7320, epoch: 7, batch: 120, loss: 0.00142, accu: 1.00000, speed: 2.50 step/s
+global step 7330, epoch: 7, batch: 130, loss: 0.00203, accu: 0.98750, speed: 3.08 step/s
+global step 7340, epoch: 7, batch: 140, loss: 0.00130, accu: 0.99062, speed: 3.06 step/s
+global step 7350, epoch: 7, batch: 150, loss: 0.00511, accu: 0.99250, speed: 2.51 step/s
+global step 7360, epoch: 7, batch: 160, loss: 0.00150, accu: 0.99375, speed: 2.20 step/s
+global step 7370, epoch: 7, batch: 170, loss: 0.00120, accu: 0.99464, speed: 2.13 step/s
+global step 7380, epoch: 7, batch: 180, loss: 0.00114, accu: 0.99531, speed: 2.34 step/s
+global step 7390, epoch: 7, batch: 190, loss: 0.00127, accu: 0.99444, speed: 2.20 step/s
+global step 7400, epoch: 7, batch: 200, loss: 0.00076, accu: 0.99500, speed: 2.39 step/s
+eval loss: 0.28835, accu: 0.94667
+eval loss: 0.24976, accu: 0.95750
+global step 7410, epoch: 7, batch: 210, loss: 0.00113, accu: 0.98750, speed: 0.23 step/s
+global step 7420, epoch: 7, batch: 220, loss: 0.00134, accu: 0.99375, speed: 2.06 step/s
+global step 7430, epoch: 7, batch: 230, loss: 0.00108, accu: 0.99167, speed: 2.41 step/s
+global step 7440, epoch: 7, batch: 240, loss: 0.00100, accu: 0.99062, speed: 2.50 step/s
+global step 7450, epoch: 7, batch: 250, loss: 0.00103, accu: 0.99000, speed: 2.55 step/s
+global step 7460, epoch: 7, batch: 260, loss: 0.40057, accu: 0.98958, speed: 2.73 step/s
+global step 7470, epoch: 7, batch: 270, loss: 0.08525, accu: 0.99107, speed: 2.11 step/s
+global step 7480, epoch: 7, batch: 280, loss: 0.00308, accu: 0.99219, speed: 2.46 step/s
+global step 7490, epoch: 7, batch: 290, loss: 0.05682, accu: 0.99028, speed: 2.42 step/s
+global step 7500, epoch: 7, batch: 300, loss: 0.00081, accu: 0.99125, speed: 2.55 step/s
+eval loss: 0.33503, accu: 0.94083
+eval loss: 0.24917, accu: 0.95250
+global step 7510, epoch: 7, batch: 310, loss: 0.08651, accu: 0.97500, speed: 0.23 step/s
+global step 7520, epoch: 7, batch: 320, loss: 0.00091, accu: 0.98750, speed: 2.45 step/s
+global step 7530, epoch: 7, batch: 330, loss: 0.00099, accu: 0.99167, speed: 2.11 step/s
+global step 7540, epoch: 7, batch: 340, loss: 0.05316, accu: 0.99062, speed: 1.97 step/s
+global step 7550, epoch: 7, batch: 350, loss: 0.00060, accu: 0.99250, speed: 2.32 step/s
+global step 7560, epoch: 7, batch: 360, loss: 0.00058, accu: 0.99375, speed: 2.18 step/s
+global step 7570, epoch: 7, batch: 370, loss: 0.00059, accu: 0.99286, speed: 2.56 step/s
+global step 7580, epoch: 7, batch: 380, loss: 0.00060, accu: 0.99375, speed: 2.44 step/s
+global step 7590, epoch: 7, batch: 390, loss: 0.00059, accu: 0.99444, speed: 1.99 step/s
+global step 7600, epoch: 7, batch: 400, loss: 0.00050, accu: 0.99500, speed: 2.70 step/s
+eval loss: 0.36280, accu: 0.95000
+eval loss: 0.28864, accu: 0.95583
+global step 7610, epoch: 7, batch: 410, loss: 0.00049, accu: 0.98750, speed: 0.23 step/s
+global step 7620, epoch: 7, batch: 420, loss: 0.00057, accu: 0.98750, speed: 2.74 step/s
+global step 7630, epoch: 7, batch: 430, loss: 0.00071, accu: 0.99167, speed: 2.58 step/s
+global step 7640, epoch: 7, batch: 440, loss: 0.00065, accu: 0.99375, speed: 2.61 step/s
+global step 7650, epoch: 7, batch: 450, loss: 0.00053, accu: 0.99500, speed: 2.98 step/s
+global step 7660, epoch: 7, batch: 460, loss: 0.00057, accu: 0.99583, speed: 2.44 step/s
+global step 7670, epoch: 7, batch: 470, loss: 0.00063, accu: 0.99286, speed: 2.26 step/s
+global step 7680, epoch: 7, batch: 480, loss: 0.00079, accu: 0.99375, speed: 2.11 step/s
+global step 7690, epoch: 7, batch: 490, loss: 0.00135, accu: 0.99306, speed: 2.43 step/s
+global step 7700, epoch: 7, batch: 500, loss: 0.00066, accu: 0.99375, speed: 2.09 step/s
+eval loss: 0.33343, accu: 0.94667
+eval loss: 0.25075, accu: 0.95917
+global step 7710, epoch: 7, batch: 510, loss: 0.00064, accu: 0.98750, speed: 0.21 step/s
+global step 7720, epoch: 7, batch: 520, loss: 0.00061, accu: 0.99375, speed: 2.73 step/s
+global step 7730, epoch: 7, batch: 530, loss: 0.00066, accu: 0.98750, speed: 1.95 step/s
+global step 7740, epoch: 7, batch: 540, loss: 0.00087, accu: 0.99062, speed: 2.53 step/s
+global step 7750, epoch: 7, batch: 550, loss: 0.00082, accu: 0.99000, speed: 2.41 step/s
+global step 7760, epoch: 7, batch: 560, loss: 0.00440, accu: 0.99167, speed: 2.28 step/s
+global step 7770, epoch: 7, batch: 570, loss: 0.00061, accu: 0.99286, speed: 2.66 step/s
+global step 7780, epoch: 7, batch: 580, loss: 0.00061, accu: 0.99375, speed: 2.32 step/s
+global step 7790, epoch: 7, batch: 590, loss: 0.00082, accu: 0.99444, speed: 3.35 step/s
+global step 7800, epoch: 7, batch: 600, loss: 0.09685, accu: 0.99375, speed: 2.16 step/s
+eval loss: 0.37219, accu: 0.94250
+eval loss: 0.30160, accu: 0.95750
+global step 7810, epoch: 7, batch: 610, loss: 0.00050, accu: 0.98750, speed: 0.23 step/s
+global step 7820, epoch: 7, batch: 620, loss: 0.00060, accu: 0.99375, speed: 2.27 step/s
+global step 7830, epoch: 7, batch: 630, loss: 0.00072, accu: 0.99583, speed: 2.48 step/s
+global step 7840, epoch: 7, batch: 640, loss: 0.00063, accu: 0.99687, speed: 2.24 step/s
+global step 7850, epoch: 7, batch: 650, loss: 0.00093, accu: 0.99500, speed: 2.49 step/s
+global step 7860, epoch: 7, batch: 660, loss: 0.00050, accu: 0.99583, speed: 3.13 step/s
+global step 7870, epoch: 7, batch: 670, loss: 0.00041, accu: 0.99643, speed: 2.89 step/s
+global step 7880, epoch: 7, batch: 680, loss: 0.00041, accu: 0.99687, speed: 2.33 step/s
+global step 7890, epoch: 7, batch: 690, loss: 0.00070, accu: 0.99583, speed: 2.45 step/s
+global step 7900, epoch: 7, batch: 700, loss: 0.00663, accu: 0.99625, speed: 2.38 step/s
+eval loss: 0.32789, accu: 0.95167
+eval loss: 0.27744, accu: 0.96000
+global step 7910, epoch: 7, batch: 710, loss: 0.00038, accu: 0.96250, speed: 0.21 step/s
+global step 7920, epoch: 7, batch: 720, loss: 0.00037, accu: 0.98125, speed: 2.57 step/s
+global step 7930, epoch: 7, batch: 730, loss: 0.00043, accu: 0.98750, speed: 2.66 step/s
+global step 7940, epoch: 7, batch: 740, loss: 0.08897, accu: 0.98750, speed: 2.31 step/s
+global step 7950, epoch: 7, batch: 750, loss: 0.00039, accu: 0.98750, speed: 2.17 step/s
+global step 7960, epoch: 7, batch: 760, loss: 0.00040, accu: 0.98958, speed: 2.71 step/s
+global step 7970, epoch: 7, batch: 770, loss: 0.00039, accu: 0.99107, speed: 2.64 step/s
+global step 7980, epoch: 7, batch: 780, loss: 0.00193, accu: 0.99219, speed: 2.28 step/s
+global step 7990, epoch: 7, batch: 790, loss: 0.00036, accu: 0.99167, speed: 2.13 step/s
+global step 8000, epoch: 7, batch: 800, loss: 0.00030, accu: 0.99250, speed: 2.69 step/s
+eval loss: 0.30133, accu: 0.95750
+eval loss: 0.27625, accu: 0.96250
+global step 8010, epoch: 7, batch: 810, loss: 0.07900, accu: 1.00000, speed: 0.21 step/s
+global step 8020, epoch: 7, batch: 820, loss: 0.00057, accu: 0.99375, speed: 2.12 step/s
+global step 8030, epoch: 7, batch: 830, loss: 0.00032, accu: 0.99583, speed: 2.37 step/s
+global step 8040, epoch: 7, batch: 840, loss: 0.04887, accu: 0.99375, speed: 2.70 step/s
+global step 8050, epoch: 7, batch: 850, loss: 0.00031, accu: 0.99250, speed: 2.66 step/s
+global step 8060, epoch: 7, batch: 860, loss: 0.00029, accu: 0.99375, speed: 2.60 step/s
+global step 8070, epoch: 7, batch: 870, loss: 0.00027, accu: 0.99286, speed: 2.65 step/s
+global step 8080, epoch: 7, batch: 880, loss: 0.00024, accu: 0.99375, speed: 2.17 step/s
+global step 8090, epoch: 7, batch: 890, loss: 0.00028, accu: 0.99444, speed: 2.16 step/s
+global step 8100, epoch: 7, batch: 900, loss: 0.00028, accu: 0.99500, speed: 2.85 step/s
+eval loss: 0.42095, accu: 0.94333
+eval loss: 0.33050, accu: 0.95750
+global step 8110, epoch: 7, batch: 910, loss: 0.00034, accu: 1.00000, speed: 0.23 step/s
+global step 8120, epoch: 7, batch: 920, loss: 0.00024, accu: 1.00000, speed: 1.75 step/s
+global step 8130, epoch: 7, batch: 930, loss: 0.00020, accu: 1.00000, speed: 2.19 step/s
+global step 8140, epoch: 7, batch: 940, loss: 0.00024, accu: 0.99375, speed: 2.75 step/s
+global step 8150, epoch: 7, batch: 950, loss: 0.00039, accu: 0.99250, speed: 2.40 step/s
+global step 8160, epoch: 7, batch: 960, loss: 0.00036, accu: 0.99375, speed: 2.21 step/s
+global step 8170, epoch: 7, batch: 970, loss: 0.71402, accu: 0.99286, speed: 2.89 step/s
+global step 8180, epoch: 7, batch: 980, loss: 0.00056, accu: 0.99375, speed: 3.03 step/s
+global step 8190, epoch: 7, batch: 990, loss: 0.00156, accu: 0.99306, speed: 2.40 step/s
+global step 8200, epoch: 7, batch: 1000, loss: 0.00146, accu: 0.99375, speed: 1.91 step/s
+eval loss: 0.31835, accu: 0.95333
+eval loss: 0.28205, accu: 0.96000
+global step 8210, epoch: 7, batch: 1010, loss: 0.00072, accu: 1.00000, speed: 0.21 step/s
+global step 8220, epoch: 7, batch: 1020, loss: 0.00216, accu: 1.00000, speed: 2.19 step/s
+global step 8230, epoch: 7, batch: 1030, loss: 0.00237, accu: 0.99167, speed: 2.90 step/s
+global step 8240, epoch: 7, batch: 1040, loss: 0.00050, accu: 0.99062, speed: 3.19 step/s
+global step 8250, epoch: 7, batch: 1050, loss: 0.00084, accu: 0.99000, speed: 2.53 step/s
+global step 8260, epoch: 7, batch: 1060, loss: 0.00046, accu: 0.99167, speed: 2.86 step/s
+global step 8270, epoch: 7, batch: 1070, loss: 0.00049, accu: 0.99286, speed: 2.40 step/s
+global step 8280, epoch: 7, batch: 1080, loss: 0.00043, accu: 0.99375, speed: 2.19 step/s
+global step 8290, epoch: 7, batch: 1090, loss: 0.11099, accu: 0.99167, speed: 2.23 step/s
+global step 8300, epoch: 7, batch: 1100, loss: 0.00048, accu: 0.99250, speed: 2.70 step/s
+eval loss: 0.38708, accu: 0.94333
+eval loss: 0.32631, accu: 0.95583
+global step 8310, epoch: 7, batch: 1110, loss: 0.11864, accu: 0.97500, speed: 0.23 step/s
+global step 8320, epoch: 7, batch: 1120, loss: 0.00062, accu: 0.98750, speed: 2.19 step/s
+global step 8330, epoch: 7, batch: 1130, loss: 0.00085, accu: 0.98750, speed: 2.50 step/s
+global step 8340, epoch: 7, batch: 1140, loss: 0.00113, accu: 0.99062, speed: 2.62 step/s
+global step 8350, epoch: 7, batch: 1150, loss: 0.00118, accu: 0.99250, speed: 1.99 step/s
+global step 8360, epoch: 7, batch: 1160, loss: 0.00092, accu: 0.99375, speed: 2.16 step/s
+global step 8370, epoch: 7, batch: 1170, loss: 0.00077, accu: 0.99464, speed: 2.31 step/s
+global step 8380, epoch: 7, batch: 1180, loss: 0.00142, accu: 0.99531, speed: 2.67 step/s
+global step 8390, epoch: 7, batch: 1190, loss: 0.00072, accu: 0.99583, speed: 2.11 step/s
+global step 8400, epoch: 7, batch: 1200, loss: 0.00071, accu: 0.99625, speed: 2.84 step/s
+eval loss: 0.33446, accu: 0.95167
+eval loss: 0.26196, accu: 0.95833
+global step 8410, epoch: 8, batch: 10, loss: 0.00062, accu: 1.00000, speed: 0.24 step/s
+global step 8420, epoch: 8, batch: 20, loss: 0.00129, accu: 0.98750, speed: 2.14 step/s
+global step 8430, epoch: 8, batch: 30, loss: 0.00508, accu: 0.99167, speed: 1.87 step/s
+global step 8440, epoch: 8, batch: 40, loss: 0.00238, accu: 0.99375, speed: 1.91 step/s
+global step 8450, epoch: 8, batch: 50, loss: 0.00183, accu: 0.99500, speed: 2.35 step/s
+global step 8460, epoch: 8, batch: 60, loss: 0.00230, accu: 0.99167, speed: 2.79 step/s
+global step 8470, epoch: 8, batch: 70, loss: 0.00116, accu: 0.99286, speed: 1.93 step/s
+global step 8480, epoch: 8, batch: 80, loss: 0.00105, accu: 0.99375, speed: 2.19 step/s
+global step 8490, epoch: 8, batch: 90, loss: 0.00162, accu: 0.99444, speed: 2.28 step/s
+global step 8500, epoch: 8, batch: 100, loss: 0.00105, accu: 0.99250, speed: 2.58 step/s
+eval loss: 0.27747, accu: 0.95833
+eval loss: 0.24528, accu: 0.95917
+global step 8510, epoch: 8, batch: 110, loss: 0.00102, accu: 1.00000, speed: 0.21 step/s
+global step 8520, epoch: 8, batch: 120, loss: 0.00079, accu: 1.00000, speed: 2.51 step/s
+global step 8530, epoch: 8, batch: 130, loss: 0.00093, accu: 0.99167, speed: 3.10 step/s
+global step 8540, epoch: 8, batch: 140, loss: 0.00092, accu: 0.99375, speed: 3.10 step/s
+global step 8550, epoch: 8, batch: 150, loss: 0.00109, accu: 0.99500, speed: 2.51 step/s
+global step 8560, epoch: 8, batch: 160, loss: 0.00099, accu: 0.99583, speed: 2.21 step/s
+global step 8570, epoch: 8, batch: 170, loss: 0.00077, accu: 0.99643, speed: 2.12 step/s
+global step 8580, epoch: 8, batch: 180, loss: 0.00077, accu: 0.99687, speed: 2.34 step/s
+global step 8590, epoch: 8, batch: 190, loss: 0.00091, accu: 0.99722, speed: 2.20 step/s
+global step 8600, epoch: 8, batch: 200, loss: 0.00054, accu: 0.99750, speed: 2.32 step/s
+eval loss: 0.27574, accu: 0.95833
+eval loss: 0.25528, accu: 0.95833
+global step 8610, epoch: 8, batch: 210, loss: 0.00249, accu: 0.98750, speed: 0.23 step/s
+global step 8620, epoch: 8, batch: 220, loss: 0.00074, accu: 0.98750, speed: 2.06 step/s
+global step 8630, epoch: 8, batch: 230, loss: 0.00598, accu: 0.99167, speed: 2.39 step/s
+global step 8640, epoch: 8, batch: 240, loss: 0.00066, accu: 0.99062, speed: 2.49 step/s
+global step 8650, epoch: 8, batch: 250, loss: 0.00066, accu: 0.99250, speed: 2.55 step/s
+global step 8660, epoch: 8, batch: 260, loss: 0.08734, accu: 0.99167, speed: 2.72 step/s
+global step 8670, epoch: 8, batch: 270, loss: 0.12804, accu: 0.98750, speed: 2.10 step/s
+global step 8680, epoch: 8, batch: 280, loss: 0.00087, accu: 0.98906, speed: 2.52 step/s
+global step 8690, epoch: 8, batch: 290, loss: 0.00076, accu: 0.98889, speed: 2.41 step/s
+global step 8700, epoch: 8, batch: 300, loss: 0.00073, accu: 0.99000, speed: 2.56 step/s
+eval loss: 0.36522, accu: 0.94000
+eval loss: 0.26623, accu: 0.95667
+global step 8710, epoch: 8, batch: 310, loss: 0.22371, accu: 0.98750, speed: 0.23 step/s
+global step 8720, epoch: 8, batch: 320, loss: 0.00113, accu: 0.98750, speed: 2.44 step/s
+global step 8730, epoch: 8, batch: 330, loss: 0.00110, accu: 0.98750, speed: 2.11 step/s
+global step 8740, epoch: 8, batch: 340, loss: 0.10628, accu: 0.98125, speed: 1.98 step/s
+global step 8750, epoch: 8, batch: 350, loss: 0.00051, accu: 0.98500, speed: 2.33 step/s
+global step 8760, epoch: 8, batch: 360, loss: 0.00049, accu: 0.98750, speed: 2.19 step/s
+global step 8770, epoch: 8, batch: 370, loss: 0.00054, accu: 0.98750, speed: 2.57 step/s
+global step 8780, epoch: 8, batch: 380, loss: 0.00052, accu: 0.98906, speed: 2.46 step/s
+global step 8790, epoch: 8, batch: 390, loss: 0.00049, accu: 0.98889, speed: 1.97 step/s
+global step 8800, epoch: 8, batch: 400, loss: 0.71102, accu: 0.98875, speed: 2.70 step/s
+eval loss: 0.29792, accu: 0.95250
+eval loss: 0.23045, accu: 0.96417
+global step 8810, epoch: 8, batch: 410, loss: 0.00230, accu: 0.98750, speed: 0.21 step/s
+global step 8820, epoch: 8, batch: 420, loss: 0.00137, accu: 0.98750, speed: 2.69 step/s
+global step 8830, epoch: 8, batch: 430, loss: 0.00328, accu: 0.99167, speed: 2.58 step/s
+global step 8840, epoch: 8, batch: 440, loss: 0.00097, accu: 0.99062, speed: 2.61 step/s
+global step 8850, epoch: 8, batch: 450, loss: 0.00093, accu: 0.99250, speed: 2.99 step/s
+global step 8860, epoch: 8, batch: 460, loss: 0.00093, accu: 0.99375, speed: 2.42 step/s
+global step 8870, epoch: 8, batch: 470, loss: 0.00098, accu: 0.98929, speed: 2.26 step/s
+global step 8880, epoch: 8, batch: 480, loss: 0.00100, accu: 0.99062, speed: 2.16 step/s
+global step 8890, epoch: 8, batch: 490, loss: 0.00081, accu: 0.99028, speed: 2.43 step/s
+global step 8900, epoch: 8, batch: 500, loss: 0.00073, accu: 0.99125, speed: 2.09 step/s
+eval loss: 0.40124, accu: 0.93417
+eval loss: 0.27854, accu: 0.94917
+global step 8910, epoch: 8, batch: 510, loss: 0.00254, accu: 1.00000, speed: 0.23 step/s
+global step 8920, epoch: 8, batch: 520, loss: 0.00067, accu: 1.00000, speed: 2.72 step/s
+global step 8930, epoch: 8, batch: 530, loss: 0.00064, accu: 0.99583, speed: 1.94 step/s
+global step 8940, epoch: 8, batch: 540, loss: 0.00080, accu: 0.99687, speed: 2.52 step/s
+global step 8950, epoch: 8, batch: 550, loss: 0.00064, accu: 0.99250, speed: 2.40 step/s
+global step 8960, epoch: 8, batch: 560, loss: 0.00077, accu: 0.99167, speed: 2.28 step/s
+global step 8970, epoch: 8, batch: 570, loss: 0.00067, accu: 0.99286, speed: 2.66 step/s
+global step 8980, epoch: 8, batch: 580, loss: 0.00078, accu: 0.99219, speed: 2.29 step/s
+global step 8990, epoch: 8, batch: 590, loss: 0.00053, accu: 0.99306, speed: 3.31 step/s
+global step 9000, epoch: 8, batch: 600, loss: 0.10719, accu: 0.99250, speed: 2.16 step/s
+eval loss: 0.32734, accu: 0.94917
+eval loss: 0.27108, accu: 0.95833
+global step 9010, epoch: 8, batch: 610, loss: 0.00060, accu: 0.97500, speed: 0.23 step/s
+global step 9020, epoch: 8, batch: 620, loss: 0.00092, accu: 0.98750, speed: 2.25 step/s
+global step 9030, epoch: 8, batch: 630, loss: 0.00077, accu: 0.99167, speed: 2.48 step/s
+global step 9040, epoch: 8, batch: 640, loss: 0.00101, accu: 0.99375, speed: 2.24 step/s
+global step 9050, epoch: 8, batch: 650, loss: 0.00077, accu: 0.99500, speed: 2.49 step/s
+global step 9060, epoch: 8, batch: 660, loss: 0.00064, accu: 0.99583, speed: 3.12 step/s
+global step 9070, epoch: 8, batch: 670, loss: 0.00075, accu: 0.99643, speed: 2.96 step/s
+global step 9080, epoch: 8, batch: 680, loss: 0.00057, accu: 0.99687, speed: 2.35 step/s
+global step 9090, epoch: 8, batch: 690, loss: 0.00079, accu: 0.99722, speed: 2.45 step/s
+global step 9100, epoch: 8, batch: 700, loss: 0.00051, accu: 0.99625, speed: 2.39 step/s
+eval loss: 0.34317, accu: 0.94500
+eval loss: 0.26144, accu: 0.96000
+global step 9110, epoch: 8, batch: 710, loss: 0.00084, accu: 0.97500, speed: 0.21 step/s
+global step 9120, epoch: 8, batch: 720, loss: 0.00044, accu: 0.98750, speed: 2.57 step/s
+global step 9130, epoch: 8, batch: 730, loss: 0.00040, accu: 0.99167, speed: 2.66 step/s
+global step 9140, epoch: 8, batch: 740, loss: 0.00042, accu: 0.99375, speed: 2.30 step/s
+global step 9150, epoch: 8, batch: 750, loss: 0.00037, accu: 0.99250, speed: 2.16 step/s
+global step 9160, epoch: 8, batch: 760, loss: 0.00047, accu: 0.99375, speed: 2.70 step/s
+global step 9170, epoch: 8, batch: 770, loss: 0.01745, accu: 0.99464, speed: 2.64 step/s
+global step 9180, epoch: 8, batch: 780, loss: 0.00052, accu: 0.99531, speed: 2.23 step/s
+global step 9190, epoch: 8, batch: 790, loss: 0.00031, accu: 0.99583, speed: 2.13 step/s
+global step 9200, epoch: 8, batch: 800, loss: 0.00026, accu: 0.99625, speed: 2.69 step/s
+eval loss: 0.33054, accu: 0.95417
+eval loss: 0.29451, accu: 0.95583
+global step 9210, epoch: 8, batch: 810, loss: 0.31981, accu: 0.97500, speed: 0.23 step/s
+global step 9220, epoch: 8, batch: 820, loss: 0.00035, accu: 0.98750, speed: 2.07 step/s
+global step 9230, epoch: 8, batch: 830, loss: 0.00033, accu: 0.99167, speed: 2.36 step/s
+global step 9240, epoch: 8, batch: 840, loss: 0.06360, accu: 0.99062, speed: 2.70 step/s
+global step 9250, epoch: 8, batch: 850, loss: 0.00034, accu: 0.99250, speed: 2.68 step/s
+global step 9260, epoch: 8, batch: 860, loss: 0.00024, accu: 0.99375, speed: 2.61 step/s
+global step 9270, epoch: 8, batch: 870, loss: 0.00022, accu: 0.99286, speed: 2.65 step/s
+global step 9280, epoch: 8, batch: 880, loss: 0.00022, accu: 0.99375, speed: 2.16 step/s
+global step 9290, epoch: 8, batch: 890, loss: 0.00030, accu: 0.99306, speed: 2.16 step/s
+global step 9300, epoch: 8, batch: 900, loss: 0.00032, accu: 0.99375, speed: 2.85 step/s
+eval loss: 0.40286, accu: 0.93917
+eval loss: 0.29943, accu: 0.95583
+global step 9310, epoch: 8, batch: 910, loss: 0.00039, accu: 1.00000, speed: 0.23 step/s
+global step 9320, epoch: 8, batch: 920, loss: 0.00029, accu: 1.00000, speed: 1.76 step/s
+global step 9330, epoch: 8, batch: 930, loss: 0.00039, accu: 1.00000, speed: 2.19 step/s
+global step 9340, epoch: 8, batch: 940, loss: 0.00035, accu: 0.99687, speed: 2.76 step/s
+global step 9350, epoch: 8, batch: 950, loss: 0.00052, accu: 0.99500, speed: 2.41 step/s
+global step 9360, epoch: 8, batch: 960, loss: 0.00051, accu: 0.99583, speed: 2.23 step/s
+global step 9370, epoch: 8, batch: 970, loss: 0.46333, accu: 0.99464, speed: 2.87 step/s
+global step 9380, epoch: 8, batch: 980, loss: 0.00048, accu: 0.99531, speed: 2.95 step/s
+global step 9390, epoch: 8, batch: 990, loss: 0.00047, accu: 0.99583, speed: 2.40 step/s
+global step 9400, epoch: 8, batch: 1000, loss: 0.00043, accu: 0.99625, speed: 1.91 step/s
+eval loss: 0.30049, accu: 0.95167
+eval loss: 0.27968, accu: 0.95917
+global step 9410, epoch: 8, batch: 1010, loss: 0.00055, accu: 1.00000, speed: 0.21 step/s
+global step 9420, epoch: 8, batch: 1020, loss: 0.00124, accu: 1.00000, speed: 2.20 step/s
+global step 9430, epoch: 8, batch: 1030, loss: 0.00125, accu: 0.99167, speed: 2.90 step/s
+global step 9440, epoch: 8, batch: 1040, loss: 0.00039, accu: 0.99375, speed: 3.18 step/s
+global step 9450, epoch: 8, batch: 1050, loss: 0.00052, accu: 0.99500, speed: 2.57 step/s
+global step 9460, epoch: 8, batch: 1060, loss: 0.00034, accu: 0.99583, speed: 2.86 step/s
+global step 9470, epoch: 8, batch: 1070, loss: 0.00037, accu: 0.99643, speed: 2.41 step/s
+global step 9480, epoch: 8, batch: 1080, loss: 0.00028, accu: 0.99687, speed: 2.20 step/s
+global step 9490, epoch: 8, batch: 1090, loss: 0.10028, accu: 0.99444, speed: 2.24 step/s
+global step 9500, epoch: 8, batch: 1100, loss: 0.00033, accu: 0.99500, speed: 2.72 step/s
+eval loss: 0.31768, accu: 0.95750
+eval loss: 0.27868, accu: 0.96167
+global step 9510, epoch: 8, batch: 1110, loss: 0.00038, accu: 0.98750, speed: 0.21 step/s
+global step 9520, epoch: 8, batch: 1120, loss: 0.00028, accu: 0.99375, speed: 2.20 step/s
+global step 9530, epoch: 8, batch: 1130, loss: 0.00037, accu: 0.99167, speed: 2.51 step/s
+global step 9540, epoch: 8, batch: 1140, loss: 0.00036, accu: 0.99375, speed: 2.62 step/s
+global step 9550, epoch: 8, batch: 1150, loss: 0.00168, accu: 0.99500, speed: 1.99 step/s
+global step 9560, epoch: 8, batch: 1160, loss: 0.00052, accu: 0.99583, speed: 2.16 step/s
+global step 9570, epoch: 8, batch: 1170, loss: 0.00041, accu: 0.99643, speed: 2.31 step/s
+global step 9580, epoch: 8, batch: 1180, loss: 0.00045, accu: 0.99687, speed: 2.67 step/s
+global step 9590, epoch: 8, batch: 1190, loss: 0.00047, accu: 0.99722, speed: 2.10 step/s
+global step 9600, epoch: 8, batch: 1200, loss: 0.00042, accu: 0.99750, speed: 2.84 step/s
+eval loss: 0.29140, accu: 0.95667
+eval loss: 0.25382, accu: 0.96083
+global step 9610, epoch: 9, batch: 10, loss: 0.00138, accu: 1.00000, speed: 0.21 step/s
+global step 9620, epoch: 9, batch: 20, loss: 0.02127, accu: 0.99375, speed: 2.15 step/s
+global step 9630, epoch: 9, batch: 30, loss: 0.02331, accu: 0.99583, speed: 1.88 step/s
+global step 9640, epoch: 9, batch: 40, loss: 0.00055, accu: 0.99687, speed: 1.93 step/s
+global step 9650, epoch: 9, batch: 50, loss: 0.00041, accu: 0.99750, speed: 2.35 step/s
+global step 9660, epoch: 9, batch: 60, loss: 0.00044, accu: 0.99583, speed: 2.78 step/s
+global step 9670, epoch: 9, batch: 70, loss: 0.00041, accu: 0.99643, speed: 1.93 step/s
+global step 9680, epoch: 9, batch: 80, loss: 0.00035, accu: 0.99687, speed: 2.19 step/s
+global step 9690, epoch: 9, batch: 90, loss: 0.00035, accu: 0.99722, speed: 2.28 step/s
+global step 9700, epoch: 9, batch: 100, loss: 0.00165, accu: 0.99625, speed: 2.56 step/s
+eval loss: 0.30023, accu: 0.95833
+eval loss: 0.26307, accu: 0.96083
+global step 9710, epoch: 9, batch: 110, loss: 0.00033, accu: 1.00000, speed: 0.21 step/s
+global step 9720, epoch: 9, batch: 120, loss: 0.00030, accu: 1.00000, speed: 2.51 step/s
+global step 9730, epoch: 9, batch: 130, loss: 0.00033, accu: 0.99583, speed: 3.04 step/s
+global step 9740, epoch: 9, batch: 140, loss: 0.00046, accu: 0.99687, speed: 3.08 step/s
+global step 9750, epoch: 9, batch: 150, loss: 0.00047, accu: 0.99750, speed: 2.51 step/s
+global step 9760, epoch: 9, batch: 160, loss: 0.00055, accu: 0.99792, speed: 2.21 step/s
+global step 9770, epoch: 9, batch: 170, loss: 0.00040, accu: 0.99821, speed: 2.12 step/s
+global step 9780, epoch: 9, batch: 180, loss: 0.00041, accu: 0.99844, speed: 2.35 step/s
+global step 9790, epoch: 9, batch: 190, loss: 0.00682, accu: 0.99861, speed: 2.20 step/s
+global step 9800, epoch: 9, batch: 200, loss: 0.00033, accu: 0.99875, speed: 2.40 step/s
+eval loss: 0.34680, accu: 0.95250
+eval loss: 0.28853, accu: 0.95833
+global step 9810, epoch: 9, batch: 210, loss: 0.00041, accu: 0.98750, speed: 0.23 step/s
+global step 9820, epoch: 9, batch: 220, loss: 0.00040, accu: 0.99375, speed: 2.06 step/s
+global step 9830, epoch: 9, batch: 230, loss: 0.00039, accu: 0.99583, speed: 2.41 step/s
+global step 9840, epoch: 9, batch: 240, loss: 0.00046, accu: 0.99375, speed: 2.49 step/s
+global step 9850, epoch: 9, batch: 250, loss: 0.00292, accu: 0.99500, speed: 2.57 step/s
+global step 9860, epoch: 9, batch: 260, loss: 0.07062, accu: 0.99583, speed: 2.73 step/s
+global step 9870, epoch: 9, batch: 270, loss: 0.07184, accu: 0.99643, speed: 2.11 step/s
+global step 9880, epoch: 9, batch: 280, loss: 0.00037, accu: 0.99687, speed: 2.52 step/s
+global step 9890, epoch: 9, batch: 290, loss: 0.00036, accu: 0.99583, speed: 2.40 step/s
+global step 9900, epoch: 9, batch: 300, loss: 0.00041, accu: 0.99625, speed: 2.53 step/s
+eval loss: 0.38743, accu: 0.94750
+eval loss: 0.29226, accu: 0.96250
+global step 9910, epoch: 9, batch: 310, loss: 0.12992, accu: 0.97500, speed: 0.21 step/s
+global step 9920, epoch: 9, batch: 320, loss: 0.00035, accu: 0.98125, speed: 2.44 step/s
+global step 9930, epoch: 9, batch: 330, loss: 0.00038, accu: 0.98333, speed: 2.11 step/s
+global step 9940, epoch: 9, batch: 340, loss: 0.10158, accu: 0.97500, speed: 1.98 step/s
+global step 9950, epoch: 9, batch: 350, loss: 0.00042, accu: 0.98000, speed: 2.32 step/s
+global step 9960, epoch: 9, batch: 360, loss: 0.00041, accu: 0.98333, speed: 2.20 step/s
+global step 9970, epoch: 9, batch: 370, loss: 0.00038, accu: 0.98571, speed: 2.58 step/s
+global step 9980, epoch: 9, batch: 380, loss: 0.00047, accu: 0.98750, speed: 2.46 step/s
+global step 9990, epoch: 9, batch: 390, loss: 0.00049, accu: 0.98750, speed: 2.00 step/s
+global step 10000, epoch: 9, batch: 400, loss: 0.00048, accu: 0.98875, speed: 2.70 step/s
+eval loss: 0.33202, accu: 0.94917
+eval loss: 0.24481, accu: 0.96250
+global step 10010, epoch: 9, batch: 410, loss: 0.00062, accu: 0.98750, speed: 0.21 step/s
+global step 10020, epoch: 9, batch: 420, loss: 0.00153, accu: 0.98125, speed: 2.77 step/s
+global step 10030, epoch: 9, batch: 430, loss: 0.00076, accu: 0.98750, speed: 2.59 step/s
+global step 10040, epoch: 9, batch: 440, loss: 0.00084, accu: 0.99062, speed: 2.62 step/s
+global step 10050, epoch: 9, batch: 450, loss: 0.00089, accu: 0.99250, speed: 3.00 step/s
+global step 10060, epoch: 9, batch: 460, loss: 0.00096, accu: 0.99375, speed: 2.44 step/s
+global step 10070, epoch: 9, batch: 470, loss: 0.00061, accu: 0.99107, speed: 2.27 step/s
+global step 10080, epoch: 9, batch: 480, loss: 0.00171, accu: 0.99219, speed: 2.16 step/s
+global step 10090, epoch: 9, batch: 490, loss: 0.00045, accu: 0.99167, speed: 2.43 step/s
+global step 10100, epoch: 9, batch: 500, loss: 0.00050, accu: 0.99250, speed: 2.10 step/s
+eval loss: 0.32578, accu: 0.95167
+eval loss: 0.23698, accu: 0.96333
+global step 10110, epoch: 9, batch: 510, loss: 0.00104, accu: 1.00000, speed: 0.21 step/s
+global step 10120, epoch: 9, batch: 520, loss: 0.00044, accu: 1.00000, speed: 2.73 step/s
+global step 10130, epoch: 9, batch: 530, loss: 0.00048, accu: 1.00000, speed: 1.94 step/s
+global step 10140, epoch: 9, batch: 540, loss: 0.00038, accu: 1.00000, speed: 2.53 step/s
+global step 10150, epoch: 9, batch: 550, loss: 0.00043, accu: 0.99750, speed: 2.40 step/s
+global step 10160, epoch: 9, batch: 560, loss: 0.00038, accu: 0.99792, speed: 2.29 step/s
+global step 10170, epoch: 9, batch: 570, loss: 0.00039, accu: 0.99821, speed: 2.65 step/s
+global step 10180, epoch: 9, batch: 580, loss: 0.00047, accu: 0.99844, speed: 2.33 step/s
+global step 10190, epoch: 9, batch: 590, loss: 0.00035, accu: 0.99861, speed: 3.38 step/s
+global step 10200, epoch: 9, batch: 600, loss: 0.24059, accu: 0.99750, speed: 2.17 step/s
+eval loss: 0.37642, accu: 0.94667
+eval loss: 0.26618, accu: 0.96167
+global step 10210, epoch: 9, batch: 610, loss: 0.00028, accu: 0.97500, speed: 0.21 step/s
+global step 10220, epoch: 9, batch: 620, loss: 0.00035, accu: 0.98750, speed: 2.27 step/s
+global step 10230, epoch: 9, batch: 630, loss: 0.00038, accu: 0.99167, speed: 2.49 step/s
+global step 10240, epoch: 9, batch: 640, loss: 0.00031, accu: 0.99375, speed: 2.24 step/s
+global step 10250, epoch: 9, batch: 650, loss: 0.00033, accu: 0.99500, speed: 2.51 step/s
+global step 10260, epoch: 9, batch: 660, loss: 0.00029, accu: 0.99583, speed: 3.08 step/s
+global step 10270, epoch: 9, batch: 670, loss: 0.00031, accu: 0.99643, speed: 2.96 step/s
+global step 10280, epoch: 9, batch: 680, loss: 0.00026, accu: 0.99687, speed: 2.35 step/s
+global step 10290, epoch: 9, batch: 690, loss: 0.00025, accu: 0.99722, speed: 2.45 step/s
+global step 10300, epoch: 9, batch: 700, loss: 0.00023, accu: 0.99750, speed: 2.40 step/s
+eval loss: 0.39343, accu: 0.94750
+eval loss: 0.27528, accu: 0.96250
+global step 10310, epoch: 9, batch: 710, loss: 0.00024, accu: 0.97500, speed: 0.21 step/s
+global step 10320, epoch: 9, batch: 720, loss: 0.00024, accu: 0.98750, speed: 2.57 step/s
+global step 10330, epoch: 9, batch: 730, loss: 0.00022, accu: 0.99167, speed: 2.65 step/s
+global step 10340, epoch: 9, batch: 740, loss: 0.00022, accu: 0.99375, speed: 2.32 step/s
+global step 10350, epoch: 9, batch: 750, loss: 0.00024, accu: 0.99250, speed: 2.18 step/s
+global step 10360, epoch: 9, batch: 760, loss: 0.00028, accu: 0.99375, speed: 2.70 step/s
+global step 10370, epoch: 9, batch: 770, loss: 0.00022, accu: 0.99464, speed: 2.63 step/s
+global step 10380, epoch: 9, batch: 780, loss: 0.05960, accu: 0.99531, speed: 2.27 step/s
+global step 10390, epoch: 9, batch: 790, loss: 0.00019, accu: 0.99583, speed: 2.13 step/s
+global step 10400, epoch: 9, batch: 800, loss: 0.00020, accu: 0.99625, speed: 2.69 step/s
+eval loss: 0.41216, accu: 0.94833
+eval loss: 0.28749, accu: 0.96250
+global step 10410, epoch: 9, batch: 810, loss: 0.07829, accu: 1.00000, speed: 0.21 step/s
+global step 10420, epoch: 9, batch: 820, loss: 0.00019, accu: 1.00000, speed: 2.11 step/s
+global step 10430, epoch: 9, batch: 830, loss: 0.00019, accu: 1.00000, speed: 2.36 step/s
+global step 10440, epoch: 9, batch: 840, loss: 0.34950, accu: 0.99375, speed: 2.62 step/s
+global step 10450, epoch: 9, batch: 850, loss: 0.00018, accu: 0.99500, speed: 2.68 step/s
+global step 10460, epoch: 9, batch: 860, loss: 0.00019, accu: 0.99375, speed: 2.60 step/s
+global step 10470, epoch: 9, batch: 870, loss: 0.00021, accu: 0.99286, speed: 2.65 step/s
+global step 10480, epoch: 9, batch: 880, loss: 0.00021, accu: 0.99375, speed: 2.17 step/s
+global step 10490, epoch: 9, batch: 890, loss: 0.00021, accu: 0.99444, speed: 2.17 step/s
+global step 10500, epoch: 9, batch: 900, loss: 0.00030, accu: 0.99500, speed: 2.86 step/s
+eval loss: 0.37583, accu: 0.94667
+eval loss: 0.27576, accu: 0.96083
+global step 10510, epoch: 9, batch: 910, loss: 0.00024, accu: 1.00000, speed: 0.21 step/s
+global step 10520, epoch: 9, batch: 920, loss: 0.00027, accu: 1.00000, speed: 1.76 step/s
+global step 10530, epoch: 9, batch: 930, loss: 0.00021, accu: 1.00000, speed: 2.20 step/s
+global step 10540, epoch: 9, batch: 940, loss: 0.00026, accu: 0.99687, speed: 2.78 step/s
+global step 10550, epoch: 9, batch: 950, loss: 0.00024, accu: 0.99500, speed: 2.41 step/s
+global step 10560, epoch: 9, batch: 960, loss: 0.00025, accu: 0.99583, speed: 2.23 step/s
+global step 10570, epoch: 9, batch: 970, loss: 0.11142, accu: 0.99464, speed: 2.89 step/s
+global step 10580, epoch: 9, batch: 980, loss: 0.00035, accu: 0.99531, speed: 3.03 step/s
+global step 10590, epoch: 9, batch: 990, loss: 0.00032, accu: 0.99583, speed: 2.41 step/s
+global step 10600, epoch: 9, batch: 1000, loss: 0.00027, accu: 0.99625, speed: 1.91 step/s
+eval loss: 0.37903, accu: 0.94833
+eval loss: 0.27534, accu: 0.96083
+global step 10610, epoch: 9, batch: 1010, loss: 0.00024, accu: 1.00000, speed: 0.21 step/s
+global step 10620, epoch: 9, batch: 1020, loss: 0.00030, accu: 1.00000, speed: 2.15 step/s
+global step 10630, epoch: 9, batch: 1030, loss: 0.00034, accu: 0.99167, speed: 2.92 step/s
+global step 10640, epoch: 9, batch: 1040, loss: 0.00025, accu: 0.99375, speed: 3.19 step/s
+global step 10650, epoch: 9, batch: 1050, loss: 0.00026, accu: 0.99500, speed: 2.56 step/s
+global step 10660, epoch: 9, batch: 1060, loss: 0.00023, accu: 0.99583, speed: 2.86 step/s
+global step 10670, epoch: 9, batch: 1070, loss: 0.00021, accu: 0.99643, speed: 2.40 step/s
+global step 10680, epoch: 9, batch: 1080, loss: 0.00021, accu: 0.99687, speed: 2.20 step/s
+global step 10690, epoch: 9, batch: 1090, loss: 0.10002, accu: 0.99444, speed: 2.24 step/s
+global step 10700, epoch: 9, batch: 1100, loss: 0.00023, accu: 0.99500, speed: 2.72 step/s
+eval loss: 0.38825, accu: 0.94833
+eval loss: 0.27999, accu: 0.96083
+global step 10710, epoch: 9, batch: 1110, loss: 0.00022, accu: 0.98750, speed: 0.21 step/s
+global step 10720, epoch: 9, batch: 1120, loss: 0.00019, accu: 0.99375, speed: 2.20 step/s
+global step 10730, epoch: 9, batch: 1130, loss: 0.00026, accu: 0.99167, speed: 2.50 step/s
+global step 10740, epoch: 9, batch: 1140, loss: 0.00047, accu: 0.99062, speed: 2.62 step/s
+global step 10750, epoch: 9, batch: 1150, loss: 0.00028, accu: 0.99250, speed: 2.00 step/s
+global step 10760, epoch: 9, batch: 1160, loss: 0.00031, accu: 0.99375, speed: 2.17 step/s
+global step 10770, epoch: 9, batch: 1170, loss: 0.00025, accu: 0.99286, speed: 2.32 step/s
+global step 10780, epoch: 9, batch: 1180, loss: 0.00028, accu: 0.99375, speed: 2.59 step/s
+global step 10790, epoch: 9, batch: 1190, loss: 0.00028, accu: 0.99444, speed: 2.11 step/s
+global step 10800, epoch: 9, batch: 1200, loss: 0.00024, accu: 0.99500, speed: 2.85 step/s
+eval loss: 0.36171, accu: 0.95167
+eval loss: 0.27106, accu: 0.95917
+global step 10810, epoch: 10, batch: 10, loss: 0.00030, accu: 1.00000, speed: 0.21 step/s
+global step 10820, epoch: 10, batch: 20, loss: 0.00024, accu: 1.00000, speed: 2.15 step/s
+global step 10830, epoch: 10, batch: 30, loss: 0.05682, accu: 0.99583, speed: 1.88 step/s
+global step 10840, epoch: 10, batch: 40, loss: 0.00128, accu: 0.99687, speed: 1.93 step/s
+global step 10850, epoch: 10, batch: 50, loss: 0.00028, accu: 0.99750, speed: 2.36 step/s
+global step 10860, epoch: 10, batch: 60, loss: 0.00026, accu: 0.99375, speed: 2.78 step/s
+global step 10870, epoch: 10, batch: 70, loss: 0.00025, accu: 0.99464, speed: 1.93 step/s
+global step 10880, epoch: 10, batch: 80, loss: 0.00026, accu: 0.99531, speed: 2.20 step/s
+global step 10890, epoch: 10, batch: 90, loss: 0.00025, accu: 0.99583, speed: 2.28 step/s
+global step 10900, epoch: 10, batch: 100, loss: 0.00052, accu: 0.99500, speed: 2.57 step/s
+eval loss: 0.34513, accu: 0.95417
+eval loss: 0.26724, accu: 0.96250
+global step 10910, epoch: 10, batch: 110, loss: 0.00026, accu: 1.00000, speed: 0.21 step/s
+global step 10920, epoch: 10, batch: 120, loss: 0.00027, accu: 1.00000, speed: 2.51 step/s
+global step 10930, epoch: 10, batch: 130, loss: 0.00023, accu: 0.99167, speed: 3.08 step/s
+global step 10940, epoch: 10, batch: 140, loss: 0.00023, accu: 0.99375, speed: 3.08 step/s
+global step 10950, epoch: 10, batch: 150, loss: 0.00024, accu: 0.99500, speed: 2.51 step/s
+global step 10960, epoch: 10, batch: 160, loss: 0.00021, accu: 0.99583, speed: 2.19 step/s
+global step 10970, epoch: 10, batch: 170, loss: 0.00019, accu: 0.99643, speed: 2.12 step/s
+global step 10980, epoch: 10, batch: 180, loss: 0.00020, accu: 0.99687, speed: 2.35 step/s
+global step 10990, epoch: 10, batch: 190, loss: 0.00026, accu: 0.99722, speed: 2.21 step/s
+global step 11000, epoch: 10, batch: 200, loss: 0.00022, accu: 0.99750, speed: 2.39 step/s
+eval loss: 0.35533, accu: 0.95417
+eval loss: 0.27846, accu: 0.96250
+global step 11010, epoch: 10, batch: 210, loss: 0.00039, accu: 0.98750, speed: 0.21 step/s
+global step 11020, epoch: 10, batch: 220, loss: 0.00024, accu: 0.99375, speed: 2.06 step/s
+global step 11030, epoch: 10, batch: 230, loss: 0.00020, accu: 0.99167, speed: 2.41 step/s
+global step 11040, epoch: 10, batch: 240, loss: 0.00022, accu: 0.99062, speed: 2.50 step/s
+global step 11050, epoch: 10, batch: 250, loss: 0.00022, accu: 0.99250, speed: 2.57 step/s
+global step 11060, epoch: 10, batch: 260, loss: 0.09743, accu: 0.99167, speed: 2.73 step/s
+global step 11070, epoch: 10, batch: 270, loss: 0.08278, accu: 0.99286, speed: 2.11 step/s
+global step 11080, epoch: 10, batch: 280, loss: 0.00021, accu: 0.99375, speed: 2.52 step/s
+global step 11090, epoch: 10, batch: 290, loss: 0.00022, accu: 0.99306, speed: 2.41 step/s
+global step 11100, epoch: 10, batch: 300, loss: 0.00019, accu: 0.99375, speed: 2.57 step/s
+eval loss: 0.36257, accu: 0.95167
+eval loss: 0.28153, accu: 0.96250
+global step 11110, epoch: 10, batch: 310, loss: 0.02361, accu: 1.00000, speed: 0.21 step/s
+global step 11120, epoch: 10, batch: 320, loss: 0.00021, accu: 1.00000, speed: 2.45 step/s
+global step 11130, epoch: 10, batch: 330, loss: 0.00022, accu: 0.99583, speed: 2.08 step/s
+global step 11140, epoch: 10, batch: 340, loss: 0.08441, accu: 0.98750, speed: 1.98 step/s
+global step 11150, epoch: 10, batch: 350, loss: 0.00020, accu: 0.99000, speed: 2.33 step/s
+global step 11160, epoch: 10, batch: 360, loss: 0.00018, accu: 0.99167, speed: 2.19 step/s
+global step 11170, epoch: 10, batch: 370, loss: 0.00018, accu: 0.99286, speed: 2.57 step/s
+global step 11180, epoch: 10, batch: 380, loss: 0.00018, accu: 0.99375, speed: 2.46 step/s
+global step 11190, epoch: 10, batch: 390, loss: 0.00017, accu: 0.99306, speed: 1.99 step/s
+global step 11200, epoch: 10, batch: 400, loss: 0.00017, accu: 0.99375, speed: 2.70 step/s
+eval loss: 0.38285, accu: 0.95417
+eval loss: 0.29538, accu: 0.96250
+global step 11210, epoch: 10, batch: 410, loss: 0.00018, accu: 1.00000, speed: 0.21 step/s
+global step 11220, epoch: 10, batch: 420, loss: 0.00019, accu: 0.98750, speed: 2.77 step/s
+global step 11230, epoch: 10, batch: 430, loss: 0.00017, accu: 0.99167, speed: 2.59 step/s
+global step 11240, epoch: 10, batch: 440, loss: 0.00017, accu: 0.99375, speed: 2.62 step/s
+global step 11250, epoch: 10, batch: 450, loss: 0.00015, accu: 0.99500, speed: 2.99 step/s
+global step 11260, epoch: 10, batch: 460, loss: 0.00017, accu: 0.99583, speed: 2.44 step/s
+global step 11270, epoch: 10, batch: 470, loss: 0.00015, accu: 0.99464, speed: 2.27 step/s
+global step 11280, epoch: 10, batch: 480, loss: 0.00017, accu: 0.99531, speed: 2.14 step/s
+global step 11290, epoch: 10, batch: 490, loss: 0.00016, accu: 0.99444, speed: 2.43 step/s
+global step 11300, epoch: 10, batch: 500, loss: 0.00017, accu: 0.99500, speed: 2.10 step/s
+eval loss: 0.38101, accu: 0.95333
+eval loss: 0.29585, accu: 0.96333
+global step 11310, epoch: 10, batch: 510, loss: 0.00021, accu: 1.00000, speed: 0.21 step/s
+global step 11320, epoch: 10, batch: 520, loss: 0.00016, accu: 1.00000, speed: 2.73 step/s
+global step 11330, epoch: 10, batch: 530, loss: 0.00015, accu: 0.99583, speed: 1.95 step/s
+global step 11340, epoch: 10, batch: 540, loss: 0.00016, accu: 0.99687, speed: 2.52 step/s
+global step 11350, epoch: 10, batch: 550, loss: 0.00014, accu: 0.99500, speed: 2.41 step/s
+global step 11360, epoch: 10, batch: 560, loss: 0.00016, accu: 0.99583, speed: 2.29 step/s
+global step 11370, epoch: 10, batch: 570, loss: 0.00016, accu: 0.99643, speed: 2.65 step/s
+global step 11380, epoch: 10, batch: 580, loss: 0.00017, accu: 0.99687, speed: 2.33 step/s
+global step 11390, epoch: 10, batch: 590, loss: 0.00017, accu: 0.99722, speed: 3.36 step/s
+global step 11400, epoch: 10, batch: 600, loss: 0.11929, accu: 0.99625, speed: 2.16 step/s

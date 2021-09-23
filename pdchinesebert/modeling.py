@@ -76,11 +76,9 @@ class ChineseBertPretrainedModel(PretrainedModel):
 
     pretrained_resource_files_map = {
         "model_state": {
-            "ChineseBERT-base": "E:\code\Code-NLP\ChineseBERT\ChineseBERT-base\chinesebert-base.pdparams",
+            "ChineseBERT-base": "E:/ChineseBERT/ChineseBERT_paddle/ChineseBERT-base/chinesebert-base.pdparams",
             # "ChineseBERT-large": "/home/aistudio/data/data106015/ChineseBERT-large-paddle/chinesebert-large.pdparams",
-            # "ChineseBERT-large": "E:/code/Code-NLP/ChineseBERT/ChineseBERT-large-paddle/chinesebert-large.pdparams",
-            # "ChineseBERT-large": "E:/code/Code-NLP/chinesebert-code/ChineseBERT-large/chinesebert-large.pdparams",
-            "ChineseBERT-large": "E:\code\Code-NLP\ChineseBERT\ChineseBERT-large-paddle\model_state.pdparams",
+            "ChineseBERT-large": "/home/aistudio/data/data109231/model_state.pdparams",
         }
     }
 

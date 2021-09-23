@@ -2,3 +2,4 @@
 *.py[cod]
 *.zip
 __pycache__
+*.pkl

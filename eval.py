@@ -1,55 +1,59 @@
 import paddle
-import paddlenlp
-from paddlenlp.transformers.bert.modeling import *
-from paddlenlp.transformers.bert.tokenizer import *
-import numpy as np
-from modeling import GlyceBertModel, GlyceBertForSequenceClassification
 
+from args import parse_args
+from dataset_cmrc2018 import get_dev_dataloader
+from train_cmrc2018 import MODEL_CLASSES
+from tqdm.auto import tqdm
+from metric import compute_prediction
+from utils import save_json
+import os
 
-paddle_model_name = "./ChineseBERT-base"
+@paddle.no_grad()
+def evaluate(model, data_loader, args, output_dir="./"):
+    model.eval()
+    all_start_logits = []
+    all_end_logits = []
 
+    for batch in tqdm(data_loader):
+        input_ids, token_type_ids,pinyin_ids = batch
+        start_logits_tensor, end_logits_tensor = model(input_ids, token_type_ids=token_type_ids,pinyin_ids=pinyin_ids)
+        all_start_logits.extend(start_logits_tensor.numpy().tolist())
+        all_end_logits.extend(end_logits_tensor.numpy().tolist())
 
-paddle_model = GlyceBertModel.from_pretrained(paddle_model_name)
+    all_predictions, all_nbest_json, scores_diff_json = compute_prediction(
+        data_loader.dataset.data,
+        data_loader.dataset.new_data,
+        (all_start_logits, all_end_logits),
+        False,
+        args.n_best_size,
+        args.max_answer_length,
+        args.null_score_diff_threshold,
+    )
 
-# paddle_model = GlyceBertForSequenceClassification(paddle_model)
-# print(paddle_model)
-# #print(paddle_model.parameters())
-# exit()
+    save_json(all_predictions, os.path.join(output_dir, "all_predictions.json"))
+    if args.save_nbest_json:
+        save_json(all_nbest_json, os.path.join(output_dir, "all_nbest_json.json"))
 
+def main(args):
+    print(args)
+    paddle.set_device(args.device)
+    model_class, tokenizer_class = MODEL_CLASSES[
+        args.model_type
+    ]
+    model = model_class.from_pretrained(args.model_name_or_path)
+    tokenizer = tokenizer_class.from_pretrained(args.model_name_or_path)
 
+    splits = "test"
+    dev_data_loader = get_dev_dataloader(tokenizer, args, splits=splits)
+    evaluate(model, dev_data_loader, args, output_dir=args.output_dir)
 
-from datasets.bert_dataset1 import BertDataset
-
-
-
-tokenizer = BertDataset("E:/ChineseBERT/ChineseBERT_paddle/ChineseBERT-base")
-
-sentence = '我喜欢猫'
-
-input_ids, pinyin_ids = tokenizer.tokenize_sentence(sentence)
-length = input_ids.shape[0]
-
-input_ids = paddle.reshape(input_ids,[1,length])
-pinyin_ids = paddle.reshape(pinyin_ids,[1, length, 8])
-
-paddle_model.eval()
-
-# print(paddle_model)
-
-
-
-# paddle_inputs = paddle_tokenizer(text)
-# paddle_inputs = {k:paddle.to_tensor([v]) for (k, v) in paddle_inputs.items()}
-# # print(paddle_inputs)
-paddle_outputs = paddle_model(input_ids,pinyin_ids)
-
-paddle_logits = paddle_outputs[0]
-paddle_array = paddle_logits.numpy()
-print("paddle_prediction_logits shape:{}".format(paddle_array.shape))
-print("paddle_prediction_logits:{}".format(paddle_array))
-
-
-# the output logits should have the same shape
-# assert torch_array.shape == paddle_array.shape, "the output logits should have the same shape, but got : {} and {} instead".format(torch_array.shape, paddle_array.shape)
-# diff = torch_array - paddle_array
-# print(np.amax(abs(diff)))
+    data_dir  = args.data_dir
+    dev_ground_truth_file_path = os.path.join(data_dir,"dev.json")
+    dev_predict_file_path = os.path.join(args.output_dir,"all_predictions.json")
+    if splits == "dev":
+        from cmrc_evaluate import get_result
+        get_result(dev_ground_truth_file_path,dev_predict_file_path)
+        
+if __name__ == "__main__":
+    args = parse_args()
+    main(args)

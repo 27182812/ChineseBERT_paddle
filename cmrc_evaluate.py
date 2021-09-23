@@ -1,104 +1,169 @@
-#!/usr/bin/env python
 # -*- coding: utf-8 -*-
+'''
+Evaluation script for CMRC 2018
+version: v5 - special
+Note: 
+v5 - special: Evaluate on SQuAD-style CMRC 2018 Datasets
+v5: formatted output, add usage description
+v4: fixed segmentation issues
+'''
 
 import argparse
-import collections
-import os
-import paddle
-from tokenizers import BertWordPieceTokenizer
-from paddle.io import DataLoader
+import json
+import re
+import sys
+from collections import OrderedDict
 
-from datasets.cmrc_2018_dataset import CMRC2018EvalDataset
-from modeling_cmrc import GlyceBertForQuestionAnswering,GlyceBertModel
-
-from tasks.CMRC.processor import write_predictions
-from utils.random_seed import set_random_seed
-
-set_random_seed(2333)
-RawResult = collections.namedtuple("RawResult",
-                                   ["unique_id", "start_logits", "end_logits"])
+import nltk
 
 
+# split Chinese with English
+def mixed_segmentation(in_str, rm_punc=False):
+    in_str = str(in_str).lower().strip()
+    segs_out = []
+    temp_str = ""
+    sp_char = ['-', ':', '_', '*', '^', '/', '\\', '~', '`', '+', '=',
+               '，', '。', '：', '？', '！', '“', '”', '；', '’', '《', '》', '……', '·', '、',
+               '「', '」', '（', '）', '－', '～', '『', '』']
+    for char in in_str:
+        if rm_punc and char in sp_char:
+            continue
+        if re.search(r'[\u4e00-\u9fa5]', char) or char in sp_char:
+            if temp_str != "":
+                ss = nltk.word_tokenize(temp_str)
+                segs_out.extend(ss)
+                temp_str = ""
+            segs_out.append(char)
+        else:
+            temp_str += char
 
-def get_parser():
-    parser = argparse.ArgumentParser(description="Training")
-    parser.add_argument("--bert_path", required=True, type=str, help="bert config file")
-    parser.add_argument("--batch_size", type=int, default=8, help="batch size")
-    parser.add_argument("--lr", type=float, default=3e-5, help="learning rate")
-    parser.add_argument("--workers", type=int, default=0, help="num workers for dataloader")
-    parser.add_argument("--weight_decay", default=0.0, type=float, help="Weight decay if we apply some.")
-    parser.add_argument("--adam_epsilon", default=1e-8, type=float, help="Epsilon for Adam optimizer.")
-    parser.add_argument("--warmup_steps", default=0, type=int, help="warmup steps")
-    parser.add_argument("--use_memory", action="store_true", help="load datasets to memory to accelerate.")
-    parser.add_argument("--max_length", default=512, type=int, help="max length of datasets")
-    parser.add_argument("--test_file", required=True, type=str, help="train data path")
-    parser.add_argument("--save_path", required=True, type=str, help="train data path")
-    parser.add_argument("--save_topk", default=1, type=int, help="save topk checkpoint")
-    parser.add_argument("--task", default='cmrc', type=str, help="checkpoint path")
-    parser.add_argument("--pretrain_checkpoint", default="", type=str, help="train data path")
-    parser.add_argument("--warmup_proporation", default=0.01, type=float, help="warmup proporation")
-    return parser
+    # handling last part
+    if temp_str != "":
+        ss = nltk.word_tokenize(temp_str)
+        segs_out.extend(ss)
+
+    return segs_out
 
 
-def evaluate():
-    parser = get_parser()
-    args = parser.parse_args()
-    # paddle.device.set_device("cpu")
+# remove punctuation
+def remove_punctuation(in_str):
+    in_str = str(in_str).lower().strip()
+    sp_char = ['-', ':', '_', '*', '^', '/', '\\', '~', '`', '+', '=',
+               '，', '。', '：', '？', '！', '“', '”', '；', '’', '《', '》', '……', '·', '、',
+               '「', '」', '（', '）', '－', '～', '『', '』']
+    out_segs = []
+    for char in in_str:
+        if char in sp_char:
+            continue
+        else:
+            out_segs.append(char)
+    return ''.join(out_segs)
 
-    # checkpoint = torch.load(args.pretrain_checkpoint, map_location=torch.device('cpu'))
-    # model_GlyceBertModel = GlyceBertModel.from_pretrained(args.pretrain_checkpoint,config_path=config_path)
-    # model = GlyceBertForQuestionAnswering.from_pretrained(args.pretrain_checkpoint)
-    model_GlyceBertModel = GlyceBertModel.from_pretrained("ChineseBERT-large")
-    model = GlyceBertForQuestionAnswering(model_GlyceBertModel)
 
-    state_dict = paddle.load(args.pretrain_checkpoint)
-    model.set_state_dict(state_dict)
-    model.eval()
+# find longest common string
+def find_lcs(s1, s2):
+    m = [[0 for i in range(len(s2) + 1)] for j in range(len(s1) + 1)]
+    mmax = 0
+    p = 0
+    for i in range(len(s1)):
+        for j in range(len(s2)):
+            if s1[i] == s2[j]:
+                m[i + 1][j + 1] = m[i][j] + 1
+                if m[i + 1][j + 1] > mmax:
+                    mmax = m[i + 1][j + 1]
+                    p = i + 1
+    return s1[p - mmax:p], mmax
 
-    dataset = CMRC2018EvalDataset(bert_path = args.bert_path, test_file = args.test_file)
-    dataloader = DataLoader(
-        dataset = dataset,
-        batch_size = args.batch_size,
-        num_workers = args.workers
-    )
-    all_results = []
-    for step, batch in enumerate(dataloader):
-        input_ids, pinyin_ids, input_mask, span_mask, segment_ids, unique_ids, indexes = batch
-        batch_size, length = input_ids.shape
-        pinyin_ids = paddle.reshape(pinyin_ids,[batch_size, length, 8])
-        output =  model(input_ids, pinyin_ids,segment_ids) 
 
-        start_logits, end_logits = output[0], output[1]
-        for i in range(input_ids.shape[0]):
-            all_results.append(
-                RawResult(
-                    unique_id=int(unique_ids[i][0]),
-                    start_logits=start_logits[i].cpu().tolist(),
-                    end_logits=end_logits[i].cpu().tolist()))
+#
+def evaluate(ground_truth_file, prediction_file):
+    f1 = 0
+    em = 0
+    total_count = 0
+    skip_count = 0
+    for instance in ground_truth_file["data"]:
+        # context_id   = instance['context_id'].strip()
+        # context_text = instance['context_text'].strip()
+        for para in instance["paragraphs"]:
+            for qas in para['qas']:
+                total_count += 1
+                query_id = qas['id'].strip()
+                query_text = qas['question'].strip()
+                answers = [x["text"] for x in qas['answers']]
 
-    eval_examples = dataset.examples
-    eval_features = dataset.samples
+                if query_id not in prediction_file:
+                    sys.stderr.write('Unanswered question: {}\n'.format(query_id))
+                    skip_count += 1
+                    continue
 
-    n_best_size = 20
-    max_answer_length = 30
-    do_lower_case = False
+                prediction = str(prediction_file[query_id])
+                f1 += calc_f1_score(answers, prediction)
+                em += calc_em_score(answers, prediction)
 
-    if not os.path.exists(args.save_path):
-        os.makedirs(args.save_path)
+    f1_score = 100.0 * f1 / total_count
+    em_score = 100.0 * em / total_count
+    return f1_score, em_score, total_count, skip_count
 
-    output_prediction_file = os.path.join(args.save_path, "test_predictions.json")
-    output_nbest_file = os.path.join(args.save_path, "test_nbest_predictions.json")
-    write_predictions(eval_examples, eval_features, all_results,
-                        n_best_size, max_answer_length,
-                        do_lower_case, output_prediction_file,
-                        output_nbest_file)
 
-    print("Generate prediction file sucefully.")
+def calc_f1_score(answers, prediction):
+    f1_scores = []
+    for ans in answers:
+        ans_segs = mixed_segmentation(ans, rm_punc=True)
+        prediction_segs = mixed_segmentation(prediction, rm_punc=True)
+        lcs, lcs_len = find_lcs(ans_segs, prediction_segs)
+        if lcs_len == 0:
+            f1_scores.append(0)
+            continue
+        precision = 1.0 * lcs_len / len(prediction_segs)
+        recall = 1.0 * lcs_len / len(ans_segs)
+        f1 = (2 * precision * recall) / (precision + recall)
+        f1_scores.append(f1)
+    return max(f1_scores)
+
+
+def calc_em_score(answers, prediction):
+    em = 0
+    for ans in answers:
+        ans_ = remove_punctuation(ans)
+        prediction_ = remove_punctuation(prediction)
+        if ans_ == prediction_:
+            em = 1
+            break
+    return em
+
+
+def get_result(ground_truth_file,prediction_file):
+    ground_truth_file = json.load(open(ground_truth_file, 'rb'))
+    prediction_file = json.load(open(prediction_file, 'rb'))
+    F1, EM, TOTAL, SKIP = evaluate(ground_truth_file, prediction_file)
+    AVG = (EM + F1) * 0.5
+    output_result = OrderedDict()
+    output_result['AVERAGE'] = '%.3f' % AVG
+    output_result['F1'] = '%.3f' % F1
+    output_result['EM'] = '%.3f' % EM
+    output_result['TOTAL'] = TOTAL
+    output_result['SKIP'] = SKIP
+    print(json.dumps(output_result))
+    return output_result
 
 if __name__ == '__main__':
-
-
-    from multiprocessing import freeze_support
-
-    freeze_support()
-    evaluate()
+    parser = argparse.ArgumentParser(description='Evaluation Script for CMRC 2018')
+    parser.add_argument('--dataset_file',
+                        default="cmrc2018_public/dev.json",
+                        help='Official dataset file')
+    parser.add_argument('--prediction_file',
+                        default="all_predictions.json",
+                        help='Your prediction File')
+    args = parser.parse_args()
+    ground_truth_file = json.load(open(args.dataset_file, 'rb'))
+    prediction_file = json.load(open(args.prediction_file, 'rb'))
+    F1, EM, TOTAL, SKIP = evaluate(ground_truth_file, prediction_file)
+    AVG = (EM + F1) * 0.5
+    output_result = OrderedDict()
+    output_result['AVERAGE'] = '%.3f' % AVG
+    output_result['F1'] = '%.3f' % F1
+    output_result['EM'] = '%.3f' % EM
+    output_result['TOTAL'] = TOTAL
+    output_result['SKIP'] = SKIP
+    output_result['FILE'] = args.prediction_file
+    print(json.dumps(output_result))
