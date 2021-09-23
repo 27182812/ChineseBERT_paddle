@@ -62,25 +62,8 @@ max difference: 4.3660402e-05
 
 ```
 
-<p align="center">
-    <img src="imgs/4.png" width="80%" align=left />
-    <img src="imgs/5.png" width="80%" align=left />
-</p><br />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<img src="imgs/4.png" width="80%" align=left />
+<img src="imgs/5.png" width="80%" align=left />
 
 ### （二）下游任务微调
 
@@ -111,13 +94,7 @@ python train_chn.py \
 
 在dev和test数据集上acc分别为95.8和96.08，达到论文精度要求，结果如下
 
- <img src="imgs/chn_test.png" width="66%" align=left /> 
-<br />
-
-
-
-
-
+<img src="imgs/chn_test.png" width="66%" align=left /> 
 
 
 #### 2、XNLI
@@ -144,14 +121,6 @@ test数据集 acc最好结果为81.657,达到论文精度要求，结果如下
 
 
  <img src="imgs/xnli_test.png" width="66%" align=left />
-
-
-
-
-
-
-
-
 
 #### 模型链接
 
