@@ -62,8 +62,8 @@ max difference: 4.3660402e-05
 
 ```
 
-<img src="imgs/4.png" width="80%" align=left />
-<img src="imgs/5.png" width="80%" align=left />
+<img src="imgs/4.png" width="80%" />
+<img src="imgs/5.png" width="80%" />
 
 
 
