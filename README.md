@@ -95,7 +95,7 @@ python train_chn.py \
 在dev和test数据集上acc分别为95.8和96.08，达到论文精度要求，结果如下
 
 <img src="imgs/chn_test.png" width="66%" align=left /> 
-
+<br/>
 
 #### 2、XNLI
 
@@ -120,8 +120,8 @@ python train_xnli.py \
 test数据集 acc最好结果为81.657,达到论文精度要求，结果如下
 
 
- <img src="imgs/xnli_test.png" width="66%" align=left />
-
+<img src="imgs/xnli_test.png" width="66%" align=left />
+<br/>
 #### 模型链接
 
 链接：https://pan.baidu.com/s/1TJnc976TM694TEs9HgF66w 
@@ -168,9 +168,8 @@ python train_cmrc2018.py \
 
 ```
 
-<p align="center">
-    <img src="imgs/cmrcdev.png" width="80%" align=left />
-</p>
+<img src="imgs/cmrcdev.png" width="80%" align=left />
+<br/>
 
 
 
