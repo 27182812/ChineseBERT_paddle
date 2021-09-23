@@ -30,12 +30,8 @@ from paddlenlp.datasets import load_dataset
 import random
 import paddle
 import numpy as np
+from utils import set_seed
 
-def set_seed(seed):
-    """sets random seed"""
-    random.seed(seed)
-    np.random.seed(seed)
-    paddle.seed(seed)
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--save_dir", default='./outputs/chn', type=str, help="The output directory where the model checkpoints will be written.")

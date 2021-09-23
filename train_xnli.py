@@ -30,12 +30,7 @@ from paddlenlp.datasets import load_dataset
 import random
 import paddle
 import numpy as np
-
-def set_seed(seed):
-    """sets random seed"""
-    random.seed(seed)
-    np.random.seed(seed)
-    paddle.seed(seed)
+from utils import set_seed
 
 
 parser = argparse.ArgumentParser()
