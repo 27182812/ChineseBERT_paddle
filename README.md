@@ -67,6 +67,17 @@ max difference: 4.3660402e-05
     <img src="imgs/5.png" width="80%" align=left />
 </p>
 
+
+
+
+
+
+
+
+
+
+
+
 ### （二）下游任务微调
 
 #### 1、ChnSentiCorp
@@ -100,6 +111,13 @@ python train_chn.py \
     <img src="imgs/chn_test.png" width="66%" align=left />
 </p>
 
+
+
+
+
+
+
+
 #### 2、XNLI
 
 #### （1）训练
@@ -131,7 +149,7 @@ test数据集 acc最好结果为81.657,达到论文精度要求，结果如下
 链接：https://pan.baidu.com/s/1TJnc976TM694TEs9HgF66w 
 提取码：bt5m
 
-## 3、cmrc2018
+#### 3、cmrc2018
 
 #### (1) 训练
 
@@ -175,6 +193,13 @@ python train_cmrc2018.py \
 <p align="center">
     <img src="imgs/cmrcdev.png" width="80%" align=left />
 </p>
+
+
+
+
+
+
+
 
 #### （2）运行eval.py，生成test数据集预测答案
 
