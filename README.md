@@ -133,7 +133,7 @@ test数据集 acc最好结果为81.657,达到论文精度要求，结果如下
 
 <img src="imgs/xnli_test.png" width="66%" />
 
-#### 模型链接
+**模型链接**
 
 链接：https://pan.baidu.com/s/1lZ2T31FlZecKSOEHwExbrQ 
 提取码：oskm
@@ -197,7 +197,8 @@ test EM为78.55，达到论文精度要求，结果如下：
 <p align="center">
  <img src="imgs/cmrctest.png" width="100%"/>
 </p>
-#### 模型链接
+
+**模型链接**
 
 链接：https://pan.baidu.com/s/11XSY3PPB_iWNBVme6JmqAQ 
 提取码：17yw
