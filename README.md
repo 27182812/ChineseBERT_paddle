@@ -65,7 +65,15 @@ max difference: 4.3660402e-05
 <img src="imgs/4.png" width="80%" />
 <img src="imgs/5.png" width="80%" />
 
+#### 预训练模型权重-base
 
+链接：https://pan.baidu.com/s/1eclrM8ahm6Fiz-gkGHYpZg 
+提取码：8gdx
+
+#### 预训练模型权重-large
+
+链接：https://pan.baidu.com/s/1sVhWS96tIDZOx-2fk9mgpw 
+提取码：i07w
 
 
 ### （二）下游任务微调
@@ -88,10 +96,10 @@ python train_chn.py \
 --seed 2333 \
 --save_dir 'outputs/chn' | tee outputs/train_chn.log
 ```
-**模型链接**(这个链接包含所有GLUE任务微调后的权重)
+**模型链接**
 
-链接：https://pan.baidu.com/s/1-Pk3n7jJj3IjaXZYR_J-xw 
-提取码：zuif
+链接：https://pan.baidu.com/s/1DKfcUuPxc7Kymk__UXHvMw 
+提取码：85rl
 
 #### (2) 评估
 
@@ -127,8 +135,8 @@ test数据集 acc最好结果为81.657,达到论文精度要求，结果如下
 
 #### 模型链接
 
-链接：https://pan.baidu.com/s/1TJnc976TM694TEs9HgF66w 
-提取码：bt5m
+链接：https://pan.baidu.com/s/1lZ2T31FlZecKSOEHwExbrQ 
+提取码：oskm
 
 #### 3、cmrc2018
 
@@ -189,6 +197,10 @@ test EM为78.55，达到论文精度要求，结果如下：
 <p align="center">
  <img src="imgs/cmrctest.png" width="100%"/>
 </p>
+#### **模型链接**
+
+链接：https://pan.baidu.com/s/11XSY3PPB_iWNBVme6JmqAQ 
+提取码：17yw
 
 # Reference
 
