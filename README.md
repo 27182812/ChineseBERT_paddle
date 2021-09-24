@@ -1,5 +1,4 @@
-使用PaddlePaddle复现论文：**ChineseBERT: Chinese Pretraining Enhanced by** Glyph and Pinyin Information
-
+使用PaddlePaddle复现论文：**ChineseBERT**: Chinese Pretraining Enhanced by Glyph and Pinyin Information
 
 
 ## ChineseBERT
@@ -32,7 +31,7 @@
 | Cuda   | 10.1         |
 | Cudnn  | 7.6 |
 
-或者使用本次复现使用的云平台：https://aistudio.baidu.com/
+本次复现使用的云平台：https://aistudio.baidu.com/
 
 
 
@@ -192,7 +191,7 @@ python eval.py --model_name_or_path outputs/step-340 --n_best_size 35 --max_answ
 
 #### （3）提交CLUE
 
-test EM为78.55，达到论文精度要求，结果如下：
+test数据集 EM为78.55，达到论文精度要求，结果如下：
 
 <p align="center">
  <img src="imgs/cmrctest.png" width="100%"/>
