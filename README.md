@@ -202,6 +202,15 @@ test数据集 EM为78.55，达到论文精度要求，结果如下：
 链接：https://pan.baidu.com/s/11XSY3PPB_iWNBVme6JmqAQ 
 提取码：17yw
 
+
+
+#### 训练日志
+
+Training logs  can be find [HERE](logs)
+
+
+
+
 # Reference
 
 ```bibtex
