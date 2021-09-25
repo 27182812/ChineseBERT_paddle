@@ -75,6 +75,24 @@ max difference: 4.3660402e-05
 提取码：i07w
 
 
+
+#### 模型权重、字典以及tokenizer_config路径配置说明
+
+##### 预训练权重
+
+将[modeling.py](pdchinesebert/modeling.py)中第81行ChineseBERT-large对应的路径改为权重实际的路径
+
+##### 字典路径
+
+将[tokenizer.py](pdchinesebert/tokenizer.py)中第10行ChineseBERT-large对应的字典路径改为vocab.txt实际所在的路径
+
+##### tokenizer_config路径
+
+将[tokenizer.py](pdchinesebert/tokenizer.py)中第14行ChineseBERT-large对应的路径改为tokenizer_config.json实际所在路径
+
+
+
+
 ### （二）下游任务微调
 
 #### 1、ChnSentiCorp
@@ -204,7 +222,7 @@ test数据集 EM为78.55，达到论文精度要求，结果如下：
 
 
 
-#### 训练日志
+### 训练日志
 
 Training logs  can be find [HERE](logs)
 
