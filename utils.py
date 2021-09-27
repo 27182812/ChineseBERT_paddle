@@ -53,10 +53,10 @@ def get_layer_lr_radios(layer_decay=0.8, n_layers=12):
     }
 
 
-def set_seed(args):
-    random.seed(args.seed)
-    np.random.seed(args.seed)
-    paddle.seed(args.seed)
+def set_seed(seed):
+    random.seed(seed)
+    np.random.seed(seed)
+    paddle.seed(seed)
 
 
 def get_writer(args):
