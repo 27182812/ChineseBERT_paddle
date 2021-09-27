@@ -1,4 +1,4 @@
-使用PaddlePaddle复现论文：**ChineseBERT**: Chinese Pretraining Enhanced by Glyph and Pinyin Information
+Use PaddlePaddle to reproduce the paper：**ChineseBERT**: Chinese Pretraining Enhanced by Glyph and Pinyin Information
 
 
 ## ChineseBERT
@@ -7,12 +7,12 @@
 
 
 
-**摘要：**
-最近的汉语预训练模型忽略了汉语特有的两个重要方面：字形和拼音，它们对语言理解具有重要的语法和语义信息。在本研究中，我们提出了汉语预训练，它将汉字的字形和拼音信息纳入语言模型预训练中。字形嵌入是基于汉字的不同字体获得的，能够从视觉特征中捕捉汉字语义，拼音嵌入代表汉字的发音，处理汉语中高度流行的异义现象（同一汉字具有不同的发音和不同的含义）。在大规模的未标记中文语料库上进行预训练后，所提出的ChineseBERT模型在训练步骤较少的基线模型上产生了显著的性能提高。该模型在广泛的中国自然语言处理任务上实现了新的SOTA性能，包括机器阅读理解、自然语言推理、文本分类、句子对匹配和命名实体识别方面的竞争性能
+**Abstract：**
+Recent Chinese pre-training models ignore two important aspects unique to Chinese: character shape and pinyin, which have important grammatical and semantic information for language understanding. In this research, we propose Chinese pre-training, which incorporates the glyph and pinyin information of Chinese characters into the language model pre-training. Glyph embedding is obtained based on different fonts of Chinese characters, which can capture the semantics of Chinese characters from visual features. Pinyin embedding represents the pronunciation of Chinese characters and handles the highly popular phenomenon of different meanings in Chinese (the same Chinese characters have different pronunciations and different meanings). After pre-training on a large-scale unlabeled Chinese corpus, the proposed ChineseBERT model produces a significant performance improvement on the baseline model with fewer training steps. The model achieves new SOTA performance on a wide range of Chinese natural language processing tasks, including competitive performance in machine reading comprehension, natural language inference, text classification, sentence pair matching, and named entity recognition.
 
-本项目是 ChineseBERT在 Paddle 2.x上的开源实现。
+This project is an open source implementation of ChineseBERT on Paddle 2.x.
 
-## 原论文效果
+## Original Paper Effect
 <p align="center">
     <img src="imgs/3.png" width="32%" />
     <img src="imgs/2.png" width="30%" />
@@ -21,35 +21,35 @@
 
 
 
-## 环境安装
+## Environment Installation
 
-| 名称   | 值             |
+| label  | value     |
 |--------|------------------|
 | python | >=3.6     |
 | GPU    | V100       |
-| 框架    | PaddlePaddle2\.1.2 |
+| Frame    | PaddlePaddle2\.1.2 |
 | Cuda   | 10.1         |
 | Cudnn  | 7.6 |
 
-本次复现使用的云平台：https://aistudio.baidu.com/
+Cloud platform used in this recurrence：https://aistudio.baidu.com/
 
 
 
 
 ```bash
-# 克隆本仓库
+# Clone the repository
 git clone https://github.com/27182812/ChineseBERT_paddle
-# 进入根目录
+# Enter the root directory
 cd ChineseBERT_paddle
-# 本地安装必要的python库
+# Install the necessary python libraries locally
 pip install -r requirements.txt
 
 ```
 
-## 快速开始
+## Quick Start
 
-### （一）模型精度对齐
-运行`python compare.py`，对比huggingface与paddle之间的精度，我们可以发现精度的平均误差在10^-7量级，最大误差在10^-6量级。
+### （一）Model Accuracy Alignment
+run `python compare.py`，Comparing the accuracy between huggingface and paddle, we can find that the average error of accuracy is on the order of 10^-7, and the maximum error is on the order of 10^-6.
 ```python
 python compare.py
 # ChineseBERT-large-pytorch vs paddle ChineseBERT-large-paddle
@@ -64,43 +64,43 @@ max difference: 4.3660402e-05
 <img src="imgs/4.png" width="80%" />
 <img src="imgs/5.png" width="80%" />
 
-#### 预训练模型权重-base
+#### Pre-trained model weights-base
 
 链接：https://pan.baidu.com/s/1eclrM8ahm6Fiz-gkGHYpZg 
 提取码：8gdx
 
-#### 预训练模型权重-large
+#### Pre-trained model weights-large
 
 链接：https://pan.baidu.com/s/1sVhWS96tIDZOx-2fk9mgpw 
 提取码：i07w
 
 
 
-#### 模型权重、字典以及tokenizer_config路径配置说明
+#### Model weight, dictionary and tokenizer_config path configuration instructions
 
-##### 预训练权重
+##### Pre-training weights
 
 将[modeling.py](pdchinesebert/modeling.py)中第81行ChineseBERT-large对应的路径改为权重实际的路径
 
-##### 字典路径
+##### Dictionary path
 
 将[tokenizer.py](pdchinesebert/tokenizer.py)中第10行ChineseBERT-large对应的字典路径改为vocab.txt实际所在的路径
 
-##### tokenizer_config路径
+##### Tokenizer_config path
 
 将[tokenizer.py](pdchinesebert/tokenizer.py)中第14行ChineseBERT-large对应的路径改为tokenizer_config.json实际所在路径
 
 
 
 
-### （二）下游任务微调
+### （二）Downstream task fine-tuning
 
 #### 1、ChnSentiCorp
-以ChnSentiCorp数据集为例
+Take the ChnSentiCorp dataset as an example.
 
-#### （1）模型微调：
+#### （1）Model fine-tuning：
 ```shell
-# 运行训练
+# run train
 python train_chn.py \
 --data_path './data/ChnSentiCorp' \
 --device 'gpu' \
@@ -113,14 +113,14 @@ python train_chn.py \
 --seed 2333 \
 --save_dir 'outputs/chn' | tee outputs/train_chn.log
 ```
-**模型链接**
+**Model Link**
 
-链接：https://pan.baidu.com/s/1DKfcUuPxc7Kymk__UXHvMw 
-提取码：85rl
+link：https://pan.baidu.com/s/1DKfcUuPxc7Kymk__UXHvMw 
+password：85rl
 
-#### (2) 评估
+#### (2) Evaluate
 
-在dev和test数据集上acc分别为95.8和96.08，达到论文精度要求，结果如下
+The acc on the dev and test datasets are respectively 95.8 and 96.08, which meet the accuracy requirements of the paper. The results are as follows:
 
 <p>
  <img src="imgs/chn_test.png" width="66%" /> 
@@ -128,7 +128,7 @@ python train_chn.py \
 
 #### 2、XNLI
 
-#### （1）训练
+#### （1）Train
 
 ```bash
 python train_xnli.py \
@@ -144,23 +144,23 @@ python train_xnli.py \
 --save_dir outputs/xnli | tee outputs/train_xnli.log
 ```
 
-#### （2）评估
+#### （2）Evaluate
 
-test数据集 acc最好结果为81.657,达到论文精度要求，结果如下
+The best result of the test dataset acc is 81.657, which meets the accuracy requirements of the paper. The results are as follows:
 
 <img src="imgs/xnli_test.png" width="66%" />
 
-**模型链接**
+**Model Link**
 
-链接：https://pan.baidu.com/s/1lZ2T31FlZecKSOEHwExbrQ 
-提取码：oskm
+link：https://pan.baidu.com/s/1lZ2T31FlZecKSOEHwExbrQ 
+password：oskm
 
 #### 3、cmrc2018
 
-#### (1) 训练
+#### (1) Train
 
 ```shell
-# 开始训练
+# Start train
 python train_cmrc2018.py \
     --model_type chinesebert \
     --data_dir "data/cmrc2018" \
@@ -182,7 +182,7 @@ python train_cmrc2018.py \
     --use_amp
 ```
 
-训练过程中模型会在dev数据集进行评估，其中最好的结果如下所示：
+During the training process, the model will be evaluated on the dev dataset, and the best results are as follows:
 
 ```python
 
@@ -199,30 +199,30 @@ python train_cmrc2018.py \
 <img src="imgs/cmrcdev.png" width="80%" />
 
 
-#### （2）运行eval.py，生成test数据集预测答案
+#### （2）Run eval.py to generate the test data set to predict the answer
 
 ```bash
 python eval.py --model_name_or_path outputs/step-340 --n_best_size 35 --max_answer_length 65
 ```
 
-其中，model_name_or_path为模型路径
+Among them, model_name_or_path is the model path
 
-#### （3）提交CLUE
+#### （3）Submit to CLUE
 
-test数据集 EM为78.55，达到论文精度要求，结果如下：
+The test dataset EM is 78.55, which meets the accuracy requirements of the paper. The results are as follows:
 
 <p align="center">
  <img src="imgs/cmrctest.png" width="100%"/>
 </p>
 
-**模型链接**
+**Model Link**
 
-链接：https://pan.baidu.com/s/11XSY3PPB_iWNBVme6JmqAQ 
-提取码：17yw
+link：https://pan.baidu.com/s/11XSY3PPB_iWNBVme6JmqAQ 
+password：17yw
 
 
 
-### 训练日志
+### Train Log
 
 Training logs  can be find [HERE](logs)
 
