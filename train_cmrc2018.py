@@ -110,7 +110,7 @@ def main(args):
         logger.info(f"{arg}: {value}")
     logger.info("**************************************************")
     paddle.set_device(args.device)
-    set_seed(args)
+    set_seed(args.seed)
     writer = get_writer(args)
 
     # get model and tokenizer
