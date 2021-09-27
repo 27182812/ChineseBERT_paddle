@@ -1,5 +1,5 @@
 Use PaddlePaddle to reproduce the paper：**ChineseBERT**: Chinese Pretraining Enhanced by Glyph and Pinyin Information
-
+English | [简体中文](./README_cn.md)
 
 ## ChineseBERT
 
