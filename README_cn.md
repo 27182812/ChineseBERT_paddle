@@ -68,14 +68,13 @@ max difference: 4.3660402e-05
 
 #### 预训练模型权重-base
 
-链接：https://pan.baidu.com/s/1eclrM8ahm6Fiz-gkGHYpZg 
-提取码：8gdx
+链接：https://pan.baidu.com/s/1FJDP1BR81ST6XWCMDQgsYw 
+提取码：fk4i
 
 #### 预训练模型权重-large
 
-链接：https://pan.baidu.com/s/1sVhWS96tIDZOx-2fk9mgpw 
-提取码：i07w
-
+链接：https://pan.baidu.com/s/1S9YRrYZdya1QEO9NiDomTQ 
+提取码：b5qn
 
 
 #### 模型权重、字典以及tokenizer_config路径配置说明
