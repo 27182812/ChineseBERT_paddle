@@ -20,7 +20,7 @@ import numpy as np
 sentence = '欢迎使用paddle'
 
 # pytorch 版模型加载、推理
-model_path="E:\code\Code-NLP\ChineseBERT\ChineseBERT-base"
+model_path="ChineseBERT-base"
 torch_tokenizer = BertDataset(model_path)
 chinese_bert = GlyceBertModel.from_pretrained(model_path)
 

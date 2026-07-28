@@ -71,13 +71,13 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument(
         "--pytorch_checkpoint_path",
-        default="E:\code\Code-NLP\ChineseBERT\ChineseBERT-base\pytorch_model.bin",
+        default="ChineseBERT-base/pytorch_model.bin",
         type=str,
         required=False,
         help="Path to the Pytorch checkpoint path.")
     parser.add_argument(
         "--paddle_dump_path",
-        default="E:\code\Code-NLP\ChineseBERT\ChineseBERT-base\chinesebert-base.pdparams",
+        default="ChineseBERT-base/chinesebert-base.pdparams",
         type=str,
         required=False,
         help="Path to the output Paddle model.")
