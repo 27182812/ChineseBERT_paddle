@@ -18,9 +18,9 @@ import torch
 import numpy as np
 
 torch_model_path = "pytorch_model.bin"
-torch_state_dict = torch.load("E:\code\Code-NLP\ChineseBERT\ChineseBERT-base\pytorch_model.bin")
+torch_state_dict = torch.load("ChineseBERT-base/pytorch_model.bin")
 
-paddle_model_path = "E:\code\Code-NLP\ChineseBERT\ChineseBERT-base\chinesebert-base.pdparams"
+paddle_model_path = "ChineseBERT-base/chinesebert-base.pdparams"
 paddle_state_dict = {}
 
 # State_dict's keys mapping: from torch to paddle
